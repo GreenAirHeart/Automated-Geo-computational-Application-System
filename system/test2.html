@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Line Between Squares</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* Styles for different elements */
+    .blue-square {
+      fill: blue;
+    }
+    .red-square {
+      fill: red;
+    }
+    .line {
+      stroke: gray;
+      stroke-dasharray: 5, 5; /* Dashed line */
+    }
+    #animationButton {
+      padding: 8px 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- SVG container for the squares and line -->
+  <svg width="400" height="200">
+    <!-- Blue and red squares -->
+    <rect class="blue-square" x="50" y="50" width="50" height="50"></rect>
+    <rect class="red-square" x="250" y="50" width="50" height="50"></rect>
+    <!-- Definitions for the arrowhead marker -->
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="gray"></path>
+      </marker>
+    </defs>
+    <!-- Line connecting squares with an arrowhead -->
+    <line class="line" x1="75" y1="75" x2="275" y2="75" marker-end="url(#arrow)"></line>
+  </svg>
+
+  <!-- Button to control animation -->
+  <button id="animationButton">Stop Animation</button>
+
+  <script>
+    const line = d3.select(".line");
+    let animationStopped = false;
+
+    // Function to animate the line
+    const animateLine = () => {
+      const totalLength = line.node().getTotalLength();
+      line
+        .attr("stroke-dashoffset", totalLength)
+        .attr("stroke-dasharray", totalLength + " " + totalLength)
+        .transition()
+        .duration(10000) // 10 seconds animation duration
+        .ease(d3.easeLinear)
+        .attr("stroke-dashoffset", 0)
+        .on("end", () => {
+          if (!animationStopped) {
+            setTimeout(() => {
+              line
+                .transition()
+                .duration(0) // No transition
+                .attr("stroke-dasharray", null) // Remove dash
+                .attr("marker-end", "url(#arrow)"); // Add arrowhead
+              animateLine(); // Restart animation if not stopped
+            }, 1000); // Change to solid line after 1 second (1000 milliseconds)
+          }
+        });
+    };
+
+    // Event listener for animation button
+    document.getElementById("animationButton").addEventListener("click", () => {
+      const button = d3.select("#animationButton");
+      if (button.text() === "Stop Animation") {
+        // Stop the animation
+        animationStopped = true;
+        button.text("Start Animation");
+        line.interrupt();
+      } else {
+        // Start or resume the animation
+        animationStopped = false;
+        button.text("Stop Animation");
+        animateLine(); // Start the animation
+      }
+    });
+
+    // Start the initial animation
+    animateLine();
+  </script>
+</body>
+</html>

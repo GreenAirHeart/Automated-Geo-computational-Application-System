@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="pic">
+    <file>model.png</file>
+  </qresource>
+</RCC>

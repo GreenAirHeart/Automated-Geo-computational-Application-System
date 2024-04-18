@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>地图事件</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+	 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+	 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	 <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+        <style type="text/css">
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        #map_MapBox{
+            height:600px;
+            width:100%;
+            position:relative;
+        }
+    </style>
+    </head>
+    <body>
+        <div id='map_MapBox'> </div>
+<!--            <div id="stateDiv" style='position:absolute;top:0;right:10px;height:70px;width:200px;background-color:#0a0a0a;z-index:401;'>-->
+<!--                <p id='mouseCoor' style='color:white;margin:0 10px;'></p>-->
+<!--                <p id='maplevel' style='color:white;margin:0 10px;'></p>-->
+<!--                <p id='leftdown' style='color:white;margin:0 10px;'></p>-->
+<!--                <p id='mapstate' style='color:green;margin:10px 10px;'></p>-->
+<!--                <p id='rectCoor' style='color:green;margin:10px 10px;'></p>-->
+<!--            </div>-->
+        <div>
+            <input type="text" id="bottomRightInput" placeholder="Top Left (Lat, Lng)">
+            <input type="text" id="topLeftInput" placeholder=" Bottom Right(Lat, Lng)">
+            <button id="drawButton">Draw Rectangle</button>
+        </div>
+
+<!--    <button id="drawButton">Draw Rectangle</button>-->
+
+        <script>
+            //加载MapBox
+            var map = new L.Map('map_MapBox');
+            var map_MapBoxUrl='http://t0.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=23a9a63f3a584ee405db4e1147945e1e';
+            var MapBox = new L.TileLayer(map_MapBoxUrl, {id:'MapBox.streets', zoom: 8, maxZoom: 18,minZoom:3 });
+            map.setView(new L.LatLng(32.06396, 113.59863),10);
+            map.addLayer(MapBox);
+
+        const drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        const drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems,
+                poly: {
+                    allowIntersection: false,
+                },
+            },
+            draw: {
+                marker: false,
+                circle: false,
+                rectangle: true,
+                polygon: false,
+                polyline: false,
+            },
+        });
+        map.addControl(drawControl);
+
+        map.on(L.Draw.Event.CREATED, function (event) {
+            const layer = event.layer;
+            drawnItems.addLayer(layer);
+            updateCoordinates(layer.getBounds());
+        });
+
+        map.on(L.Draw.Event.DELETED, function (event) {
+            clearCoordinates();
+        });
+
+        function clearDrawnRectangle() {
+            drawnItems.clearLayers();
+            clearCoordinates();
+        }
+
+        function updateCoordinates(bounds) {
+            const leftUp = bounds.getNorthWest();
+            const rightDown = bounds.getSouthEast();
+            document.getElementById('leftUpLat').value = leftUp.lat;
+            document.getElementById('leftUpLng').value = leftUp.lng;
+            document.getElementById('rightDownLat').value = rightDown.lat;
+            document.getElementById('rightDownLng').value = rightDown.lng;
+        }
+
+        function clearCoordinates() {
+            document.getElementById('leftUpLat').value = '';
+            document.getElementById('leftUpLng').value = '';
+            document.getElementById('rightDownLat').value = '';
+            document.getElementById('rightDownLng').value = '';
+        }
+
+        function drawUserRectangle() {
+            const leftUpLat = parseFloat(document.getElementById('leftUpLat').value);
+            const leftUpLng = parseFloat(document.getElementById('leftUpLng').value);
+            const rightDownLat = parseFloat(document.getElementById('rightDownLat').value);
+            const rightDownLng = parseFloat(document.getElementById('rightDownLng').value);
+
+            if (!isNaN(leftUpLat) && !isNaN(leftUpLng) && !isNaN(rightDownLat) && !isNaN(rightDownLng)) {
+                const rectangleBounds = L.latLngBounds(
+                    L.latLng(leftUpLat, leftUpLng),
+                    L.latLng(rightDownLat, rightDownLng)
+                );
+                const rectangle = L.rectangle(rectangleBounds);
+                drawnItems.addLayer(rectangle);
+                updateCoordinates(rectangleBounds);
+            }
+        }
+    </script>
+</body>
+</html>

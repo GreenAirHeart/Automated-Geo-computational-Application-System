@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3.js Blue Square Example</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="applicationSetting.js"></script>
+  <script src="modelSetting.js" defer></script>
+  <script src="dataSetting.js" defer></script>
+  <script src="resultProcessing.js" defer></script>
+
+  <style>
+    /* Styles for different elements */
+    /* ... (existing styles remain unchanged) ... */
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .blank-square {
+      stroke: black;
+      fill: none;
+    }
+
+    .red-square text {
+      font-size: 14px;
+      font-weight: bold;
+      fill: white;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .button {
+
+      /*display: flex; !* Use flexbox to arrange buttons in a row *!*/
+      /*gap: 10px; !* Adjust spacing between buttons *!*/
+      /*margin-left: 50px; !* Adjust left margin as needed *!*/
+
+
+      padding: 5px 10px;
+      margin: 5px;
+      cursor: pointer;
+      border: 1px solid black;
+      border-radius: 3px;
+      background-color: lightgrey;
+    }
+
+    .row:nth-child(1) {
+      height: 150px; /* Height of the first row */
+    }
+    .row:nth-child(2) {
+      height: 100px; /* Height of the second row */
+    }
+    .row:nth-child(3) {
+      height: 500px; /* Height of the third row */
+    }
+
+
+    .blue-box {
+      fill: blue;
+    }
+    .black-box {
+      fill: black;
+    }
+    .red-box {
+      fill: red;
+    }
+    .yellow-box {
+      fill: yellow;
+    }
+    /* Define styles for different colored squares and curve lines */
+    .blue-square {
+      fill: blue;
+      cursor: pointer;
+    }
+    .red-square {
+      fill: red;
+      display: none;
+    }
+    .green-square {
+      fill: green;
+      display: none;
+    }
+    .yellow-square {
+      fill: yellow;
+      display: none;
+    }
+    .orange-square {
+      fill: orange;
+      display: none;
+    }
+    .grey-curve {
+      fill: none;
+      stroke: grey;
+      stroke-width: 2;
+      display: none;
+    }
+    .pink-curve {
+      fill: none;
+      stroke: pink;
+      stroke-width: 2;
+      display: none;
+    }
+    .black-curve {
+      fill: none;
+      stroke: black;
+      stroke-width: 2;
+      display: none;
+    }
+    .purple-curve {
+      fill: none;
+      stroke: purple;
+      stroke-width: 2;
+      display: none;
+    }
+    .rectangle {
+      fill: white;
+      stroke: black;
+      rx: 10; /* Adjust corner radius */
+      ry: 10; /* Adjust corner radius */
+    }
+    .rectangle:hover {
+      stroke: grey; /* Change outline color on hover */
+      cursor: pointer;
+    }
+
+    .text-high {
+      fill: black;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      user-select: none;
+    }
+
+
+    .text-inside {
+      fill: black;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      user-select: none;
+    }
+    .label {
+      font-size: 20px;
+      font-weight: bold;
+      fill: black;
+    }
+
+    .row:nth-child(2) .label {
+      /* Adjust position for "Input" */
+      x: 180;
+      y: 160;
+    }
+
+    .row:nth-child(3) .label {
+      /* Adjust position for "Output" */
+      x: 180;
+      y: 160;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="row">
+    <!-- First row with blank squares and buttons -->
+    <svg width="1000" height="150">
+      <rect class="blank-square" x="50" y="10" width="100" height="100"></rect>
+      <rect class="blank-square" x="170" y="10" width="100" height="100"></rect>
+      <rect class="blank-square" x="290" y="10" width="100" height="100"></rect>
+    </svg>
+    <div style="margin-right: 0px;margin-left: 0px">
+      <button class="button" onclick="showContent(1)">Application Setting</button>
+      <button class="button" onclick="showContent(2)">Model Setting</button>
+      <button class="button" onclick="showContent(3)">Data Setting</button>
+      <button class="button" onclick="showContent(4)">Result Processing</button>
+    </div>
+  </div>
+    <div class="row">
+        <div class="input-output">
+          <span class="label">Input:</span>
+          <!-- Input content goes here -->
+        </div>
+        <div class="input-output">
+          <span class="label">Output:</span>
+          <!-- Output content goes here -->
+        </div>
+      </div>
+
+  <div class="row">
+    <!-- Second row for boxes -->
+    <svg id="content" width="400" height="400"></svg>
+  </div>
+
+  <script>
+    function showContent(contentNumber) {
+      const content = d3.select("#content");
+
+      content.selectAll("*").remove(); // Clear previous content
+
+      if (contentNumber === 1) {
+
+        showApplicationSetting(content);
+
+        }
+
+
+
+       else if (contentNumber === 2) {
+       showModelSetting(content);
+
+
+      } else if (contentNumber === 3) {
+        showDataSetting(content);
+
+      } else if (contentNumber === 4) {
+        showResultProcessing(content)
+      }
+    }
+  </script>
+</body>
+</html>

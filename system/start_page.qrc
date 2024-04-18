@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="start_page">
+    <file>geocomputation-ontology.png</file>
+  </qresource>
+</RCC>

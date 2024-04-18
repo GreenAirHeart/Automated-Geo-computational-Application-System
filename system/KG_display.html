@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3.js Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* 设置页面中字体为 Arial 或者 sans-serif（没有指定字体时使用默认字体） */
+            margin: 0; /* 设置页面 body 的外边距为 0 */
+            padding: 0; /* 设置页面 body 的内边距为 0 */
+        }
+
+        header, footer {
+            background-color: #f0f0f0; /* 设置标题栏和页脚的背景颜色为淡灰色 */
+            padding: 10px; /* 设置标题栏和页脚的内边距为 10px */
+            text-align: center; /* 将标题栏和页脚中的文本内容居中对齐 */
+        }
+
+        /* 整体内容区域设置 */
+        .container {
+            display: flex; /* 使用 Flexbox 布局 */
+            flex-direction: column; /* 设置子元素在 Flex 容器中按列排列 */
+            align-items: center; /* 沿着交叉轴（垂直方向）居中对齐 */
+            justify-content: center; /* 沿着主轴（水平方向）居中对齐 */
+            height: 100vh; /* 设置容器高度为视口的高度 */
+        }
+
+        /* 每个板块的通用样式 */
+        .section {
+            width: 80%; /* 每个板块的宽度为父元素宽度的 80% */
+            margin: 10px 0; /* 设置每个板块的上下边距为 10px，左右边距为 0 */
+            display: flex; /* 使用 Flexbox 布局 */
+            justify-content: space-between; /* 子元素在容器中平均分布 */
+            align-items: center; /* 子元素垂直居中对齐 */
+        }
+
+        /* 第二个板块的样式 */
+        .main-section {
+            display: flex; /* 使用 Flexbox 布局 */
+            justify-content: space-between; /* 子元素在容器中平均分布 */
+            width: 100%; /* 第二个板块的宽度与父元素相同 */
+        }
+
+        /* 每列的样式 */
+        .column {
+            flex: 1; /* 每列的宽度平均分配 */
+            padding: 10px; /* 设置每列的内边距为 10px */
+        }
+
+        /* 输入和输出列的样式 */
+        .input, .output {
+            background-color: #e0e0e0; /* 设置输入和输出列的背景颜色为浅灰色 */
+            padding: 10px; /* 设置输入和输出列的内边距为 10px */
+        }
+
+        /* 过程列的样式 */
+        .process {
+            flex: 3; /* 设置过程列的宽度是其他列的 3 倍 */
+            padding: 10px; /* 设置过程列的内边距为 10px */
+            background-color: #f5f5f5; /* 设置过程列的背景颜色为更浅的灰色 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Project Name</h1>
+    </header>
+
+    <div class="container">
+        <section class="section">
+
+            <!-- js in the section -->
+            <div class="main-section">
+                <div class="column input">
+                    <h2>Input</h2>
+                    <!-- Content for Input -->
+                </div>
+
+                <div class="column process">
+                    <h2>Process</h2>
+                    <!-- D3.js Visualization goes here -->
+                </div>
+
+                <div class="column output">
+                    <h2>Output</h2>
+                    <!-- Content for Output -->
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <p>
+                Explanation of the D3.js visualization goes here.
+            </p>
+        </section>
+
+        <footer>
+            <p>Footer content</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

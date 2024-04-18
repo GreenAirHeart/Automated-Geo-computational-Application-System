@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Data Processing Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add the necessary map API scripts and styles here -->
+    <!-- Replace 'MAP_API_URL' with the URL of your map API -->
+    <script type="text/javascript" src="http://api.tianditu.gov.cn/api?v=4.0&tk=23a9a63f3a584ee405db4e1147945e1e"></script>
+    <style type="text/css">body,html{width:100%;height:100%;margin:0;font-family:"Microsoft YaHei"}#mapDiv{width :100%;height:600px}input,b,p{margin-left:5px;font-size:14px}</style>
+    <!--link href="MAP_API_URL/map-api.css" rel="stylesheet" />
+    <style>
+        #map-container {
+            width: 100%;
+            height: 300px;
+        }
+    </style-->
+</head>
+
+<body>
+<!--    <h1>Data Processing Webpage</h1>-->
+
+    <!-- Step 1: View Map -->
+    <div id="step1">
+<!--        <h2>Step 1: View Map</h2>-->
+<!--        <div id="map-container">-->
+<!--	        <p>Map will be displayed here</p>-->
+	    <body onLoad="onLoad()">
+        <div id="mapDiv">
+
+        </div>
+        <div  >
+	 <input type="button" value="开启" onClick="rectTool.open();"/>
+	 <input type="button" value="清除" onClick="rectTool.clear();"/>
+        <input type="button" value="关闭" onClick="rectTool.close();"/>
+        <input type="button" value="get" onClick="rectTool.getRectangles();"/>
+	 </div>
+        </div>
+        <button type="button" onclick="showStep2()">Next</button>
+    </div>
+
+    <!-- Step 2: Select from the List -->
+    <div id="step2" style="display: none;">
+        <h2>Step 2: Select from the List</h2>
+        <select id="dropdown">
+            <option value="" disabled selected>Select an option...</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+        <button type="button" onclick="showStep1()">Previous</button>
+        <button type="button" onclick="showStep3()">Next</button>
+    </div>
+
+    <!-- Step 3: Upload Data -->
+    <div id="step3" style="display: none;">
+        <h2>Step 3: Upload Data</h2>
+        <form id="upload-form">
+            <input type="file" id="file-upload" name="data-file" accept=".csv, .txt">
+            <button type="button" onclick="showStep2()">Previous</button>
+            <button type="button" onclick="showStep4()">Next</button>
+        </form>
+    </div>
+
+    <!-- Step 4: Process Data -->
+    <div id="step4" style="display: none;">
+        <h2>Step 4: Process Data</h2>
+        <button type="button" onclick="showStep3()">Previous</button>
+        <button type="button" onclick="executeProcess()">Process Data</button>
+    </div>
+
+    <script>
+        // Map initialization (replace this with your map API's initialization script)
+        // This script will create the map using your API
+        // Example:
+       var map, rectTool;;
+       var zoom = 8;
+       var lay;
+       var onlyMapLay;
+
+       function onLoad() {
+                    var imageURL = "http://t0.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=23a9a63f3a584ee405db4e1147945e1e";
+                    lay = new T.TileLayer(imageURL, {minZoom: 1, maxZoom: 18});
+                    var config = {layers: [lay]};
+                    map = new T.Map("mapDiv", config);
+                    map.centerAndZoom(new T.LngLat(116.40969, 39.89945), zoom);
+                    map.enableScrollWheelZoom();
+                    rectTool = new T.RectangleTool(map);
+                    getMapBounds();
+                }
+         function getMapBounds() {
+            var rt = rectTool.getRectangles();
+            var bs = rt.getLngLats();   	//获取可视区域
+            var bssw = bs.getSouthWest();   //可视区域左下角
+            var bsne = bs.getNorthEast();   //可视区域右上角
+            alert("当前地图可视范围是：" + bssw.getLng() + "," + bssw.getLat() + "到" + bsne.getLng() + "," + bsne.getLat());}
+        function showStep1() {
+            document.getElementById("step2").style.display = "none";
+            document.getElementById("step3").style.display = "none";
+            document.getElementById("step4").style.display = "none";
+            document.getElementById("step1").style.display = "block";
+        }
+
+        function showStep2() {
+            document.getElementById("step1").style.display = "none";
+            document.getElementById("step3").style.display = "none";
+            document.getElementById("step4").style.display = "none";
+            document.getElementById("step2").style.display = "block";
+        }
+
+        function showStep3() {
+            document.getElementById("step1").style.display = "none";
+            document.getElementById("step2").style.display = "none";
+            document.getElementById("step4").style.display = "none";
+            document.getElementById("step3").style.display = "block";
+        }
+
+        function showStep4() {
+            document.getElementById("step1").style.display = "none";
+            document.getElementById("step2").style.display = "none";
+            document.getElementById("step3").style.display = "none";
+            document.getElementById("step4").style.display = "block";
+        }
+
+        function executeProcess() {
+            // Get the uploaded file and selected option
+            const fileInput = document.getElementById('file-upload');
+            const selectedOption = document.getElementById('dropdown').value;
+
+            // Perform processing (you can add your logic here)
+            console.log('File:', fileInput.files[0]);
+            console.log('Selected Option:', selectedOption);
+
+            // Show a message or redirect to the processing page
+            alert('Data processing completed!');
+        }
+
+        // Initialize the map when the page loads
+        window.onload = onLoad;
+    </script>
+</body>
+
+</html>
+

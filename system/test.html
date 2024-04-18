@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinate Input</title>
+</head>
+<body>
+    <label for="coordinates_input">Enter Coordinates:</label>
+    <input type="text" id="coordinates_input" name="coordinates_input">
+    <button onclick="saveCoordinates()">Save</button>
+
+    <script>
+        function saveCoordinates() {
+            var coordinates = document.getElementById('coordinates_input').value;
+            if (coordinates.trim()) {
+                console.log("User saved");
+            }
+            return coordinates;
+        }
+    </script>
+</body>
+</html>

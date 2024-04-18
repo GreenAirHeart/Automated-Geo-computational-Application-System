@@ -1,0 +1,548 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>地图事件</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+	 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+	 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	 <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/qwebchannel@6.2.0/qwebchannel.min.js"></script>
+        <style type="text/css">
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        #map_MapBox{
+            height:600px;
+            width:100%;
+            position:relative;}
+
+            input {
+            font-size: 20px;
+            font-family: Arial;
+            padding: 10px;
+        }
+
+        input#topLeftInput {
+        position: relative;
+        top: 20px;
+        left: 0px;
+    }
+
+    input#bottomRightInput {
+        position: relative;
+        top: 20px;
+        left: 0px;
+    }
+
+     button#drawButton {
+        position: relative;
+        top: 20px;
+        left: 5px;
+    }
+
+    button#clearButton {
+        position: relative;
+        top: 20px;
+        left: 5px;
+    }
+       button#saveButton {
+        position: relative;
+        top: 20px;
+        left: 5px;
+    }
+
+
+    </style>
+    </head>
+    <body>
+        <div id='map_MapBox'> </div>
+<!--            <div id="stateDiv" style='position:absolute;top:0;right:10px;height:70px;width:200px;background-color:#0a0a0a;z-index:401;'>-->
+<!--                <p id='mouseCoor' style='color:white;margin:0 10px;'></p>-->
+<!--                <p id='maplevel' style='color:white;margin:0 10px;'></p>-->
+<!--                <p id='leftdown' style='color:white;margin:0 10px;'></p>-->
+<!--                <p id='mapstate' style='color:green;margin:10px 10px;'></p>-->
+<!--                <p id='rectCoor' style='color:green;margin:10px 10px;'></p>-->
+<!--            </div>-->
+        <div>
+            <input type="text" id="bottomRightInput" placeholder="Top Left (Lat, Lng)" >
+            <input type="text" id="topLeftInput" placeholder=" Bottom Right(Lat, Lng)">
+            <button id="drawButton" onclick="drawRectangleFromInput()"   style="font-size: 25px; font-family: Agency FB; padding: 6px 15px;">Draw Rectangle</button>
+            <button id="clearButton" onclick="clearDrawnRectangle()"style="font-size: 25px; font-family: Agency FB; padding: 6px 15px;">Clear Rectangle</button>
+<!--            <button id="saveButton" onclick="saveAndRetrieveCoordinates()" style="font-size: 25px; font-family: Agency FB; padding: 6px 15px;">Save Rectangle</button>-->
+        </div>
+
+<!--    <button id="drawButton">Draw Rectangle</button>-->
+
+        <script id="coordinate">
+            //加载MapBox
+            var map = new L.Map('map_MapBox');
+            var map_MapBoxUrl='http://t0.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=23a9a63f3a584ee405db4e1147945e1e';
+            var MapBox = new L.TileLayer(map_MapBoxUrl, {id:'MapBox.streets', zoom: 8, maxZoom: 18,minZoom:3 });
+            map.setView(new L.LatLng(32.06396, 113.59863),10);
+            map.addLayer(MapBox);
+
+
+
+            // var chinaboundary = L.geojson(chinaboundary);
+            // map.addLayer(chinaboundary);
+            // document.getElementById('maplevel').innerText='当前级别:'+map._zoom;
+        //
+	    // const drawnItems = new L.FeatureGroup();
+		// const drawControl = new L.Control.Draw({
+		//     draw: {
+		//         rectangle: true,
+		//         polyline: false,
+		//         circle: false,
+		//         marker: false,
+		//         circlemarker: false,
+        //         polygon:false,
+		//     },
+		//     edit: {
+		//         featureGroup: drawnItems, // Use the featureGroup to store drawn shapes
+		//     },
+		// });
+        //
+		// map.addControl(drawControl);
+		// map.addLayer(drawnItems); // Add the featureGroup to the map
+        //
+		// let drawnRectangle; // Variable to store the drawn rectangle
+        //
+        //           map.addControl(drawControl);
+        let drawnRectangleFromInput = null;
+        var drawingEnabled = true;
+        const drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        const drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems,
+                remove: false, // Disable the default delete button
+                edit: false
+            },
+
+            draw: {
+                marker: false,
+                circle: false,
+                rectangle: true,
+                polygon: false,
+                polyline: false,
+                circlemarker:false
+            },
+        });
+
+        drawControl._toolbars.edit.removeToolbar('actions');
+        drawControl._toolbars.edit.actions = {};
+
+
+        map.addControl(drawControl);
+
+        let drawnRectangleByControl = null; // Added to keep track of the control-drawn rectangle
+
+        map.on(L.Draw.Event.CREATED, function (event) {
+            if (!drawingEnabled) {
+                return; // Do not draw if disabled
+            }
+            clearDrawnRectangle(); // Clear any existing rectangle
+            const layer = event.layer;
+            // layer.setStyle({ fillColor: 'blue', color: 'blue' });
+            drawnItems.addLayer(layer);
+            drawnRectangleByControl = layer;
+            updateCoordinates(layer.getBounds());
+            drawingEnabled = false;
+        });
+
+
+        function clearDrawnRectangle() {
+                if (drawnRectangleFromInput) {
+                    map.removeLayer(drawnRectangleFromInput);
+                    drawnRectangleFromInput = null;
+                    clearCoordinates();
+                    drawingEnabled = true;
+                }
+
+                if (drawnRectangleByControl) {
+                    map.removeLayer(drawnRectangleByControl);
+                    drawnRectangleByControl = null;
+                    clearCoordinates();
+                    drawingEnabled = true;
+                }
+
+                // Clear the drawnItems layer
+                drawnItems.clearLayers();
+            }
+
+
+        function saveRectangle() {
+                if (drawnRectangleFromInput) {
+                    drawnRectangleFromInput.setStyle({fillColor: 'red', color: 'red'});
+                    var bounds = drawnRectangleFromInput.getBounds();
+                    var topLeft = bounds.getNorthWest();
+                    var bottomRight = bounds.getSouthEast();
+                    var topLeftLat = topLeft.lat;
+                    var topLeftLng = topLeft.lng;
+                    var bottomRightLat = bottomRight.lat;
+                    var bottomRightLng = bottomRight.lng;
+                    // Call the function to save coordinates to Python side
+
+
+                }
+
+                if (drawnRectangleByControl) {
+                    drawnRectangleByControl.setStyle({fillColor: 'red', color: 'red'});
+                    console.log("Save button clicked!");
+                }
+                }
+
+        function drawRectangleFromInput() {
+            if (!drawingEnabled) {
+                return; // Do not draw if disabled
+            }
+            const topLeftInput = document.getElementById('topLeftInput').value;
+            const bottomRightInput = document.getElementById('bottomRightInput').value;
+
+
+
+            // Parse the input coordinates into LatLng objects
+            const [topLeftLat, topLeftLng] = topLeftInput.split(',');
+            const [bottomRightLat, bottomRightLng] = bottomRightInput.split(',');
+
+
+
+            // Create a new rectangle based on user input
+            const rectangleBounds = L.latLngBounds(
+                L.latLng(topLeftLat, topLeftLng),
+                L.latLng(bottomRightLat, bottomRightLng)
+            );
+
+            clearDrawnRectangle();
+            const rectangleFromInput = L.rectangle(rectangleBounds, { fillColor: 'green', color: 'green' });
+            drawnRectangleFromInput = rectangleFromInput;
+            rectangleFromInput.addTo(map);
+            updateCoordinates(rectangleBounds);
+            drawingEnabled = false;
+
+
+        }
+
+
+
+
+           function enableRectangleDrawing() {
+            // Activate the rectangle drawing mode
+            map.addControl(drawControl);
+            drawControl.setDrawingOptions({ rectangle: { shapeOptions: { color: 'blue' } } });
+            drawControl._toolbars.draw._modes.rectangle.handler.enable();
+        }
+
+
+        function updateCoordinates(bounds) {
+            const topLeft = bounds.getNorthWest();
+            const bottomRight = bounds.getSouthEast();
+            document.getElementById('topLeftInput').value = `${topLeft.lat},${topLeft.lng}`;
+            document.getElementById('bottomRightInput').value = `${bottomRight.lat},${bottomRight.lng}`;
+
+
+        }
+
+        function clearCoordinates() {
+            document.getElementById('topLeftInput').value = '';
+            document.getElementById('bottomRightInput').value = '';
+        }
+
+        // function saveAndRetrieveCoordinates() {
+        //         // Save the rectangle
+        //         saveRectangle();
+        //         // Call the function in Python to retrieve coordinates
+        //         window.pywebchannel_1.handleSaveButtonClicked();
+        //     }
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--//             let drawnRectangle = null;-->
+<!--//-->
+<!--//         const drawnItems = new L.FeatureGroup();-->
+<!--//         map.addLayer(drawnItems);-->
+<!--//-->
+<!--//         const drawControl = new L.Control.Draw({-->
+<!--//             edit: {-->
+<!--//                 featureGroup: drawnItems,-->
+<!--//                 poly: {-->
+<!--//                     allowIntersection: false,-->
+<!--//                 },-->
+<!--//             },-->
+<!--//             draw: {-->
+<!--//                 rectangle: true,-->
+<!--// 		        polyline: false,-->
+<!--// 		        circle: false,-->
+<!--// 		        marker: false,-->
+<!--// 		        circlemarker: false,-->
+<!--//                 polygon:false,-->
+<!--//             },-->
+<!--//         });-->
+<!--//         map.addControl(drawControl);-->
+<!--//         map.on(L.Draw.Event.CREATED, function (event) {-->
+<!--//             const layer = event.layer;-->
+<!--//             // layer.setStyle({ fillColor: 'green', color: 'green' });-->
+<!--//             drawnItems.addLayer(layer);-->
+<!--//             updateCoordinates(layer.getBounds());-->
+<!--//         });-->
+<!--//-->
+<!--//         function clearDrawnRectangle() {-->
+<!--//             if (drawnRectangle) {-->
+<!--//                 map.removeLayer(drawnRectangle);-->
+<!--//                 drawnRectangle = null;-->
+<!--//                 clearCoordinates();-->
+<!--//             }-->
+<!--//         }-->
+<!--//-->
+<!--//         function drawRectangleFromInput() {-->
+<!--//             const topLeftInput = document.getElementById('topLeftInput').value;-->
+<!--//             const bottomRightInput = document.getElementById('bottomRightInput').value;-->
+<!--//-->
+<!--//             // Parse the input coordinates into LatLng objects-->
+<!--//             const [topLeftLat, topLeftLng] = topLeftInput.split(',');-->
+<!--//             const [bottomRightLat, bottomRightLng] = bottomRightInput.split(',');-->
+<!--//-->
+<!--//             // Create a new rectangle based on user input-->
+<!--//             const rectangleBounds = L.latLngBounds(-->
+<!--//                 L.latLng(topLeftLat, topLeftLng),-->
+<!--//                 L.latLng(bottomRightLat, bottomRightLng)-->
+<!--//             );-->
+<!--//-->
+<!--//             // Add the rectangle to the map and remove any existing drawn rectangle-->
+<!--//             clearDrawnRectangle();-->
+<!--//             const rectangle = L.rectangle(rectangleBounds,{ fillColor: 'green', color: 'green' });-->
+<!--//             drawnRectangle = rectangle;-->
+<!--//             rectangle.addTo(map);-->
+<!--//             updateCoordinates(rectangleBounds);-->
+<!--//         }-->
+<!--//-->
+<!--//         function updateCoordinates(bounds) {-->
+<!--//             const topLeft = bounds.getNorthWest();-->
+<!--//             const bottomRight = bounds.getSouthEast();-->
+<!--//             document.getElementById('topLeftInput').value = `${topLeft.lat},${topLeft.lng}`;-->
+<!--//             document.getElementById('bottomRightInput').value = `${bottomRight.lat},${bottomRight.lng}`;-->
+<!--//         }-->
+<!--//-->
+<!--//         function clearCoordinates() {-->
+<!--//             document.getElementById('topLeftInput').value = '';-->
+<!--//             document.getElementById('bottomRightInput').value = '';-->
+<!--//         }-->
+<!--//-->
+<!--//-->
+<!--//-->
+<!--//-->
+<!--//             /////before-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--//-->
+<!--// // 		// Event listener for the "Draw Rectangle" button-->
+<!--// // 		// document.getElementById('drawButton').addEventListener('click', function () {-->
+<!--// // 		//     // Enable drawing mode for rectangles-->
+<!--// // 		//     drawControl.setDrawingOptions({ rectangle: true });-->
+<!--// // 		//     map.on(L.Draw.Event.CREATED, function (event) {-->
+<!--// // 		//         const layer = event.layer;-->
+<!--// // 		//         drawnItems.addLayer(layer); // Add the drawn rectangle to the featureGroup-->
+<!--// // 		//         drawnRectangle = layer;-->
+<!--// //         //-->
+<!--// // 		//         // Get the coordinates of the rectangle-->
+<!--// // 		//         const bounds = layer.getBounds();-->
+<!--// // 		//         const topLeft = bounds.getNorthWest();-->
+<!--// // 		//         const bottomRight = bounds.getSouthEast();-->
+<!--// //         //-->
+<!--// // 		//       // Display the coordinates in two input boxes-->
+<!--// //         //         document.getElementById('topLeftInput').value = topLeft.toString();-->
+<!--// //         //         document.getElementById('bottomRightInput').value = bottomRight.toString();-->
+<!--// //                 map.on(L.Draw.Event.CREATED, function (event) {-->
+<!--// //                             const layer = event.layer;-->
+<!--// //                             drawnItems.addLayer(layer);-->
+<!--// //                             updateCoordinates(layer.getBounds());-->
+<!--// //-->
+<!--// //-->
+<!--// // 		        // Disable drawing mode after the user draws a rectangle-->
+<!--// // 		        drawControl.setDrawingOptions({ rectangle: false });-->
+<!--// //-->
+<!--// //-->
+<!--// //-->
+<!--// //-->
+<!--// //             updateCoordinates(layer.getBounds());-->
+<!--// //-->
+<!--// //-->
+<!--// //-->
+<!--// //-->
+<!--// //         });-->
+<!--// //             function clearDrawnRectangle() {-->
+<!--// //                     if (drawnRectangle) {-->
+<!--// //                         map.removeLayer(drawnRectangle);-->
+<!--// //                         drawnRectangle = null;-->
+<!--// //                         clearCoordinates();-->
+<!--// //                     }}-->
+<!--// //-->
+<!--// //-->
+<!--// //-->
+<!--// // 		 // Customize the appearance of Leaflet control buttons using CSS-->
+<!--// // // Add the CSS rules to your HTML file-->
+<!--// //             const customCss = `-->
+<!--// //                 .leaflet-control-zoom-in,-->
+<!--// //                 .leaflet-control-zoom-out,-->
+<!--// //                 .leaflet-draw-draw-polygon-->
+<!--// //                  {-->
+<!--// //                     font-size: 35px; /* Adjust the font size to make buttons bigger */-->
+<!--// //                 }-->
+<!--// //             `;-->
+<!--// //-->
+<!--// //             const styleElement = document.createElement('style');-->
+<!--// //             styleElement.type = 'text/css';-->
+<!--// //             styleElement.appendChild(document.createTextNode(customCss));-->
+<!--// //             document.head.appendChild(styleElement);-->
+<!--// //-->
+<!--// //-->
+<!--// //             // Create a GeoJSON boundary layer (replace 'your_geojson_url' with your GeoJSON file or URL)-->
+<!--// //            // Load GeoJSON boundary from a URL-->
+<!--// //             L.geoJSON.ajax('https://geo.datav.aliyun.com/areas_v3/bound/100000.json', {-->
+<!--// //                 onEachFeature: function (feature, layer) {-->
+<!--// //                     layer.addTo(map);-->
+<!--// //                 }-->
+<!--// //             });-->
+<!--// //-->
+<!--// //                         // Initialize the Leaflet.Geoman plugin-->
+<!--// //             map.pm.addControls({-->
+<!--// //                 position: 'topleft', // Adjust the position of the controls as needed-->
+<!--// //             });-->
+<!--// //             // Define a function to restrict drawing within the boundary-->
+<!--// //             map.on('pm:create', function (e) {-->
+<!--// //                 const layer = e.layer;-->
+<!--// //                 const boundaryLayer = map.pm.getGeomanLayers()[0]; // Assumes that the boundary is the first layer-->
+<!--// //-->
+<!--// //                 if (!isLayerWithinBoundary(layer, boundaryLayer)) {-->
+<!--// //                     map.removeLayer(layer);-->
+<!--// //                     alert('Drawn polygon is outside the boundary. Please draw inside the boundary.');-->
+<!--// //                 }-->
+<!--// //             });-->
+<!--// //-->
+<!--// //             // Function to check if a layer is within the boundary-->
+<!--// //             function isLayerWithinBoundary(layer, boundaryLayer) {-->
+<!--// //                 const layerBounds = layer.getBounds();-->
+<!--// //                 const boundaryBounds = boundaryLayer.getBounds();-->
+<!--// //                 return boundaryBounds.contains(layerBounds);-->
+<!--// //             }-->
+<!--// //     //添加点击事件-->
+<!--// //     /*-->
+<!--// //     layerGeo.on('click',function(e){-->
+<!--// //         console.log(e.layer.feature.properties.name) //当前点击的物体的名称-->
+<!--// //     });-->
+<!--// //     */-->
+<!--// //-->
+<!--// //-->
+<!--// //           function saveRectangle() {-->
+<!--// //                 // Get the coordinates of the rectangle (topLeft and bottomRight) from the HTML element-->
+<!--// //                 const topLeft = drawnRectangle.getBounds().getNorthWest();-->
+<!--// //                 const bottomRight = drawnRectangle.getBounds().getSouthEast();-->
+<!--// //-->
+<!--// //                 // Create a data object to send as JSON-->
+<!--// //                 const data = {-->
+<!--// //                     topLeft: { lat: topLeft.lat, lng: topLeft.lng },-->
+<!--// //                     bottomRight: { lat: bottomRight.lat, lng: bottomRight.lng },-->
+<!--// //                 };-->
+<!--// //-->
+<!--// //                 // Send an HTTP POST request to the Python server-->
+<!--// //                 fetch('/save_rectangle', {-->
+<!--// //                     method: 'POST',-->
+<!--// //                     headers: {-->
+<!--// //                         'Content-Type': 'application/json',-->
+<!--// //                     },-->
+<!--// //                     body: JSON.stringify(data),-->
+<!--// //                 })-->
+<!--// //                     .then(response => response.json())-->
+<!--// //                     .then(result => {-->
+<!--// //                         // Handle the server's response if needed-->
+<!--// //                         console.log(result);-->
+<!--// //                     })-->
+<!--// //                     .catch(error => {-->
+<!--// //                         // Handle errors-->
+<!--// //                         console.error('Error:', error);-->
+<!--// //                     });-->
+<!--// //             }-->
+<!--// //-->
+<!--// //-->
+<!--// //-->
+<!--// //             // Function to draw a rectangle on the map based on user input-->
+<!--// //             function drawRectangleFromInput() {-->
+<!--// //                 const topLeftInput = document.getElementById('topLeftInput').value;-->
+<!--// //                 const bottomRightInput = document.getElementById('bottomRightInput').value;-->
+<!--// //-->
+<!--// //                 // Parse the input coordinates into LatLng objects-->
+<!--// //                 const [topLeftLat, topLeftLng] = topLeftInput.split(',');-->
+<!--// //                 const [bottomRightLat, bottomRightLng] = bottomRightInput.split(',');-->
+<!--// //-->
+<!--// //                 // Create a new rectangle based on user input-->
+<!--// //                const rectangleBounds = L.latLngBounds(-->
+<!--// //                     L.latLng(topLeftLat, topLeftLng),-->
+<!--// //                     L.latLng(bottomRightLat, bottomRightLng)-->
+<!--// //                 );-->
+<!--// //-->
+<!--// //                 // Add the rectangle to the map and remove any existing drawn rectangle-->
+<!--// //                 if (drawnRectangle) {-->
+<!--// //                     map.removeLayer(drawnRectangle);-->
+<!--// //                 }-->
+<!--// //                 rectangle.addTo(map);-->
+<!--// //                 drawnRectangle = rectangle;-->
+<!--// //-->
+<!--// //                 clearDrawnRectangle();-->
+<!--// //                 const rectangle = L.rectangle(rectangleBounds);-->
+<!--// //                 drawnRectangle = rectangle;-->
+<!--// //                 rectangle.addTo(map);-->
+<!--// //                 updateCoordinates(rectangleBounds);-->
+<!--// //-->
+<!--// //             }-->
+<!--// //-->
+<!--// //                 function updateCoordinates(bounds) {-->
+<!--// //                             const topLeft = bounds.getNorthWest();-->
+<!--// //                             const bottomRight = bounds.getSouthEast();-->
+<!--// //                             document.getElementById('topLeftInput').value = `${topLeft.lat},${topLeft.lng}`;-->
+<!--// //                             document.getElementById('bottomRightInput').value = `${bottomRight.lat},${bottomRight.lng}`;-->
+<!--// //            }-->
+<!--// //-->
+<!--// //                 function clearCoordinates() {-->
+<!--// //                     document.getElementById('topLeftInput').value = '';-->
+<!--// //                     document.getElementById('bottomRightInput').value = '';-->
+<!--// //            }-->
+<!--// //-->
+<!--// //-->
+<!--// //-->
+<!--// //             // Attach the drawRectangleFromInput function to a button click event-->
+<!--// //             document.getElementById('drawButton').addEventListener('click', drawRectangleFromInput);-->
+<!--// //-->
+<!--// //-->
+<!--// //                 map.on('click', onMapClick);-->
+<!--        </script>-->
+<!--    </body>-->
+<!--</html>-->
