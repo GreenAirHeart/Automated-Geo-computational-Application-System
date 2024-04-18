@@ -1,0 +1,1 @@
+The pics on each window are stored in another file, remember to change the file path.

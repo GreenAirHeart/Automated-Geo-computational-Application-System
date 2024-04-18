@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>地图事件</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+	 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+	 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	 <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/qwebchannel@6.2.0/qwebchannel.min.js"></script>
+        <style type="text/css">
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        #map_MapBox{
+            height:600px;
+            width:100%;
+            position:relative;}
+
+            input {
+            font-size: 20px;
+            font-family: Arial;
+            padding: 10px;
+        }
+
+        input#topLeftInput {
+        position: relative;
+        top: 20px;
+        left: 0px;
+    }
+
+    input#bottomRightInput {
+        position: relative;
+        top: 20px;
+        left: 0px;
+    }
+
+     button#drawButton {
+        position: relative;
+        top: 20px;
+        left: 5px;
+    }
+
+    button#clearButton {
+        position: relative;
+        top: 20px;
+        left: 5px;
+    }
+       button#saveButton {
+        position: relative;
+        top: 20px;
+        left: 5px;
+    }
+
+
+    </style>
+    </head>
+    <body>
+        <div id='map_MapBox'> </div>
+
+        <div>
+            <input type="text" id="bottomRightInput" placeholder="Top Left (Lat, Lng)" >
+            <input type="text" id="topLeftInput" placeholder=" Bottom Right(Lat, Lng)">
+            <button id="drawButton" onclick="drawRectangleFromInput()"   style="font-size: 25px; font-family: Agency FB; padding: 6px 15px;">Draw Rectangle</button>
+            <button id="clearButton" onclick="clearDrawnRectangle()"style="font-size: 25px; font-family: Agency FB; padding: 6px 15px;">Clear Rectangle</button>
+        </div>
+
+
+        <script id="coordinate">
+            //加载MapBox
+            var map = new L.Map('map_MapBox');
+            var map_MapBoxUrl  //replace with your own map url and account 
+            var MapBox = new L.TileLayer(map_MapBoxUrl, {id:'MapBox.streets', zoom: 8, maxZoom: 18,minZoom:3 });
+            map.setView(new L.LatLng(32.06396, 113.59863),10);
+            map.addLayer(MapBox);
+
+
+
+   
+        let drawnRectangleFromInput = null;
+        var drawingEnabled = true;
+        const drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        const drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems,
+                remove: false, // Disable the default delete button
+                edit: false
+            },
+
+            draw: {
+                marker: false,
+                circle: false,
+                rectangle: true,
+                polygon: false,
+                polyline: false,
+                circlemarker:false
+            },
+        });
+
+        drawControl._toolbars.edit.removeToolbar('actions');
+        drawControl._toolbars.edit.actions = {};
+
+
+        map.addControl(drawControl);
+
+        let drawnRectangleByControl = null; // Added to keep track of the control-drawn rectangle
+
+        map.on(L.Draw.Event.CREATED, function (event) {
+            if (!drawingEnabled) {
+                return; // Do not draw if disabled
+            }
+            clearDrawnRectangle(); // Clear any existing rectangle
+            const layer = event.layer;
+            // layer.setStyle({ fillColor: 'blue', color: 'blue' });
+            drawnItems.addLayer(layer);
+            drawnRectangleByControl = layer;
+            updateCoordinates(layer.getBounds());
+            drawingEnabled = false;
+        });
+
+
+        function clearDrawnRectangle() {
+                if (drawnRectangleFromInput) {
+                    map.removeLayer(drawnRectangleFromInput);
+                    drawnRectangleFromInput = null;
+                    clearCoordinates();
+                    drawingEnabled = true;
+                }
+
+                if (drawnRectangleByControl) {
+                    map.removeLayer(drawnRectangleByControl);
+                    drawnRectangleByControl = null;
+                    clearCoordinates();
+                    drawingEnabled = true;
+                }
+
+                // Clear the drawnItems layer
+                drawnItems.clearLayers();
+            }
+
+
+        function saveRectangle() {
+                if (drawnRectangleFromInput) {
+                    drawnRectangleFromInput.setStyle({fillColor: 'red', color: 'red'});
+                    var bounds = drawnRectangleFromInput.getBounds();
+                    var topLeft = bounds.getNorthWest();
+                    var bottomRight = bounds.getSouthEast();
+                    var topLeftLat = topLeft.lat;
+                    var topLeftLng = topLeft.lng;
+                    var bottomRightLat = bottomRight.lat;
+                    var bottomRightLng = bottomRight.lng;
+                    // Call the function to save coordinates to Python side
+
+
+                }
+
+                if (drawnRectangleByControl) {
+                    drawnRectangleByControl.setStyle({fillColor: 'red', color: 'red'});
+                    console.log("Save button clicked!");
+                }
+                }
+
+        function drawRectangleFromInput() {
+            if (!drawingEnabled) {
+                return; // Do not draw if disabled
+            }
+            const topLeftInput = document.getElementById('topLeftInput').value;
+            const bottomRightInput = document.getElementById('bottomRightInput').value;
+
+
+
+            // Parse the input coordinates into LatLng objects
+            const [topLeftLat, topLeftLng] = topLeftInput.split(',');
+            const [bottomRightLat, bottomRightLng] = bottomRightInput.split(',');
+
+
+
+            // Create a new rectangle based on user input
+            const rectangleBounds = L.latLngBounds(
+                L.latLng(topLeftLat, topLeftLng),
+                L.latLng(bottomRightLat, bottomRightLng)
+            );
+
+            clearDrawnRectangle();
+            const rectangleFromInput = L.rectangle(rectangleBounds, { fillColor: 'green', color: 'green' });
+            drawnRectangleFromInput = rectangleFromInput;
+            rectangleFromInput.addTo(map);
+            updateCoordinates(rectangleBounds);
+            drawingEnabled = false;
+
+
+        }
+
+
+
+
+           function enableRectangleDrawing() {
+            // Activate the rectangle drawing mode
+            map.addControl(drawControl);
+            drawControl.setDrawingOptions({ rectangle: { shapeOptions: { color: 'blue' } } });
+            drawControl._toolbars.draw._modes.rectangle.handler.enable();
+        }
+
+
+        function updateCoordinates(bounds) {
+            const topLeft = bounds.getNorthWest();
+            const bottomRight = bounds.getSouthEast();
+            document.getElementById('topLeftInput').value = `${topLeft.lat},${topLeft.lng}`;
+            document.getElementById('bottomRightInput').value = `${bottomRight.lat},${bottomRight.lng}`;
+
+
+        }
+
+        function clearCoordinates() {
+            document.getElementById('topLeftInput').value = '';
+            document.getElementById('bottomRightInput').value = '';
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
