@@ -1,0 +1,6039 @@
+Prefix: : <http://www.semanticweb.org/ontologies/Geo_computation.owl#>
+Prefix: Concept: <http://www.semanticweb.org/ontologies/Concept.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: swrl: <http://www.w3.org/2003/11/swrl#>
+Prefix: swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#>
+Prefix: swrlb: <http://www.w3.org/2003/11/swrlb#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/ontologies/Geo_computation.owl>
+
+Import: <http://www.semanticweb.org/ontologies/Concept.owl>
+
+AnnotationProperty: Concept:has__Final_Output
+
+    
+AnnotationProperty: rdfs:comment
+
+    
+AnnotationProperty: swrla:isRuleEnabled
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+Datatype: xsd:boolean
+
+    
+Datatype: xsd:dateTime
+
+    
+Datatype: xsd:double
+
+    
+Datatype: xsd:float
+
+    
+Datatype: xsd:int
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:long
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: Concept:affectedBy_Genetic_Type
+
+    
+ObjectProperty: Concept:affectedBy_Sub-genetic_Type
+
+    
+ObjectProperty: Concept:classifiedBy
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    
+ObjectProperty: Concept:definedBy
+
+    
+ObjectProperty: Concept:describedBy
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Range: 
+        Concept:Geomorphic_Type
+    
+    
+ObjectProperty: Concept:dividedInto
+
+    
+ObjectProperty: Concept:has_Clip_Feature
+
+    
+ObjectProperty: Concept:has_Erase_feature
+
+    
+ObjectProperty: Concept:has_Extent
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    
+ObjectProperty: Concept:has_Final_Output
+
+    
+ObjectProperty: Concept:has_Input
+
+    
+ObjectProperty: Concept:has_Input_cost_raster
+
+    
+ObjectProperty: Concept:has_Input_flow_direction_raster
+
+    
+ObjectProperty: Concept:has_Input_mask_data
+
+    
+ObjectProperty: Concept:has_Input_pour_point_data
+
+    
+ObjectProperty: Concept:has_Input_value_raster
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    
+ObjectProperty: Concept:has_Output
+
+    
+ObjectProperty: Concept:has_Select_feature
+
+    
+ObjectProperty: Concept:has_Target_raster
+
+    
+ObjectProperty: Concept:has_Update_feature
+
+    
+ObjectProperty: Concept:has_input_symbology_layer
+
+    
+ObjectProperty: calculatedBy
+
+    
+ObjectProperty: consistOf
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        Geo-Model
+    
+    Range: 
+        Geo-Model
+    
+    
+ObjectProperty: decidesBy
+
+    
+ObjectProperty: executedBy
+
+    
+ObjectProperty: has
+
+    
+ObjectProperty: hasCellSize
+
+    
+ObjectProperty: hasClipInput
+
+    
+ObjectProperty: hasComputationalType
+
+    Domain: 
+        Geo-Model
+    
+    
+ObjectProperty: hasCostInput
+
+    
+ObjectProperty: hasErase
+
+    
+ObjectProperty: hasEraseInput
+
+    
+ObjectProperty: hasFinalOutput
+
+    
+ObjectProperty: hasFlowDirection
+
+    
+ObjectProperty: hasInput
+
+    Domain: 
+        Geo-Model
+    
+    
+ObjectProperty: hasInputRaster
+
+    
+ObjectProperty: hasList
+
+    
+ObjectProperty: hasMask
+
+    
+ObjectProperty: hasNext
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    
+ObjectProperty: hasOutput
+
+    Domain: 
+        Geo-Model
+    
+    
+ObjectProperty: hasParameterValue
+
+    
+ObjectProperty: hasPourPoint
+
+    
+ObjectProperty: hasSelect
+
+    
+ObjectProperty: hasSimilarFunction
+
+    Domain: 
+        Geo-Model
+    
+    Range: 
+        Geo-Model
+    
+    
+ObjectProperty: hasSymbologyInput
+
+    
+ObjectProperty: hasTargetInput
+
+    
+ObjectProperty: hasTechType
+
+    Domain: 
+        Geo-Model
+    
+    
+ObjectProperty: hasUpdate
+
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+ObjectProperty: realizedBy
+
+    
+ObjectProperty: referencedBy
+
+    
+DataProperty: Concept:altitude
+
+    Domain: 
+        Concept:Basic_Landform_Type
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: Concept:area_unit
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:background_value
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:cell_size
+
+    
+DataProperty: Concept:clipping_geometry
+
+    
+DataProperty: Concept:colormap
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:condition
+
+    
+DataProperty: Concept:distance_method
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:end1
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:end2
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:end3
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:end4
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:end5
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:end6
+
+    
+DataProperty: Concept:expression
+
+    
+DataProperty: Concept:expression_type
+
+    
+DataProperty: Concept:field
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:field_name
+
+    
+DataProperty: Concept:field_type
+
+    
+DataProperty: Concept:geometry_property
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:height
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:id
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:ignore_nodata
+
+    
+DataProperty: Concept:invert_spatial_relationship
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:keep_borders
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:maintain_clipping_extent
+
+    
+DataProperty: Concept:majority_definition
+
+    
+DataProperty: Concept:map_algebra_expressions
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:matching_method
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:method
+
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:minimum_dangle_length
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:missing_values
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:mosaic_colormap_mode
+
+    
+DataProperty: Concept:mosaic_method
+
+    
+DataProperty: Concept:mosaic_type
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:mosaicking_tolerance
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:neighborhood
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:new1
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:new2
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:new3
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:new4
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:new5
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:new6
+
+    
+DataProperty: Concept:nodata_value
+
+    
+DataProperty: Concept:number_neighbors
+
+    
+DataProperty: Concept:number_of_bands
+
+    
+DataProperty: Concept:out_geometry_type
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:output_coordinate_system
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:output_measurement
+
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:overlap_type
+
+    
+DataProperty: Concept:part_area
+
+    
+DataProperty: Concept:part_option
+
+    
+DataProperty: Concept:pixel_type
+
+    
+DataProperty: Concept:pour_point_field
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:reclass_field
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:reclassification
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:rectangle
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:resampling_technique
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:search_distance
+
+    
+DataProperty: Concept:select_features
+
+    
+DataProperty: Concept:selection
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:selection_type
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:simplify
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:simplify_polylines
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:start1
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:start2
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:start3
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:start4
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:start5
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:start6
+
+    
+DataProperty: Concept:statistics_type
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:threshold_ZhenAcc
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:threshold_deep
+
+    
+DataProperty: Concept:threshold_slope
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:topographic_relief
+
+    Domain: 
+        Concept:Basic_Landform_Type,
+        Concept:Basic_Morphological_Features_of_Landform
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: Concept:units
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:where_clause
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:width
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:z_factor
+
+    Range: 
+        xsd:double
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: Concept:zone_field
+
+    
+DataProperty: accumulation_distance_threshold
+
+    Range: 
+        xsd:double
+    
+    
+DataProperty: application_category
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: area_unit
+
+    
+DataProperty: background_value
+
+    
+DataProperty: classification_system_unit
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: colormap
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: condition
+
+    
+DataProperty: coordinate__system
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: data_attribute
+
+    Domain: 
+        Data
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: data_dimension
+
+    
+DataProperty: data_element
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: data_object
+
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: data_type
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: default_value
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dem_name
+
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: description
+
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: distance_acc_method
+
+    
+DataProperty: doubleParameter
+
+    Range: 
+        xsd:double
+    
+    SubPropertyOf: 
+        numericalParameter
+    
+    
+DataProperty: element
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: expression
+
+    
+DataProperty: expression_type
+
+    
+DataProperty: field_name
+
+    
+DataProperty: field_type
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: field_value
+
+    
+DataProperty: floatParameter
+
+    Range: 
+        xsd:float
+    
+    SubPropertyOf: 
+        numericalParameter
+    
+    DisjointWith: 
+        intParameter
+    
+    
+DataProperty: flow_accumulation_threshold
+
+    Range: 
+        xsd:double
+    
+    
+DataProperty: flow_direction
+
+    
+DataProperty: format
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: function
+
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: geometry_property
+
+    
+DataProperty: height
+
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: intParameter
+
+    Range: 
+        xsd:int
+    
+    SubPropertyOf: 
+        numericalParameter
+    
+    DisjointWith: 
+        floatParameter
+    
+    
+DataProperty: linear_unit
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: majority_definition
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: matching_method
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: minimum_dangle_length
+
+    
+DataProperty: model_type
+
+    
+DataProperty: mosaic_type
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: mosic_colormap_mode
+
+    
+DataProperty: name
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: neighborhood_method
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: nodata_value
+
+    
+DataProperty: number_neighbors
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: number_of_bands
+
+    Range: 
+        xsd:long
+    
+    
+DataProperty: numericalParameter
+
+    SubPropertyOf: 
+        parameter_value
+    
+    
+DataProperty: object
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: output_geometry_type
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: overlap_type
+
+    
+DataProperty: owl:topDataProperty
+
+    
+DataProperty: parameter_name
+
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: parameter_value
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: part_option
+
+    
+DataProperty: path
+
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: pixel_type
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: pour_point_field
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: projected
+
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: reasoning_data_type
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: reverse_flow_accumulation_threshold
+
+    Range: 
+        xsd:double
+    
+    
+DataProperty: scale
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: scope_category
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: selection_type
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: size
+
+    Range: 
+        xsd:double
+    
+    
+DataProperty: slope_threshold
+
+    Range: 
+        xsd:double
+    
+    
+DataProperty: source
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: spatial_resolution
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: spatial_type
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: spatial_value
+
+    Range: 
+        xsd:double,
+        xsd:string
+    
+    
+DataProperty: statistics_type_method
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: stringParameter
+
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        parameter_value
+    
+    
+DataProperty: subtask_category
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: suffix
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: task_category
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: technique_invocation
+
+    
+DataProperty: technique_type
+
+    
+DataProperty: temporal_type
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: temporal_value
+
+    Range: 
+        xsd:dateTime,
+        xsd:int
+    
+    
+DataProperty: theme
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: units_type
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: width
+
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: zone_field
+
+    
+Class: Add_Field
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Vector,
+        field_name some xsd:string,
+        field_type some xsd:string
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Apply_Symbology
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Mountain_basedOn_slope,
+        hasInput some Plain_basedOn_altitude,
+        hasInput some Symbology_Layer,
+        hasOutput some Classification_Result,
+        executedBy exactly 1 Apply_Symbology_From_Layer,
+        executedBy exactly 1 Mosaic_To_New_Raster,
+        executedBy exactly 1 Raster_To_Polygon,
+        model_type value "Integrated model",
+        technique_invocation value "Apply_symbology",
+        technique_type value "Script"
+    
+    
+Class: Apply_Symbology_From_Layer
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 Classification_Result,
+        hasSymbologyInput exactly 1 Symbology_Layer
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Calculate_Field
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Vector,
+        expression some xsd:string,
+        field_value some xsd:string,
+        expression_type value "PYTHON3"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Calculate_Geometry_Attributes
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 Geometry_Output,
+        area_unit value "SQUARE_KILOMETERS"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Calculate_slope_value
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Projected_DEM,
+        hasOutput some Slope_value,
+        executedBy exactly 1 Slope,
+        model_type value "Individual model",
+        technique_invocation value "Calculate_slope_value",
+        technique_type value "Script"
+    
+    
+Class: Classification_Result
+
+    SubClassOf: 
+        Data,
+        data_type value "Vector",
+        projected value true,
+        suffix value "shp",
+        name exactly 1 xsd:string
+    
+    
+Class: Classification_of_plain_based_on_altitude
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some DEM_boundary,
+        hasInput some General_classification,
+        hasInput some Mountain_basedOn_slope,
+        hasOutput some Plain_basedOn_altitude,
+        executedBy exactly 1 Clip_Raster,
+        executedBy exactly 1 Pairwise_Erase,
+        executedBy exactly 1 Raster_Calculator,
+        executedBy exactly 1 Raster_To_Polygon,
+        model_type value "Integrated model",
+        technique_invocation value "Classification_of_plain_based_on_altitude",
+        technique_type value "Script"
+    
+    
+Class: Clip_Raster
+
+    EquivalentTo: 
+        has exactly 2 Default_Click,
+        hasClipInput exactly 1 Input_Vector,
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Raster_Clipped,
+        nodata_value value "-32768"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Cliped_Output
+
+    SubClassOf: 
+        Vector,
+        (projected value false) or (projected value true),
+        data_type value "Vector",
+        suffix value "shp",
+        name exactly 1 xsd:string
+    
+    
+Class: Concept:Accumulation_Type
+
+    SubClassOf: 
+        Concept:Geomorphic_Sub_Genetic_Type
+    
+    
+Class: Concept:Aeolian_Action
+
+    Annotations: 
+        rdfs:comment "\"Aeolian action refers to the destruction of surface rocks and loose sediments by the wind with its own strength and sand and gravel. The process of destruction and loss of surface materials under the action of wind is called wind erosion.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:Aeolian_Landform
+
+    SubClassOf: 
+        Concept:Geomorphic_Genetic_Type
+    
+    
+Class: Concept:Alluvion
+
+    Annotations: 
+        rdfs:comment "“冲积”"
+    
+    SubClassOf: 
+        Concept:Flow_Operation
+    
+    
+Class: Concept:Alluvion-Lacustrine
+
+    Annotations: 
+        rdfs:comment "“冲积湖积”"
+    
+    SubClassOf: 
+        Concept:Flow_Operation
+    
+    
+Class: Concept:Alluvion-Marine_Accumulation
+
+    Annotations: 
+        rdfs:comment "“冲积海积”"
+    
+    SubClassOf: 
+        Concept:Flow_Operation
+    
+    
+Class: Concept:Alluvion-Proluvial
+
+    Annotations: 
+        rdfs:comment "“冲积洪积”"
+    
+    SubClassOf: 
+        Concept:Flow_Operation
+    
+    
+Class: Concept:Altitude
+
+    Annotations: 
+        rdfs:comment "\"The vertical height above the average sea level is called altitude, also known as absolute height and altitude.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    EquivalentTo: 
+        Concept:definedBy value Concept:Numerical_classification_system_of_Chinese_landforms
+    
+    SubClassOf: 
+        Concept:Macro_Feature,
+        Concept:definedBy some Concept:Geomorphic_Classification_System
+    
+    
+Class: Concept:Anthropogenic_Process
+
+    Annotations: 
+        rdfs:comment "\"All kinds of landforms shaped by human activities.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:Arid
+
+    Annotations: 
+        rdfs:comment "\"The landform formed under the action of strong physical weathering, wind and Intermittent Flood in dry climate areas.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:Arid-River_Valley
+
+    SubClassOf: 
+        Concept:Arid
+    
+    
+Class: Concept:Arid_Denudation
+
+    Annotations: 
+        rdfs:comment "“干燥剥蚀”"
+    
+    SubClassOf: 
+        Concept:Arid
+    
+    
+Class: Concept:Arid_Erosion_Denudation
+
+    Annotations: 
+        rdfs:comment "“干燥侵蚀剥蚀”"
+    
+    SubClassOf: 
+        Concept:Arid
+    
+    
+Class: Concept:Arid_Landform
+
+    SubClassOf: 
+        Concept:Geomorphic_Genetic_Type
+    
+    
+Class: Concept:Arid_Proluvial
+
+    Annotations: 
+        rdfs:comment "“干燥洪积”"
+    
+    SubClassOf: 
+        Concept:Arid
+    
+    
+Class: Concept:Aspect
+
+    Annotations: 
+        rdfs:comment "\"The slope direction of a point on the ground is the angle between the projection of the normal vector passing through the tangent plane of the point on the horizontal plane and the true north direction.\"'
+汤国安,刘学军,闾国年.数字高程模型及地学分析原理与方法[M].北京:科学出版社,2005."@en
+    
+    SubClassOf: 
+        Concept:Basic_Feature
+    
+    
+Class: Concept:Basic_Feature
+
+    SubClassOf: 
+        Concept:Geomorphic_Feature
+    
+    
+Class: Concept:Basic_Landform_Type
+
+    SubClassOf: 
+        Concept:Geomorphic_Type,
+        Concept:classifiedBy some Concept:Altitude,
+        Concept:classifiedBy some Concept:Topographic_Relief
+    
+    
+Class: Concept:Basic_Morphological_Features_of_Landform
+
+    SubClassOf: 
+        Concept:Geomorphic_Type,
+        Concept:classifiedBy some Concept:Topographic_Relief
+    
+    
+Class: Concept:Biological_Weathering
+
+    Annotations: 
+        rdfs:comment "\"In the process of biological growth and decomposition, the biochemical and biophysical process of rock disintegration and destruction is called biological weathering, which involves the corrosion of rocks by various acids secreted by biological metabolism, the extrusion of rocks by plant roots, and the digging and chiseling activities of some animals in rocks.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:Dissected_Density
+
+    Annotations: 
+        rdfs:comment "\"The total length of valleys and valleys per unit area is called dissected density.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Basic_Feature
+    
+    
+Class: Concept:Dissected_Depth
+
+    Annotations: 
+        rdfs:comment "\"The depth of river undercutting is called dissected depth, also known as vertical cutting strength.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Basic_Feature
+    
+    
+Class: Concept:Endogenic_Force
+
+    Annotations: 
+        rdfs:comment "\"The force generated by the energy within the Earth.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Genetic_Type_of_Geomorphology
+    
+    
+Class: Concept:Erosion_Type
+
+    SubClassOf: 
+        Concept:Geomorphic_Sub_Genetic_Type
+    
+    
+Class: Concept:Exogenic_Force
+
+    Annotations: 
+        rdfs:comment "\"A force on the Earth's surface produced by solar and gravitational energy and by biological activity.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Genetic_Type_of_Geomorphology
+    
+    
+Class: Concept:Flow-River_Valley
+
+    Annotations: 
+        rdfs:comment "“流水河谷”"
+    
+    SubClassOf: 
+        Concept:Flow_Operation
+    
+    
+Class: Concept:Flow_Erosion_Denudation
+
+    Annotations: 
+        rdfs:comment "\"流水侵蚀剥蚀\""
+    
+    SubClassOf: 
+        Concept:Flow_Operation
+    
+    
+Class: Concept:Flow_Operation
+
+    Annotations: 
+        rdfs:comment "\"Water erodes the surface rocks and soil, transports the surface loose materials and its eroded materials as well as the materials dissolved in water, and finally deposits the transported materials due to the weakening of the kinetic energy of water. These effects are collectively referred to as flow operation.\"
+流水作用_百度百科 (baidu.com)"@en
+    
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:Fluvial_Landform
+
+    SubClassOf: 
+        Concept:Geomorphic_Genetic_Type
+    
+    
+Class: Concept:Genetic_Type_of_Geomorphology
+
+    
+Class: Concept:Geomorphic_Classification_System
+
+    Annotations: 
+        rdfs:comment "\"A division reflecting the objective internal logical relationship between the morphology, genesis, material composition, age and other properties of the morphological units of the Earth's surface.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        referencedBy some GEO-MODEL
+    
+    
+Class: Concept:Geomorphic_Feature
+
+    Annotations: 
+        rdfs:comment "\"The undulation, shape and outline of the ground and their combined structures are collectively called surface morphology. Regular triangulation network and grid network are often used to represent the surface morphology.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    
+Class: Concept:Geomorphic_Genetic_Type
+
+    SubClassOf: 
+        Concept:Geomorphic_Type
+    
+    
+Class: Concept:Geomorphic_Sub_Genetic_Type
+
+    SubClassOf: 
+        Concept:Geomorphic_Type
+    
+    
+Class: Concept:Geomorphic_Type
+
+    Annotations: 
+        rdfs:comment "\"Landforms are often divided into a number of different types, based on differences in genesis and morphology. The same type has the same or similar characteristics.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."
+    
+    
+Class: Concept:Glacial
+
+    Annotations: 
+        rdfs:comment "\"冰川\""
+    
+    SubClassOf: 
+        Concept:Glaciation
+    
+    
+Class: Concept:Glacial_Erosion
+
+    Annotations: 
+        rdfs:comment "“冰蚀”"
+    
+    SubClassOf: 
+        Concept:Glaciation
+    
+    
+Class: Concept:Glacial_Erosion_Denudation
+
+    Annotations: 
+        rdfs:comment "“冰川侵蚀剥蚀”"
+    
+    SubClassOf: 
+        Concept:Glaciation
+    
+    
+Class: Concept:Glacial_Landform
+
+    SubClassOf: 
+        Concept:Geomorphic_Genetic_Type
+    
+    
+Class: Concept:Glacial_River_Valley
+
+    Annotations: 
+        rdfs:comment "\"冰川河谷\""
+    
+    SubClassOf: 
+        Concept:Glaciation
+    
+    
+Class: Concept:Glaciation
+
+    Annotations: 
+        rdfs:comment "\"The ice forming process of glacier, the mechanical and thermal processes inside the ice body and the shaping process of the surface are collectively called glaciation.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:Glaciofluvial
+
+    Annotations: 
+        rdfs:comment "“冰水”"
+    
+    SubClassOf: 
+        Concept:Glaciation
+    
+    
+Class: Concept:Graviational_Process
+
+    Annotations: 
+        rdfs:comment "\"Various landforms formed by the displacement of rock mass or soil mass mainly under the action of its own gravity.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:High_Aeolian_Hill
+
+    SubClassOf: 
+        Concept:Aeolian_Landform
+    
+    
+Class: Concept:High_Aeolian_Plain
+
+    SubClassOf: 
+        Concept:Aeolian_Landform
+    
+    
+Class: Concept:High_Alluvion-Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Alluvion-Proluvial_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Alluvion_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Alluvion_Platform
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Erosion_Denudation_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:High_Flow-River_Valley_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:High_Fluvial_Hill
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:High_Fluvial_Plain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:High_Fluvial_Platform
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:High_Glacial_Hill
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:High_Glacial_Plain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:High_Glacial_Platform
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:High_Glaciofluvial_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Hill
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 3500 , <= 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Hill,
+        Concept:affectedBy_Genetic_Type some Concept:Aeolian_Action,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude,
+        Concept:altitude value 100
+    
+    
+Class: Concept:High_Lacustrine-Alluviation_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Lacustrine_Deposit_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Lacustrine_Erosion_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:High_Lacustrine_Erosion_Platform
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:High_Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Lacustrine_Landform
+    
+    
+Class: Concept:High_Lacustrine_Platform
+
+    SubClassOf: 
+        Concept:Lacustrine_Landform
+    
+    
+Class: Concept:High_Moraine_Hill
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Moraine_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Moraine_Platform
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Mountain
+
+    EquivalentTo: 
+        Concept:topographic_relief some xsd:integer[> 1000 , <= 2500]
+    
+    SubClassOf: 
+        Concept:Basic_Morphological_Features_of_Landform
+    
+    
+Class: Concept:High_Periglacial_Erosion_Denudation_Platform
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:High_Periglacial_Glacial_Erosion_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:High_Periglacial_Hill
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:High_Periglacial_Limnetic_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:High_Periglacial_Plain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:High_Periglacial_Platform
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:High_Periglacial_River_Valley_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:High_Plain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 3500 , <= 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Plain,
+        Concept:affectedBy_Genetic_Type some Concept:Aeolian_Action,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Lacustrine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:High_Platform
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 3500 , <= 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Platform,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Lacustrine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:High_Proluvial-Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Proluvial_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:High_Volcanic-Lava_Hill
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:High_Volcanic-Lava_Plain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:High_Volcanic-Lava_Platform
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Hill
+
+    EquivalentTo: 
+        Concept:topographic_relief some xsd:integer[< 200]
+    
+    SubClassOf: 
+        Concept:Basic_Morphological_Features_of_Landform
+    
+    
+Class: Concept:Hydrothermal_Process
+
+    Annotations: 
+        rdfs:comment "\"Hydrothermal process refers to the infiltration of seawater into the deep crust of the seabed through rock fissures or structural faults, and the exchange of chemical components with crustal rocks.\"
+《海洋大辞典》编辑委员会．海洋大辞典: 辽宁人民出版社, 1998."@en
+    
+    SubClassOf: 
+        Concept:Endogenic_Force
+    
+    
+Class: Concept:Lacustrine-Alluviation
+
+    Annotations: 
+        rdfs:comment "“湖积冲积”"
+    
+    SubClassOf: 
+        Concept:Lacustrine_Process
+    
+    
+Class: Concept:Lacustrine_Deposit
+
+    Annotations: 
+        rdfs:comment "“湖积”"
+    
+    SubClassOf: 
+        Concept:Lacustrine_Process
+    
+    
+Class: Concept:Lacustrine_Erosion
+
+    Annotations: 
+        rdfs:comment "“湖蚀”"
+    
+    SubClassOf: 
+        Concept:Lacustrine_Process
+    
+    
+Class: Concept:Lacustrine_Landform
+
+    SubClassOf: 
+        Concept:Geomorphic_Genetic_Type
+    
+    
+Class: Concept:Lacustrine_Process
+
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:Large_Undulating_Arid_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Large_Undulating_Fluvial_High_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Large_Undulating_Fluvial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Large_Undulating_Fluvial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Large_Undulating_Glacial_High_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Large_Undulating_Glacial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Large_Undulating_Glacial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Large_Undulating_High_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 3500 , <= 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:High_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Large_Undulating_Middle_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 1000 , <= 3500]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Middle_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Large_Undulating_Periglacial_High_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Large_Undulating_Periglacial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Large_Undulating_Periglacial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Large_Undulating_Very_High_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Very_High_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Large_Undulating_Volcanic-Lava_High_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Large_Undulating_Volcanic-Lava_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Large_Undulating_Volcanic-Lava_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Lava_Arid
+
+    Annotations: 
+        rdfs:comment "“熔岩干燥”"
+    
+    SubClassOf: 
+        Concept:Volcanic_Lava
+    
+    
+Class: Concept:Lava_Deposition
+
+    Annotations: 
+        rdfs:comment "\"熔积\""
+    
+    SubClassOf: 
+        Concept:Volcanic_Lava
+    
+    
+Class: Concept:Lava_Erosion_Denudation
+
+    Annotations: 
+        rdfs:comment "“熔岩侵蚀剥蚀”"
+    
+    SubClassOf: 
+        Concept:Volcanic_Lava
+    
+    
+Class: Concept:Lava_Glacial
+
+    Annotations: 
+        rdfs:comment "\"熔岩冰川\""
+    
+    SubClassOf: 
+        Concept:Volcanic_Lava
+    
+    
+Class: Concept:Lava_Periglacial
+
+    Annotations: 
+        rdfs:comment "“熔岩冰缘”"
+    
+    SubClassOf: 
+        Concept:Volcanic_Lava
+    
+    
+Class: Concept:Limnetic
+
+    Annotations: 
+        rdfs:comment "\"湖沼\""
+    
+    SubClassOf: 
+        Concept:Periglacial_Process
+    
+    
+Class: Concept:Low_Aeolian_Hill
+
+    SubClassOf: 
+        Concept:Aeolian_Landform
+    
+    
+Class: Concept:Low_Aeolian_Plain
+
+    SubClassOf: 
+        Concept:Aeolian_Landform
+    
+    
+Class: Concept:Low_Alluvion-Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Alluvion-Marine_Accumulation_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Alluvion-Proluvial_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Alluvion_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Alluvion_Platform
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Arid_Hill
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Low_Arid_Plain
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Low_Arid_Platform
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Low_Erosion_Denudation_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Low_Flow-River_Valley_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Low_Fluvial_Hill
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Low_Fluvial_Plain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Low_Fluvial_Platform
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Low_Hill
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 0 , <= 1000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Hill,
+        Concept:affectedBy_Genetic_Type some Concept:Aeolian_Action,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Low_Lacustrine-Alluviation_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Lacustrine_Deposit_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Lacustrine_Erosion_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Low_Lacustrine_Erosion_Platform
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Low_Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Lacustrine_Landform
+    
+    
+Class: Concept:Low_Lacustrine_Platform
+
+    SubClassOf: 
+        Concept:Lacustrine_Landform
+    
+    
+Class: Concept:Low_Marine_Accumulation_Alluviation_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Marine_Accumulation_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Marine_Erosion_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Low_Marine_Plain
+
+    SubClassOf: 
+        Concept:Marine_Landform
+    
+    
+Class: Concept:Low_Marine_Platform
+
+    SubClassOf: 
+        Concept:Marine_Landform
+    
+    
+Class: Concept:Low_Mountain
+
+    EquivalentTo: 
+        Concept:topographic_relief some xsd:integer[> 200 , <= 500]
+    
+    SubClassOf: 
+        Concept:Basic_Morphological_Features_of_Landform
+    
+    
+Class: Concept:Low_Periglacial_Erosion_Denudation_Platform
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Low_Periglacial_Glacial_Erosion_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Low_Periglacial_Hill
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Low_Periglacial_Limnetic_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Low_Periglacial_Plain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Low_Periglacial_Platform
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Low_Periglacial_River_Valley_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Low_Plain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 0 , <= 1000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Plain,
+        Concept:affectedBy_Genetic_Type some Concept:Aeolian_Action,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Lacustrine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Marine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Low_Platform
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 0 , <= 1000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Platform,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Lacustrine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Marine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Low_Proluvial-Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Proluvial_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Low_Volcanic-Lava_Hill
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Low_Volcanic-Lava_Plain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Low_Volcanic-Lava_Platform
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Macro_Feature
+
+    SubClassOf: 
+        Concept:Geomorphic_Feature,
+        calculatedBy some GEO-MODEL
+    
+    
+Class: Concept:Marine_Accumulation
+
+    Annotations: 
+        rdfs:comment "\"海积\""
+    
+    SubClassOf: 
+        Concept:Marine_Process
+    
+    
+Class: Concept:Marine_Accumulation_Alluviation
+
+    Annotations: 
+        rdfs:comment "“海积冲积”"
+    
+    SubClassOf: 
+        Concept:Marine_Process
+    
+    
+Class: Concept:Marine_Erosion
+
+    Annotations: 
+        rdfs:comment "“海蚀”"
+    
+    SubClassOf: 
+        Concept:Marine_Process
+    
+    
+Class: Concept:Marine_Landform
+
+    SubClassOf: 
+        Concept:Geomorphic_Genetic_Type
+    
+    
+Class: Concept:Marine_Process
+
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:Medium_Undulating_Arid_Low_Mountain
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Medium_Undulating_Arid_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Medium_Undulating_Fluvial_High_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Fluvial_Low_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Fluvial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Fluvial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Glacial_High_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Glacial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Glacial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Medium_Undulating_High_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 3500 , <= 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:High_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Medium_Undulating_Low_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 0 , <= 1000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Low_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Medium_Undulating_Middle_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 1000 , <= 3500]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Middle_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Medium_Undulating_Periglacial_High_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Periglacial_Low_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Periglacial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Periglacial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Medium_Undulating_Very_High_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Very_High_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Medium_Undulating_Volcanic-Lava_High_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Medium_Undulating_Volcanic-Lava_Low_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Medium_Undulating_Volcanic-Lava_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Medium_Undulating_Volcanic-Lava_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Middle_Aeolian_Hill
+
+    SubClassOf: 
+        Concept:Aeolian_Landform
+    
+    
+Class: Concept:Middle_Aeolian_Plain
+
+    SubClassOf: 
+        Concept:Aeolian_Landform
+    
+    
+Class: Concept:Middle_Alluvion-Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Alluvion-Proluvial_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Alluvion_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Alluvion_Platform
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Arid_Hill
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Middle_Arid_Plain
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Middle_Arid_Platform
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Middle_Erosion_Denudation_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Middle_Flow-River_Valley_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Middle_Fluvial_Hill
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Middle_Fluvial_Plain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Middle_Fluvial_Platform
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Middle_Glacial_Hill
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Middle_Glacial_Plain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Middle_Glacial_Platform
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Middle_Glaciofluvial_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Hill
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 1000 , <= 3500]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Hill,
+        Concept:affectedBy_Genetic_Type some Concept:Aeolian_Action,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Middle_Lacustrine-Alluviation_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Lacustrine_Deposit_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Lacustrine_Erosion_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Middle_Lacustrine_Erosion_Platform
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Middle_Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Lacustrine_Landform
+    
+    
+Class: Concept:Middle_Lacustrine_Platform
+
+    SubClassOf: 
+        Concept:Lacustrine_Landform
+    
+    
+Class: Concept:Middle_Moraine_Hill
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Moraine_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Moraine_Platform
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Mountain
+
+    EquivalentTo: 
+        Concept:topographic_relief some xsd:integer[> 500 , <= 1000]
+    
+    SubClassOf: 
+        Concept:Basic_Morphological_Features_of_Landform
+    
+    
+Class: Concept:Middle_Periglacial_Erosion_Denudation_Platform
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Middle_Periglacial_Glacial_Erosion_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Middle_Periglacial_Hill
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Middle_Periglacial_Limnetic_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Middle_Periglacial_Plain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Middle_Periglacial_Platform
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Middle_Periglacial_River_Valley_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Middle_Plain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 1000 , <= 3500]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Plain,
+        Concept:affectedBy_Genetic_Type some Concept:Aeolian_Action,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Lacustrine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Middle_Platform
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 1000 , <= 3500]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Platform,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Lacustrine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Middle_Proluvial-Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Proluvial_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Middle_Volcanic-Lava_Hill
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Middle_Volcanic-Lava_Plain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Middle_Volcanic-Lava_Platform
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Moraine
+
+    Annotations: 
+        rdfs:comment "“冰碛”"
+    
+    SubClassOf: 
+        Concept:Glaciation
+    
+    
+Class: Concept:Neotectonic_Movement
+
+    Annotations: 
+        rdfs:comment "\"Tectonic movement since the Neotertiary or Quaternary.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Endogenic_Force
+    
+    
+Class: Concept:Periglacial
+
+    Annotations: 
+        rdfs:comment "“冰缘”"
+    
+    SubClassOf: 
+        Concept:Glaciation
+    
+    
+Class: Concept:Periglacial_Erosion_Denudation
+
+    Annotations: 
+        rdfs:comment "\"冰缘侵蚀剥蚀\""
+    
+    SubClassOf: 
+        Concept:Periglacial_Process
+    
+    
+Class: Concept:Periglacial_Glacial_Erosion
+
+    Annotations: 
+        rdfs:comment "“冰缘冰蚀”"
+    
+    SubClassOf: 
+        Concept:Periglacial_Process
+    
+    
+Class: Concept:Periglacial_Landform
+
+    SubClassOf: 
+        Concept:Geomorphic_Genetic_Type
+    
+    
+Class: Concept:Periglacial_Process
+
+    Annotations: 
+        rdfs:comment "\"Periglacial processes are a series of freezing and melting processes caused by annual and daily changes in temperature and changes in water phase.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Exogenic_Force
+    
+    
+Class: Concept:Periglacial_River_Valley
+
+    Annotations: 
+        rdfs:comment "“冰缘河谷”"
+    
+    SubClassOf: 
+        Concept:Periglacial_Process
+    
+    
+Class: Concept:Plain
+
+    EquivalentTo: 
+        Concept:topographic_relief some xsd:integer[> 0 , <= 30]
+    
+    SubClassOf: 
+        Concept:Basic_Morphological_Features_of_Landform
+    
+    
+Class: Concept:Platform
+
+    EquivalentTo: 
+        Concept:topographic_relief some xsd:integer[> 30 , <= 200]
+    
+    SubClassOf: 
+        Concept:Basic_Morphological_Features_of_Landform
+    
+    
+Class: Concept:Proluvial
+
+    Annotations: 
+        rdfs:comment "“洪积”"
+    
+    SubClassOf: 
+        Concept:Flow_Operation
+    
+    
+Class: Concept:Proluvial-Lacustrine
+
+    Annotations: 
+        rdfs:comment "\"洪积湖积\""
+    
+    SubClassOf: 
+        Concept:Flow_Operation
+    
+    
+Class: Concept:Salt_Lake
+
+    Annotations: 
+        rdfs:comment "“盐湖”"
+    
+    SubClassOf: 
+        Concept:Arid
+    
+    
+Class: Concept:Slope
+
+    Annotations: 
+        rdfs:comment "\"The slope value of a point on the ground is the value of the angle between the tangent plane and the horizontal plane passing through the point.\"
+汤国安,刘学军,闾国年.数字高程模型及地学分析原理与方法[M].北京:科学出版社,2005."@en
+    
+    SubClassOf: 
+        Concept:Basic_Feature
+    
+    
+Class: Concept:Slope_Form
+
+    Annotations: 
+        rdfs:comment "\"The appearance of the inclined surface on land is called slope shape. According to the appearance characteristics, the inclined surface is divided into straight slope, concave slope, convex slope and compound slope.\"
+周成虎. 地貌学辞典. 北京: 中国水利水电出版社, 2006."@en
+    
+    SubClassOf: 
+        Concept:Basic_Feature
+    
+    
+Class: Concept:Small_Undulating_Aeolian_High_Mountain
+
+    SubClassOf: 
+        Concept:Aeolian_Landform
+    
+    
+Class: Concept:Small_Undulating_Aeolian_Low_Mountain
+
+    SubClassOf: 
+        Concept:Aeolian_Landform
+    
+    
+Class: Concept:Small_Undulating_Aeolian_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Aeolian_Landform
+    
+    
+Class: Concept:Small_Undulating_Arid_Low_Mountain
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Small_Undulating_Arid_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Arid_Landform
+    
+    
+Class: Concept:Small_Undulating_Fluvial_High_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Small_Undulating_Fluvial_Low_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Small_Undulating_Fluvial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Small_Undulating_Fluvial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Small_Undulating_Glacial_High_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Small_Undulating_Glacial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Small_Undulating_Glacial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Small_Undulating_High_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 3500 , <= 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:High_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Aeolian_Action,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Small_Undulating_Low_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 0 , <= 1000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Low_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Aeolian_Action,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Small_Undulating_Middle_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 1000 , <= 3500]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Middle_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Aeolian_Action,
+        Concept:affectedBy_Genetic_Type some Concept:Arid,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Small_Undulating_Periglacial_High_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Small_Undulating_Periglacial_Low_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Small_Undulating_Periglacial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Small_Undulating_Periglacial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Small_Undulating_Very_High_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Very_High_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Small_Undulating_Volcanic-Lava_High_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Small_Undulating_Volcanic-Lava_Low_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Small_Undulating_Volcanic-Lava_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Small_Undulating_Volcanic-Lava_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Topographic_Relief
+
+    Annotations: 
+        rdfs:comment "\"Topographic relief refers to the difference between the altitude of the highest point and the altitude of the lowest point in a specific area. It is a macroscopic index to describe the topographic characteristics of a region.\"
+汤国安．数字高程模型教程：科学出版社，2010."@en
+    
+    EquivalentTo: 
+        Concept:definedBy value Concept:Numerical_classification_system_of_Chinese_landforms
+    
+    SubClassOf: 
+        Concept:Macro_Feature,
+        Concept:definedBy some Concept:Geomorphic_Classification_System
+    
+    
+Class: Concept:Very_High_Glacial_Hill
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Very_High_Glacial_Plain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Very_High_Glacial_Platform
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Very_High_Glaciofluvial_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Very_High_Hill
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Hill,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Very_High_Lacustrine-Alluviation_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Very_High_Lacustrine_Deposit_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Very_High_Lacustrine_Erosion_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Very_High_Lacustrine_Erosion_Platform
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Very_High_Lacustrine_Plain
+
+    SubClassOf: 
+        Concept:Lacustrine_Landform
+    
+    
+Class: Concept:Very_High_Lacustrine_Platform
+
+    SubClassOf: 
+        Concept:Lacustrine_Landform
+    
+    
+Class: Concept:Very_High_Moraine_Hill
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Very_High_Moraine_Plain
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Very_High_Moraine_Platform
+
+    SubClassOf: 
+        Concept:Accumulation_Type
+    
+    
+Class: Concept:Very_High_Mountain
+
+    EquivalentTo: 
+        Concept:topographic_relief some xsd:integer[> 2500]
+    
+    SubClassOf: 
+        Concept:Basic_Morphological_Features_of_Landform
+    
+    
+Class: Concept:Very_High_Periglacial_Erosion_Denudation_Platform
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Very_High_Periglacial_Glacial_Erosion_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Very_High_Periglacial_Hill
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Very_High_Periglacial_Limnetic_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Very_High_Periglacial_Plain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Very_High_Periglacial_Platform
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Very_High_Periglacial_River_Valley_Plain
+
+    SubClassOf: 
+        Concept:Erosion_Type
+    
+    
+Class: Concept:Very_High_Plain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Plain,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Lacustrine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Very_High_Platform
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Platform,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Lacustrine_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Very_High_Volcanic-Lava_Platform
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Fluvial_High_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Fluvial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Fluvial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Fluvial_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Glacial_High_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Glacial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Glacial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Glacial_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_High_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 3500 , <= 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:High_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Flow_Operation,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Very_Large_Undulating_Periglacial_High_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Periglacial_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Periglacial_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Periglacial_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Very_High_Mountain
+
+    EquivalentTo: 
+        Concept:altitude some xsd:integer[> 5000]
+    
+    SubClassOf: 
+        Concept:Basic_Landform_Type,
+        Concept:Very_High_Mountain,
+        Concept:affectedBy_Genetic_Type some Concept:Glaciation,
+        Concept:affectedBy_Genetic_Type some Concept:Periglacial_Process,
+        Concept:affectedBy_Genetic_Type some Concept:Volcanic_Lava,
+        Concept:classifiedBy some Concept:Altitude
+    
+    
+Class: Concept:Very_Large_Undulating_Volcanic-Lava_High_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Volcanic-Lava_Middle_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Very_Large_Undulating_Volcanic-Lava_Very_High_Mountain
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Very_Volcanic-Lava_High_Hill
+
+    SubClassOf: 
+        Concept:Volcanic-Lava_Landform
+    
+    
+Class: Concept:Volcanic-Lava_Landform
+
+    SubClassOf: 
+        Concept:Geomorphic_Genetic_Type
+    
+    
+Class: Concept:Volcanic_Lava
+
+    Annotations: 
+        rdfs:comment "\"There is a 'liquid zone' 100 to 150 kilometers below the earth's crust, in which there is molten silicate material containing volatile gas under high temperature and pressure, namely magma. When magma rushes out of the surface from the weak section of the earth's crust, it forms volcanoes, and then volcanic lava.\"
+什么是火山熔岩 - 业百科 (yebaike.com)"@en
+    
+    SubClassOf: 
+        Concept:Endogenic_Force
+    
+    
+Class: Concept:Wind_Accumulation
+
+    Annotations: 
+        rdfs:comment "\"风积\""
+    
+    SubClassOf: 
+        Concept:Aeolian_Action
+    
+    
+Class: Concept:Wind_Accumulation_Alluviation
+
+    Annotations: 
+        rdfs:comment "“风积冲积”"
+    
+    SubClassOf: 
+        Concept:Aeolian_Action
+    
+    
+Class: Concept:Wind_Erosion
+
+    Annotations: 
+        rdfs:comment "“风蚀”"
+    
+    SubClassOf: 
+        Concept:Aeolian_Action
+    
+    
+Class: Continuous_Data
+
+    SubClassOf: 
+        Types_Of_Data
+    
+    
+Class: Converted_Raster
+
+    SubClassOf: 
+        Data,
+        (projected value false) or (projected value true),
+        data_type value "Raster",
+        suffix value "tif",
+        name exactly 1 xsd:string
+    
+    
+Class: DEGREE
+
+    EquivalentTo: 
+        Measurement_Unit
+         and (classification_system_unit value "degree")
+    
+    
+Class: DEM
+
+    EquivalentTo: 
+        Data
+         and (data_attribute some xsd:string)
+         and (data_element some xsd:string)
+         and (data_object some xsd:string)
+         and (dem_name some xsd:string)
+         and (format some xsd:string)
+         and (linear_unit some xsd:string)
+         and (path some xsd:string)
+         and (projected some xsd:boolean)
+         and (reasoning_data_type some xsd:string)
+         and (scale some xsd:string)
+         and (source some xsd:string)
+         and (spatial_resolution some xsd:string)
+         and (spatial_type some xsd:string)
+         and (spatial_value some xsd:string)
+         and (temporal_type some xsd:string)
+         and (temporal_value some xsd:string)
+         and (data_type value "Raster")
+         and (suffix value "tif")
+    
+    
+Class: DEM_boundary
+
+    SubClassOf: 
+        Vector
+    
+    
+Class: Data
+
+    
+Class: Default_Click
+
+    EquivalentTo: 
+        (default_value value "AREA") or (default_value value "BORDERS") or (default_value value "ClippingGeometry") or (default_value value "DATA") or (default_value value "FORCE") or (default_value value "INVERT") or (default_value value "LENGTH") or (default_value value "MAINTAIN_EXTENT") or (default_value value "NODATA") or (default_value value "NONE") or (default_value value "NORMAL") or (default_value value "NOT_INVERT") or (default_value value "NO_BORDERS") or (default_value value "NO_MAINTAIN_EXTENT") or (default_value value "NO_SIMPLIFY") or (default_value value "SIMPLIFY")
+    
+    SubClassOf: 
+        Parameter
+    
+    
+Class: Delete_Rows
+
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Detect_mountain_unit
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some DEM,
+        hasOutput some Mountain_unit,
+        executedBy exactly 1 Flow_Accumulation,
+        executedBy exactly 1 Flow_Direction,
+        executedBy exactly 1 Project_Raster,
+        executedBy exactly 1 Raster_Calculator,
+        executedBy exactly 1 Raster_To_Polygon,
+        executedBy exactly 1 Stream_Link,
+        executedBy exactly 1 Watershed,
+        reverse_flow_accumulation_threshold some xsd:double,
+        model_type value "Individual model",
+        technique_invocation value " Detect_mountain_unit",
+        technique_type value "Script"
+    
+    
+Class: Dimension
+
+    SubClassOf: 
+        Parameter_Value
+    
+    
+Class: Discrete_Data
+
+    SubClassOf: 
+        Types_Of_Data
+    
+    
+Class: Distance_Acc_Output
+
+    EquivalentTo: 
+        Raster,
+        Data
+         and (data_type value "Raster")
+         and (projected value true)
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    
+Class: Distance_Accumulation
+
+    EquivalentTo: 
+        hasCostInput exactly 1 Input_Raster,
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Distance_Acc_Output,
+        distance_acc_method value "PLANAR"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Division_mountain_unit
+
+    SubClassOf: 
+        Vector
+    
+    
+Class: Division_of_mountain_unit
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some DEM_boundary,
+        hasInput some Mountain_unit,
+        hasOutput some Division_mountain_unit,
+        model_type value "Integrated model",
+        technique_invocation value " Division_of_mountain_unit",
+        technique_type value "Script"
+    
+    
+Class: Eliminate
+
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Eliminate_Polygon_Part
+
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Eliminate_isolated
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: Eliminate_isolated_pieces
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Projected_DEM,
+        hasInput some Replenish_mountain_unit,
+        hasInput some Vector_complete_mountain_plain,
+        hasOutput some Eliminate_isolated,
+        model_type value "Integrated model",
+        technique_invocation value "Eliminate_isolated_pieces",
+        technique_type value "Script"
+    
+    
+Class: Erase
+
+    EquivalentTo: 
+        hasErase exactly 1 Input_Vector,
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 Erase_Out
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Erase_Out
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Erased_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Extract_By_Mask
+
+    EquivalentTo: 
+        (hasMask exactly 1 Input_Raster) or (hasMask exactly 1 Input_Vector),
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Mask_Output
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: FC_width
+
+    SubClassOf: 
+        Parameter
+    
+    
+Class: FS_neighborhood
+
+    EquivalentTo: 
+        Parameter
+         and ((neighborhood_method value "NbrAnnulus") or (neighborhood_method value "NbrCircle") or (neighborhood_method value "NbrIrregular") or (neighborhood_method value "NbrRectangle") or (neighborhood_method value "NbrWedge") or (neighborhood_method value "NbrWeight"))
+         and ((units_type value "CELL") or (units_type value "MAP"))
+         and (height some xsd:integer)
+         and (width some xsd:integer)
+    
+    
+Class: FS_statistics_type
+
+    EquivalentTo: 
+        (statistics_type_method value "MAJORITY") or (statistics_type_method value "MAXIMUM") or (statistics_type_method value "MEAN") or (statistics_type_method value "MEDIAN") or (statistics_type_method value "MINIMUM") or (statistics_type_method value "MINORITY") or (statistics_type_method value "PERCENTILE") or (statistics_type_method value "RANGE") or (statistics_type_method value "STD") or (statistics_type_method value "SUM") or (statistics_type_method value "VARIETY")
+    
+    SubClassOf: 
+        Parameter
+    
+    
+Class: Feature_to_Raster
+
+    EquivalentTo: 
+        hasCellSize exactly 1 Input_Raster,
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 Converted_Raster,
+        field_value some xsd:string
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Filtered_Raster
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Fishnet
+
+    SubClassOf: 
+        Vector
+    
+    
+Class: Flow_Accumulation
+
+    EquivalentTo: 
+        has exactly 1 Flow_Direction_Type,
+        hasInput exactly 1 Flow_Direction_Output,
+        hasOutput exactly 1 Flow_Accumulation_Output
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Flow_Accumulation_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Flow_Direction
+
+    EquivalentTo: 
+        has exactly 1 Flow_Direction_Type,
+        hasInput exactly 1 DEM,
+        hasOutput exactly 1 Flow_Direction_Output
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Flow_Direction_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Flow_Direction_Type
+
+    EquivalentTo: 
+        flow_direction value "D8"
+    
+    SubClassOf: 
+        Parameter
+    
+    
+Class: FocalStatistics_out
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Focal_Statistics
+
+    EquivalentTo: 
+        has some Default_Click,
+        has some FS_neighborhood,
+        has some FS_statistics_type,
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 FocalStatistics_out
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: GEO-MODEL
+
+    
+Class: GEODESIC
+
+    EquivalentTo: 
+        Slope_Calculation_Method
+         and (decidesBy some Three_D)
+    
+    
+Class: General_Classification_Based_on_Altitude_Value
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Projected_DEM,
+        hasOutput some General_classification,
+        model_type value "Integrated model",
+        technique_invocation value " General_Classification_Based_on_Altitude_Value",
+        technique_type value "Script"
+    
+    
+Class: General_classification
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: Geo-Model
+
+    EquivalentTo: 
+        (has some Parameter)
+         and (hasInput some Data)
+         and (hasOutput some Data)
+         and (application_category some xsd:string)
+         and (description some xsd:string)
+         and (name some xsd:string)
+    
+    
+Class: Geometry_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Identify_DEM_boundary
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Projected_DEM,
+        hasOutput some DEM_boundary,
+        model_type value "Individual model",
+        technique_invocation value " Identify_DEM_boundary",
+        technique_type value "Script"
+    
+    
+Class: Identify_plain_within_mountains
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Slope_value,
+        hasInput some Water_net,
+        hasOutput some Plain_within_mountain,
+        accumulation_distance_threshold some xsd:double,
+        model_type value "Integrated model",
+        technique_invocation value "Identify_plain_within_mountains",
+        technique_type value "Script"
+    
+    
+Class: Identify_water_net
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Projected_DEM,
+        hasOutput some Water_net,
+        flow_accumulation_threshold some xsd:double,
+        model_type value "Individual model",
+        technique_invocation value " Identify_water_net",
+        technique_type value "Script"
+    
+    
+Class: Input_Raster
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Input_Vector
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Majority_Filter
+
+    EquivalentTo: 
+        hasInput some Input_Raster,
+        hasOutput some Filtered_Raster,
+        majority_definition value "MAJORITY",
+        number_neighbors value "EIGHT"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Mask_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Measurement_Unit
+
+    SubClassOf: 
+        Parameter_Value
+    
+    
+Class: Merge_area_of_mountain_and_plain
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Plain_within_mountain,
+        hasInput some Rough_mountain_plain,
+        hasOutput some Merge_mountain_plain,
+        model_type value "Integrated model",
+        technique_invocation value "Merge_area_of_mountain_and_plain",
+        technique_type value "Script"
+    
+    
+Class: Merge_mountain_plain
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: Mosaic
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Mosaic_Output,
+        hasTargetInput exactly 1 Input_Raster,
+        colormap value "FIRST",
+        matching_method value "NONE",
+        mosaic_type value "SUM"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Mosaic_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Mosaic_To_New_Raster
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Raster,
+        hasInputRaster exactly 1 Input_Raster,
+        hasOutput exactly 1 Mosaic_Output,
+        mosaic_type some xsd:string,
+        mosic_colormap_mode some xsd:string,
+        pixel_type some xsd:string,
+        number_of_bands value 1
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Mountain_basedOn_slope
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: Mountain_classification_based_on_slope
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Eliminate_isolated,
+        hasInput some General_classification,
+        hasInput some Projected_DEM,
+        hasInput some Replenish_vacant_island,
+        hasOutput some Mountain_basedOn_slope,
+        model_type value "Integrated model",
+        technique_invocation value "Mountain_classification_based_on_slope",
+        technique_type value "Script"
+    
+    
+Class: Mountain_unit
+
+    SubClassOf: 
+        Vector
+    
+    
+Class: Multipart_To_Singlepart
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 Single_Part
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: PERCENT_RISE
+
+    EquivalentTo: 
+        Measurement_Unit
+         and (classification_system_unit value "percent")
+    
+    
+Class: PLANAR
+
+    EquivalentTo: 
+        Slope_Calculation_Method
+         and (decidesBy some Two_D)
+    
+    
+Class: PR_cordinate_System
+
+    SubClassOf: 
+        Parameter
+    
+    
+Class: PR_resampling_technique
+
+    SubClassOf: 
+        Parameter
+    
+    
+Class: Pairwise_Clip
+
+    EquivalentTo: 
+        hasClipInput exactly 1 Input_Vector,
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 Cliped_Output
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Pairwise_Erase
+
+    EquivalentTo: 
+        hasEraseInput exactly 1 Input_Vector,
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 Erased_Output
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Parameter
+
+    EquivalentTo: 
+        Parameter
+         and (parameter_name some xsd:string)
+         and (parameter_value some (xsd:double or xsd:int or xsd:string))
+    
+    
+Class: Parameter_Value
+
+    SubClassOf: 
+        Parameter
+    
+    
+Class: Plain_basedOn_altitude
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: Plain_within_mountain
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: Polygon
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Polyline
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Project_DEM
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some DEM,
+        hasOutput some Projected_DEM,
+        model_type value "Individual model",
+        technique_invocation value "Project_DEM",
+        technique_type value "Script"
+    
+    
+Class: Project_Raster
+
+    EquivalentTo: 
+        has exactly 1 PR_cordinate_System,
+        has exactly 1 PR_resampling_technique,
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Raster_With_Projection
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Projected_DEM
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: RC_expression
+
+    SubClassOf: 
+        Parameter
+    
+    
+Class: R_expression
+
+    SubClassOf: 
+        Parameter
+    
+    
+Class: Raster
+
+    EquivalentTo: 
+        Distance_Acc_Output
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Raster_Calculated
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Raster_Calculator
+
+    EquivalentTo: 
+        Geo-Model
+         and ((Geo-Model
+         and (hasInput min 1 Input_Raster)
+         and (has exactly 1 RC_expression)
+         and (hasOutput exactly 1 Raster_Calculated)) or (accumulation_distance_threshold some xsd:double) or (flow_accumulation_threshold some xsd:double) or (reverse_flow_accumulation_threshold some xsd:double) or (slope_threshold some xsd:double))
+    
+    
+Class: Raster_Clipped
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Raster_Domain
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Raster_Domain_Output,
+        output_geometry_type value "POLYGON"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Raster_Domain_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Raster_Reclassified
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Raster_To_Polygon
+
+    EquivalentTo: 
+        has exactly 1 Default_Click,
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Polygon,
+        field_value value "VALUE"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Raster_To_Polyline
+
+    EquivalentTo: 
+        has exactly 1 Default_Click,
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Polyline,
+        background_value value "ZERO",
+        minimum_dangle_length value 0
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Raster_With_Projection
+
+    EquivalentTo: 
+        Data
+         and (data_type value "Raster")
+         and (projected value true)
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Reclassify
+
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Replenish_Mountain_Unit
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some DEM_boundary,
+        hasInput some Division_mountain_unit,
+        hasInput some Fishnet,
+        hasOutput some Replenish_mountain_unit,
+        model_type value "Integrated model",
+        technique_invocation value "Replenish_Mountain_Unit",
+        technique_type value "Script"
+    
+    
+Class: Replenish_mountain_unit
+
+    SubClassOf: 
+        Vector
+    
+    
+Class: Replenish_the_vacant_parts_of_the_island
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Projected_DEM,
+        hasInput some Rough_mountain_plain,
+        hasInput some Valid_DEM,
+        hasInput some Vector_complete_mountain_plain,
+        hasOutput some Replenish_vacant_island,
+        technique_invocation value "Replenish_the_vacant_parts_of_the_island",
+        technique_type value "Script"
+    
+    
+Class: Replenish_vacant_island
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: Rough_Classification_of_mountain_and_plain
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Slope_value,
+        hasOutput some Rough_mountain_plain,
+        slope_threshold some xsd:double,
+        technique_invocation value "Rough_Classification_of_mountain_and_plain",
+        technique_type value "Script"
+    
+    
+Class: Rough_mountain_plain
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: Select
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 SelectOut
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: SelectOut
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Select_Eliminate_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Select_Layer_By_Attribute_Delete_Row_Eliminate
+
+    EquivalentTo: 
+        hasFinalOutput some Select_Eliminate_Output,
+        hasInput some Input_Vector,
+        hasOutput some SelectOut,
+        condition some xsd:string,
+        part_option some xsd:string,
+        selection_type some xsd:string
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Select_Layer_By_Attribute_Eliminate
+
+    EquivalentTo: 
+        has exactly 1 Default_Click,
+        hasFinalOutput exactly 1 Select_Eliminate_Output,
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 SelectOut,
+        selection_type value "NEW_SELECTION"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Select_Layer_By_Attribute_Location_Eliminate
+
+    EquivalentTo: 
+        has exactly 1 Default_Click,
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 Select_Location_Output,
+        hasSelect exactly 1 Input_Vector,
+        overlap_type some xsd:string,
+        selection_type some xsd:string
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Select_Layer_By_Location
+
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Select_Location_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Single_Part
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Slope
+
+    EquivalentTo: 
+        Geo-Model
+         and (has some Z_value)
+         and (has exactly 1 Slope_method)
+         and (has exactly 1 Slope_outputMeasurement)
+         and (hasInput exactly 1 DEM)
+         and (hasOutput exactly 1 Slope_value)
+    
+    
+Class: Slope_Calculation_Method
+
+    SubClassOf: 
+        Parameter_Value
+    
+    
+Class: Slope_method
+
+    EquivalentTo: 
+        Parameter
+         and ((hasParameterValue exactly 1 GEODESIC) or (hasParameterValue exactly 1 PLANAR))
+    
+    
+Class: Slope_outputMeasurement
+
+    EquivalentTo: 
+        Parameter
+         and ((hasParameterValue exactly 1 DEGREE) or (hasParameterValue exactly 1 PERCENT_RISE))
+    
+    
+Class: Slope_value
+
+    SubClassOf: 
+        Raster,
+        data_type value "Raster",
+        projected value true,
+        suffix value "tif",
+        name exactly 1 xsd:string
+    
+    
+Class: Stream_Link
+
+    EquivalentTo: 
+        hasFlowDirection exactly 1 Input_Raster,
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Stream_Output
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Stream_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Symbology_Layer
+
+    SubClassOf: 
+        Data
+    
+    
+Class: Three_D
+
+    EquivalentTo: 
+        Dimension
+         and ((linear_unit value "FOOT") or (linear_unit value "INCH") or (linear_unit value "METER") or (linear_unit value "YARD"))
+    
+    
+Class: Two_D
+
+    EquivalentTo: 
+        Dimension
+         and (linear_unit value "1")
+    
+    
+Class: Types_Of_Data
+
+    SubClassOf: 
+        Parameter_Value
+    
+    
+Class: Update
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Vector,
+        hasOutput exactly 1 Update_Out,
+        hasUpdate exactly 1 Input_Vector
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Update_Out
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Vector")
+         and (suffix value "shp")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Valid_DEM
+
+    SubClassOf: 
+        Raster
+    
+    
+Class: Validate_DEM
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Projected_DEM,
+        hasOutput some Valid_DEM,
+        model_type value "Individual model",
+        technique_invocation value "Validate_DEM",
+        technique_type value "Script"
+    
+    
+Class: Vector
+
+    SubClassOf: 
+        Data
+    
+    
+Class: Vector_complete_mountain_plain
+
+    SubClassOf: 
+        Vector
+    
+    
+Class: Vector_merge_mountain_plain
+
+    SubClassOf: 
+        Vector
+    
+    
+Class: Vectorize_Complete_mountain_and_plain
+
+    EquivalentTo: 
+        hasInput some Projected_DEM,
+        hasInput some Valid_DEM,
+        hasInput some Vector_merge_mountain_plain,
+        hasOutput some Vector_complete_mountain_plain,
+        model_type value "Integrated model",
+        technique_invocation value "Vectorize_Complete_mountain_and_plain",
+        technique_type value "Script"
+    
+    SubClassOf: 
+        GEO-MODEL
+    
+    
+Class: Vectorize_Merge_area_of_mountain_and_plain
+
+    SubClassOf: 
+        GEO-MODEL,
+        hasInput some Merge_mountain_plain,
+        hasOutput some Vector_merge_mountain_plain,
+        model_type value "Integrated model",
+        technique_invocation value "Vectorize_Merge_area_of_mountain_and_plain",
+        technique_type value "Script"
+    
+    
+Class: Water_net
+
+    SubClassOf: 
+        Vector
+    
+    
+Class: Watershed
+
+    EquivalentTo: 
+        hasInput exactly 1 Input_Raster,
+        hasOutput exactly 1 Watershed_Output,
+        hasPourPoint exactly 1 Input_Raster,
+        pour_point_field value "VALUE"
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: Watershed_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Z_Factor
+
+    EquivalentTo: 
+        Z_Parameter
+         and (decidesBy some PLANAR)
+         and (linear_unit some xsd:double)
+    
+    
+Class: Z_Parameter
+
+    SubClassOf: 
+        Parameter_Value
+    
+    
+Class: Z_Unit
+
+    EquivalentTo: 
+        Z_Parameter
+         and (decidesBy some GEODESIC)
+         and (linear_unit some xsd:string)
+    
+    
+Class: Z_value
+
+    EquivalentTo: 
+        Parameter
+         and (Z_Factor or Z_Unit)
+    
+    
+Class: Zonal_Output
+
+    EquivalentTo: 
+        Data
+         and ((projected value false) or (projected value true))
+         and (data_type value "Raster")
+         and (suffix value "tif")
+         and (name exactly 1 xsd:string)
+    
+    SubClassOf: 
+        Data
+    
+    
+Class: Zonal_Statistics
+
+    EquivalentTo: 
+        has exactly 1 Default_Click,
+        has exactly 1 FS_statistics_type,
+        hasInput exactly 1 Input_Vector,
+        hasInputRaster exactly 1 Input_Raster,
+        hasOutput exactly 1 Zonal_Output,
+        zone_field some xsd:string
+    
+    SubClassOf: 
+        Geo-Model
+    
+    
+Class: a
+
+    SubClassOf: 
+        Vector
+    
+    
+Class: b
+
+    SubClassOf: 
+        Raster
+    
+    
+Individual: <http://www.semanticweb.org/ontologies/Geo_computation.owl#['noprj_dem.tif']>
+
+    Types: 
+        DEM
+    
+    Facts:  
+     format  "GTiff"^^xsd:string,
+     linear_unit  "1.0"^^xsd:string,
+     projected  "false"^^xsd:string,
+     spatial_resolution  "0.00027777777777777794"^^xsd:string,
+     spatial_value  "POLYGON((97.14791666666667 29.499861111111116,97.14791666666667 32.508750000000006,100.5001388888889 32.508750000000006,100.5001388888889 29.499861111111116,97.14791666666667 29.499861111111116))"^^xsd:string
+    
+    
+Individual: Concept:ADD_FIELD_1
+
+    Facts:  
+     Concept:has_Input  Concept:reclass_polygon,
+     Concept:field_name  "parea"^^xsd:string,
+     Concept:field_type  "FLOAT"^^xsd:string
+    
+    
+Individual: Concept:APPLY_SYSBOLOGY_FROM_LAYER
+
+    Facts:  
+     Concept:has_Input  Concept:prj_dem_muploy11,
+     Concept:has_input_symbology_layer  Concept:new_color
+    
+    
+Individual: Concept:CALCULATE_FIELD_1
+
+    Facts:  
+     Concept:has_Input  Concept:reclass_polygon,
+     Concept:has_Output  Concept:raster_to_feature,
+     Concept:expression  "!shape.area!/1000000"^^xsd:string,
+     Concept:expression_type  "PYTHON3"^^xsd:string,
+     Concept:field  "parea"^^xsd:string
+    
+    
+Individual: Concept:CALCULATE_FIELD_2
+
+    Facts:  
+     Concept:has_Input  Concept:mosaic_QFD_Ele_poly,
+     Concept:has_Output  Concept:cal_first_code,
+     Concept:expression  "int(!gridcode!/10)*10"^^xsd:string,
+     Concept:expression_type  "PYTHON3"^^xsd:string,
+     Concept:field  "code1"^^xsd:string
+    
+    
+Individual: Concept:CALCULATE_FIELD_3
+
+    Facts:  
+     Concept:has_Input  Concept:mosaic_QFD_Ele_poly,
+     Concept:has_Output  Concept:cal_second_code,
+     Concept:expression  "!gridcode!"^^xsd:string,
+     Concept:expression_type  "PYTHON3"^^xsd:string,
+     Concept:field  "code2"^^xsd:string
+    
+    
+Individual: Concept:CALCULATE_GEOMETRY_ATTRIBUTES_1
+
+    Facts:  
+     Concept:has_Input  Concept:common_mountain,
+     Concept:has_Output  Concept:common_mountain,
+     Concept:area_unit  "SQUARE_KILOMETERS"^^xsd:string,
+     Concept:geometry_property  "[\"mu_area\",\"AREA\"]"^^xsd:string
+    
+    
+Individual: Concept:CALCULATE_VALUE_1
+
+    Facts:  
+     Concept:has_Output  Concept:value,
+     Concept:expression  "def calFID(id):
+	fid = id + 107
+	return fid"^^xsd:string,
+     Concept:id  "352"^^xsd:string
+    
+    
+Individual: Concept:CLIP_RASTER_1
+
+    Facts:  
+     Concept:has_Input  Concept:reclass_ele,
+     Concept:has_Output  Concept:pclass_preEle,
+     Concept:clipping_geometry  "NONE"^^xsd:string,
+     Concept:maintain_clipping_extent  "NO_MAINTAIN_EXTENT"^^xsd:string,
+     Concept:nodata_value  "-32768"^^xsd:string,
+     Concept:rectangle  "p_area"^^xsd:string
+    
+    
+Individual: Concept:DELETE_ROWS_1
+
+    Facts:  
+     Concept:has_Input  Concept:raster_to_feature_layer
+    
+    
+Individual: Concept:DISTANCE_ACCUMULATION_1
+
+    Facts:  
+     Concept:has_Input  Concept:water_net,
+     Concept:has_Input_cost_raster  Concept:prj_dem_slope,
+     Concept:has_Output  Concept:pro_dem_40000,
+     Concept:distance_method  "PLANAR"^^xsd:string
+    
+    
+Individual: Concept:ELIMINATE_1
+
+    Facts:  
+     Concept:has_Input  Concept:raster_to_watershed_layer,
+     Concept:has_Output  Concept:mountain_unit_elimi,
+     Concept:selection  "LENGTH"^^xsd:string
+    
+    
+Individual: Concept:ELIMINATE_2
+
+    Facts:  
+     Concept:has_Input  Concept:raster_to_watershed_layer_eliminate,
+     Concept:has_Output  Concept:mountain_unit_shape,
+     Concept:selection  "LENGTH"^^xsd:string
+    
+    
+Individual: Concept:ELIMINATE_3
+
+    Facts:  
+     Concept:has_Input  Concept:mountain_selection,
+     Concept:has_Output  Concept:eliminate_iso,
+     Concept:selection  "LENGTH"^^xsd:string
+    
+    
+Individual: Concept:ELIMINATE_POLYGON_PART_1
+
+    Facts:  
+     Concept:has_Input  Concept:updated_raster_to_feature_layer,
+     Concept:has_Output  Concept:eliminate_polygon,
+     Concept:condition  "AREA"^^xsd:string,
+     Concept:part_area  "0.16KM*KM"^^xsd:string,
+     Concept:part_option  "CONTAINED_ONLY"^^xsd:string
+    
+    
+Individual: Concept:ERASE_1
+
+    Facts:  
+     Concept:has_Erase_feature  Concept:mountain_unit,
+     Concept:has_Input  Concept:projDEM_domain,
+     Concept:has_Output  Concept:rest_mountain
+    
+    
+Individual: Concept:ERASE_2
+
+    Facts:  
+     Concept:has_Erase_feature  Concept:mountain_unit_shape,
+     Concept:has_Input  Concept:domain_clip,
+     Concept:has_Output  Concept:domain_erase
+    
+    
+Individual: Concept:EXTRACT_BY_MASK_1
+
+    Facts:  
+     Concept:has_Input  Concept:comb_2,
+     Concept:has_Input_mask_data  Concept:prj_dem_slope,
+     Concept:has_Output  Concept:pro_dem_40000_800
+    
+    
+Individual: Concept:EXTRACT_BY_MASK_2
+
+    Facts:  
+     Concept:has_Input  Concept:comMuRaster,
+     Concept:has_Input_mask_data  Concept:mountain_raster,
+     Concept:has_Output  Concept:mountainMU
+    
+    
+Individual: Concept:FEATURE_TO_RASTER_1
+
+    Facts:  
+     Concept:has_Input  Concept:complete_mountain_plain,
+     Concept:has_Output  Concept:step4_raster,
+     Concept:cell_size  "prj_dem"^^xsd:string,
+     Concept:field  "gridcode"^^xsd:string
+    
+    
+Individual: Concept:FEATURE_TO_RASTER_2
+
+    Facts:  
+     Concept:has_Input  Concept:eliminate_iso,
+     Concept:has_Output  Concept:comMuRaster,
+     Concept:cell_size  "prj_dem"^^xsd:string,
+     Concept:field  "FID"^^xsd:string
+    
+    
+Individual: Concept:FOCAL_STATISTICS_1
+
+    Facts:  
+     Concept:has_Input  Concept:slope_threshold,
+     Concept:has_Output  Concept:majority__slope,
+     Concept:height  "5"^^xsd:int,
+     Concept:ignore_nodata  "DATA"^^xsd:string,
+     Concept:neighborhood  "NbrRectangle"^^xsd:string,
+     Concept:statistics_type  "MAJORITY"^^xsd:string,
+     Concept:units  "Cell"^^xsd:string,
+     Concept:width  "5"^^xsd:int
+    
+    
+Individual: Concept:MAJORITY_FILTER_1
+
+    Facts:  
+     Concept:has_Input  Concept:merge,
+     Concept:has_Output  Concept:merge_filter_1,
+     Concept:majority_definition  "MAJORITY"^^xsd:string,
+     Concept:number_neighbors  "EIGHT"^^xsd:string
+    
+    
+Individual: Concept:MAJORITY_FILTER_2
+
+    Facts:  
+     Concept:has_Input  Concept:merge_filter_1,
+     Concept:has_Output  Concept:merge_filter_2,
+     Concept:majority_definition  "MAJORITY"^^xsd:string,
+     Concept:number_neighbors  "EIGHT"^^xsd:string
+    
+    
+Individual: Concept:MOSAIC_1
+
+    Facts:  
+     Concept:has_Input  Concept:comb_1,
+     Concept:has_Output  Concept:comb_2,
+     Concept:has_Target_raster  Concept:comb_2,
+     Concept:colormap  "FIRST"^^xsd:string,
+     Concept:matching_method  "NONE"^^xsd:string,
+     Concept:mosaic_type  "SUM"^^xsd:string
+    
+    
+Individual: Concept:MOSAIC_TO_NEW_RASTER_1
+
+    Facts:  
+     Concept:has_Input  Concept:dem_domain,
+     Concept:has_Input  Concept:modified_mountain,
+     Concept:has_Output  Concept:edit_mandpall,
+     Concept:mosaic_colormap_mode  "FIRST"^^xsd:string,
+     Concept:mosaic_method  "LAST"^^xsd:string,
+     Concept:number_of_bands  "1"^^xsd:long,
+     Concept:pixel_type  "8_BIT_UNSIGNED"^^xsd:string
+    
+    
+Individual: Concept:MOSAIC_TO_NEW_RASTER_2
+
+    Facts:  
+     Concept:has_Input  Concept:rest_step1_reclass,
+     Concept:has_Input  Concept:step4_raster,
+     Concept:has_Output  Concept:class_withrest,
+     Concept:mosaic_colormap_mode  "MATCH"^^xsd:string,
+     Concept:mosaic_method  "BLEND"^^xsd:string,
+     Concept:number_of_bands  "1"^^xsd:long,
+     Concept:pixel_type  "8_BIT_UNSIGNED"^^xsd:string
+    
+    
+Individual: Concept:MOSAIC_TO_NEW_RASTER_3
+
+    Facts:  
+     Concept:has_Input  Concept:mountain_sum_QFD_Ele,
+     Concept:has_Input  Concept:pclass_ele,
+     Concept:has_Output  Concept:mosaic_QFD_Ele,
+     Concept:mosaic_colormap_mode  "MATCH"^^xsd:string,
+     Concept:mosaic_method  "FIRST"^^xsd:string,
+     Concept:number_of_bands  "1"^^xsd:long,
+     Concept:pixel_type  "8_BIT_UNSIGNED"^^xsd:string
+    
+    
+Individual: Concept:MULTIPART_TO_SINGLEPART_1
+
+    Facts:  
+     Concept:has_Input  Concept:domain_update,
+     Concept:has_Output  Concept:domain_single
+    
+    
+Individual: Concept:Numerical_classification_system_of_Chinese_landforms
+
+    Annotations: 
+        rdfs:comment "Numerical classification system of Chinese landforms
+contributor: \"周成虎, 程维明, & 钱金凯. 数字地貌遥感解析与制图. 科学出版社.\""@cn ; created: 2009;
+    
+    
+Individual: Concept:PAIRWISE_CLIP_1
+
+    Facts:  
+     Concept:has_Clip_Feature  Concept:select_grid,
+     Concept:has_Input  Concept:demdomain,
+     Concept:has_Output  Concept:domain_clip
+    
+    
+Individual: Concept:PAIRWISE_ERASE_1
+
+    Facts:  
+     Concept:has_Erase_feature  Concept:m_qfd_ele_poly,
+     Concept:has_Input  Concept:demdomain,
+     Concept:has_Output  Concept:p_area
+    
+    
+Individual: Concept:PROJECT_RASTER_1
+
+    Facts:  
+     Concept:has_Input  Concept:dem_slope_no_pro,
+     Concept:has_Output  Concept:dem_slope_pro,
+     Concept:output_coordinate_system  "World_Behrmann"^^xsd:string,
+     Concept:resampling_technique  "BILINEAR"^^xsd:string
+    
+    
+Individual: Concept:PROJECT_RASTER_2
+
+    Facts:  
+     Concept:has_Input  Concept:water_shed,
+     Concept:has_Output  Concept:water_shed_flow,
+     Concept:output_coordinate_system  "World_Behrmann"^^xsd:string,
+     Concept:resampling_technique  "NEAREST"^^xsd:string
+    
+    
+Individual: Concept:PROJECT_RASTER_3
+
+    Facts:  
+     Concept:has_Input  Concept:noprj_dem,
+     Concept:has_Output  Concept:projDEM,
+     Concept:output_coordinate_system  "World_Behrmann"^^xsd:string,
+     Concept:resampling_technique  "BILINEAR"^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_1
+
+    Facts:  
+     Concept:has_Input  Concept:dem_slope_pro,
+     Concept:has_Output  Concept:slope_threshold,
+     Concept:map_algebra_expressions  "%dem_slope_pro%> float(%threshold_slope%)"^^xsd:string,
+     Concept:threshold_slope  3.0f
+    
+    
+Individual: Concept:RASTER_CALCULATOR_10
+
+    Facts:  
+     Concept:has_Input  Concept:rest_area,
+     Concept:has_Input_cost_raster  Concept:rough_PM_classification,
+     Concept:has_Output  Concept:rest_area_with_step1result,
+     Concept:map_algebra_expressions  "\"rest_area\" * (\"rough_PM_classification\" + 1)"^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_11
+
+    Facts:  
+     Concept:has_Input  Concept:class_withrest,
+     Concept:has_Output  Concept:mountain_raster,
+     Concept:map_algebra_expressions  "SetNull(\"class_withrest\"==1,0)"^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_12
+
+    Facts:  
+     Concept:has_Input  Concept:prj_dem,
+     Concept:has_Input_cost_raster  Concept:mountainMini,
+     Concept:has_Output  Concept:mountainQFD,
+     Concept:map_algebra_expressions  "\"prj_dem\" - \"mountainMini\""^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_13
+
+    Facts:  
+     Concept:has_Input  Concept:reclassQFD,
+     Concept:has_Input  Concept:reclass_ele,
+     Concept:has_Output  Concept:mountain_sum_QFD_Ele,
+     Concept:map_algebra_expressions  "\"reclassQFD\" + \"reclass_ele\""^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_14
+
+    Facts:  
+     Concept:has_Input  Concept:pclass_preEle,
+     Concept:has_Output  Concept:pclass_ele,
+     Concept:map_algebra_expressions  "\"pclass_preEle\" +100"^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_2
+
+    Facts:  
+     Concept:has_Input  Concept:prj_ZhenAcc,
+     Concept:has_Output  Concept:band_1,
+     Concept:map_algebra_expressions  "SetNull(%prj_ZhenAcc% <  float(%threshold_ZhenAcc%) ,1)"^^xsd:string,
+     Concept:threshold_ZhenAcc  40000.0f
+    
+    
+Individual: Concept:RASTER_CALCULATOR_3
+
+    Facts:  
+     Concept:has_Input  Concept:pro_dem_40000,
+     Concept:has_Output  Concept:comb_1,
+     Concept:map_algebra_expressions  "Con(%pro_dem_40000%< float(%threshold_deep%) ,1,0)"^^xsd:string,
+     Concept:threshold_deep  800.0f
+    
+    
+Individual: Concept:RASTER_CALCULATOR_4
+
+    Facts:  
+     Concept:has_Input  Concept:pro_dem_40000,
+     Concept:has_Output  Concept:comb_2,
+     Concept:map_algebra_expressions  "Con( IsNull(%pro_dem_40000%) ,1,0)"^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_5
+
+    Facts:  
+     Concept:has_Input  Concept:noprj_FanAcc,
+     Concept:has_Output  Concept:raster_14000,
+     Concept:map_algebra_expressions  "%noprj_FanAcc%> 14000"^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_6
+
+    Facts:  
+     Concept:has_Input  Concept:pro_dem_40000_800,
+     Concept:has_Input  Concept:rough_PM_classification,
+     Concept:has_Output  Concept:merge,
+     Concept:map_algebra_expressions  "Con( (\"rough_PM_classification\"+ \"pro_dem_40000_800\")>0, 1,0)"^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_7
+
+    Facts:  
+     Concept:has_Input  Concept:prj_dem,
+     Concept:has_Output  Concept:dem_domain,
+     Concept:map_algebra_expressions  "Con(\"prj_dem\">-1000,1,0)"^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_8
+
+    Facts:  
+     Concept:has_Input  Concept:prj_dem,
+     Concept:has_Output  Concept:domain_raster,
+     Concept:map_algebra_expressions  "\"prj_dem\">-1000"^^xsd:string
+    
+    
+Individual: Concept:RASTER_CALCULATOR_9
+
+    Facts:  
+     Concept:has_Input  Concept:step4_raster,
+     Concept:has_Input_cost_raster  Concept:domain_raster,
+     Concept:has_Output  Concept:rest_area,
+     Concept:map_algebra_expressions  "Con( IsNull(\"step4_raster\") & \"domain_raster\"==1, 1, 0)"^^xsd:string
+    
+    
+Individual: Concept:RASTER_DOMAIN_1
+
+    Facts:  
+     Concept:has_Input  Concept:projDEM,
+     Concept:has_Output  Concept:projDEM_domain,
+     Concept:out_geometry_type  "POLYGON"^^xsd:string
+    
+    
+Individual: Concept:RASTER_DOMAIN_2
+
+    Facts:  
+     Concept:has_Input  Concept:prj_dem,
+     Concept:has_Output  Concept:demdomain,
+     Concept:out_geometry_type  "POLYGON"^^xsd:string
+    
+    
+Individual: Concept:RASTER_TO_POLYGON_1
+
+    Facts:  
+     Concept:has_Input  Concept:water_shed_flow,
+     Concept:has_Output  Concept:mountain_unit,
+     Concept:field  "VALUE"^^xsd:string,
+     Concept:simplify  "SIMPLIFY"^^xsd:string
+    
+    
+Individual: Concept:RASTER_TO_POLYGON_2
+
+    Facts:  
+     Concept:has_Input  Concept:reclass,
+     Concept:has_Output  Concept:reclass_polygon,
+     Concept:field  "VALUE"^^xsd:string,
+     Concept:simplify  "SIMPLIFY"^^xsd:string
+    
+    
+Individual: Concept:RASTER_TO_POLYGON_3
+
+    Facts:  
+     Concept:has_Input  Concept:edit_mandpall,
+     Concept:has_Output  Concept:complete_mountain_plain,
+     Concept:field  "VALUE"^^xsd:string,
+     Concept:simplify  "SIMPLIFY"^^xsd:string
+    
+    
+Individual: Concept:RASTER_TO_POLYGON_4
+
+    Facts:  
+     Concept:has_Input  Concept:mountain_sum_QFD_Ele,
+     Concept:has_Output  Concept:m_qfd_ele_poly,
+     Concept:field  "VALUE"^^xsd:string,
+     Concept:simplify  "NO_SIMPLIFY"^^xsd:string
+    
+    
+Individual: Concept:RASTER_TO_POLYGON_5
+
+    Facts:  
+     Concept:has_Input  Concept:mosaic_QFD_Ele,
+     Concept:has_Output  Concept:mosaic_QFD_Ele_poly,
+     Concept:field  "VALUE"^^xsd:string,
+     Concept:simplify  "SIMPLIFY"^^xsd:string
+    
+    
+Individual: Concept:RASTER_TO_POLYLINE_1
+
+    Facts:  
+     Concept:has_Input  Concept:band_1,
+     Concept:has_Output  Concept:water_net,
+     Concept:background_value  "ZERO"^^xsd:string,
+     Concept:minimum_dangle_length  "0.0"^^xsd:double,
+     Concept:simplify_polylines  "SIMPLIFY"^^xsd:string
+    
+    
+Individual: Concept:RECLASSIFY_1
+
+    Facts:  
+     Concept:has_Input  Concept:majority__slope,
+     Concept:has_Output  Concept:rough_PM_classification,
+     Concept:end1  "0.0"^^xsd:double,
+     Concept:end2  "1.0"^^xsd:double,
+     Concept:end3  "NODATA"^^xsd:string,
+     Concept:missing_values  "DATA"^^xsd:string,
+     Concept:new1  "1"^^xsd:int,
+     Concept:new2  "0"^^xsd:int,
+     Concept:new3  "NODATA"^^xsd:string,
+     Concept:reclass_field  "VALUE"^^xsd:string,
+     Concept:reclassification  "RemapRange([start1,end1,new1],[start2,end2,new2])"^^xsd:string,
+     Concept:start1  "0.0"^^xsd:double,
+     Concept:start2  "1.0"^^xsd:double,
+     Concept:start3  "NODATA"^^xsd:string
+    
+    
+Individual: Concept:RECLASSIFY_2
+
+    Facts:  
+     Concept:has_Input  Concept:merge_filter_2,
+     Concept:has_Output  Concept:reclass,
+     Concept:end1  "0.0"^^xsd:double,
+     Concept:end2  "NODATA"^^xsd:string,
+     Concept:missing_values  "NODATA"^^xsd:string,
+     Concept:new1  "1"^^xsd:int,
+     Concept:new2  "NODATA"^^xsd:string,
+     Concept:reclass_field  "VALUE"^^xsd:string,
+     Concept:reclassification  "RemapRange([start1,end1,new1],[start2,end2,new2])"^^xsd:string,
+     Concept:start1  "0.0"^^xsd:double,
+     Concept:start2  "NODATA"^^xsd:string
+    
+    
+Individual: Concept:RECLASSIFY_3
+
+    Facts:  
+     Concept:has_Input  Concept:zonal,
+     Concept:has_Output  Concept:modified_mountain,
+     Concept:end1  "10000.0"^^xsd:double,
+     Concept:end2  "NODATA"^^xsd:string,
+     Concept:missing_values  "NODATA"^^xsd:string,
+     Concept:new1  "0"^^xsd:int,
+     Concept:new2  "NODATA"^^xsd:string,
+     Concept:reclass_field  "VALUE"^^xsd:string,
+     Concept:reclassification  "RemapRange([start1,end1,new1],[start2,end2,new2])"^^xsd:string,
+     Concept:start1  "30.0"^^xsd:double,
+     Concept:start2  "NODATA"^^xsd:string
+    
+    
+Individual: Concept:RECLASSIFY_4
+
+    Facts:  
+     Concept:has_Input  Concept:prj_dem,
+     Concept:has_Output  Concept:reclass_ele,
+     Concept:end1  "1000.0"^^xsd:double,
+     Concept:end2  "3500.0"^^xsd:double,
+     Concept:end3  "5000.0"^^xsd:double,
+     Concept:end4  "10000.0"^^xsd:double,
+     Concept:end5  "NODATA"^^xsd:string,
+     Concept:missing_values  "NODATA"^^xsd:string,
+     Concept:new1  "1"^^xsd:int,
+     Concept:new2  "2"^^xsd:int,
+     Concept:new3  "3"^^xsd:int,
+     Concept:new4  "4"^^xsd:int,
+     Concept:new5  "NODATA"^^xsd:string,
+     Concept:reclass_field  "VALUE"^^xsd:string,
+     Concept:reclassification  "RemapRange([start1,end1,new1],[start2,end2,new2])"^^xsd:string,
+     Concept:start1  "-1000.0"^^xsd:double,
+     Concept:start2  "1000.00001"^^xsd:double,
+     Concept:start3  "3500.00001"^^xsd:double,
+     Concept:start4  "5000.00001"^^xsd:double,
+     Concept:start5  "NODATA"^^xsd:string
+    
+    
+Individual: Concept:RECLASSIFY_5
+
+    Facts:  
+     Concept:has_Input  Concept:rest_area_with_step1result,
+     Concept:has_Output  Concept:rest_step1_reclass,
+     Concept:end1  "1.0"^^xsd:double,
+     Concept:end2  "2.0"^^xsd:double,
+     Concept:end3  "NODATA"^^xsd:string,
+     Concept:missing_values  "NODATA"^^xsd:string,
+     Concept:new1  "0"^^xsd:int,
+     Concept:new2  "1"^^xsd:int,
+     Concept:new3  "NODATA"^^xsd:string,
+     Concept:reclass_field  "VALUE"^^xsd:string,
+     Concept:reclassification  "RemapRange([start1,end1,new1],[start2,end2,new2])"^^xsd:string,
+     Concept:start1  "1.0"^^xsd:double,
+     Concept:start2  "2.0"^^xsd:double,
+     Concept:start3  "NODATA"^^xsd:string
+    
+    
+Individual: Concept:RECLASSIFY_6
+
+    Facts:  
+     Concept:has_Input  Concept:mountainQFD,
+     Concept:has_Output  Concept:reclassQFD,
+     Concept:end1  "200.0"^^xsd:double,
+     Concept:end2  "500.0"^^xsd:double,
+     Concept:end3  "1000.0"^^xsd:double,
+     Concept:end4  "2500.0"^^xsd:double,
+     Concept:end5  "10000.0"^^xsd:double,
+     Concept:end6  "NODATA"^^xsd:string,
+     Concept:missing_values  "NODATA"^^xsd:string,
+     Concept:new1  "210"^^xsd:int,
+     Concept:new2  "220"^^xsd:int,
+     Concept:new3  "230"^^xsd:int,
+     Concept:new4  "240"^^xsd:int,
+     Concept:new5  "250"^^xsd:int,
+     Concept:new6  "NODATA"^^xsd:string,
+     Concept:reclass_field  "VALUE"^^xsd:string,
+     Concept:reclassification  "RemapRange([start1,end1,new1],[start2,end2,new2])"^^xsd:string,
+     Concept:start1  "0.0"^^xsd:double,
+     Concept:start2  "200.0"^^xsd:double,
+     Concept:start3  "500.0"^^xsd:double,
+     Concept:start4  "1000.0"^^xsd:double,
+     Concept:start5  "2500.0"^^xsd:double,
+     Concept:start6  "NODATA"^^xsd:string
+    
+    
+Individual: Concept:SELECT_1
+
+    Facts:  
+     Concept:has_Input  Concept:globalfishnet_wgs84,
+     Concept:has_Output  Concept:select_grid,
+     Concept:where_clause  "FID = %Value%"^^xsd:string
+    
+    
+Individual: Concept:SELECT_LAYER_BY_ATTRIBUTE_1
+
+    Facts:  
+     Concept:has_Final_Output  Concept:mountain_unit_elimi,
+     Concept:has_Input  Concept:common_mountain,
+     Concept:has_Output  Concept:raster_to_watershed_layer,
+     Concept:selection  "LENGTH"^^xsd:string,
+     Concept:selection_type  "NEW_SELECTION"^^xsd:string,
+     Concept:where_clause  "\"mu_area\"<0.16"^^xsd:string
+    
+    
+Individual: Concept:SELECT_LAYER_BY_ATTRIBUTE_2
+
+    Facts:  
+     Concept:has_Final_Output  Concept:mountain_unit_shape,
+     Concept:has_Input  Concept:mountain_unit_elimi,
+     Concept:has_Output  Concept:raster_to_watershed_layer_eliminate,
+     Concept:selection  "LENGTH"^^xsd:string,
+     Concept:selection_type  "NEW_SELECTION"^^xsd:string,
+     Concept:where_clause  "\"mu_area\"<0.16"^^xsd:string
+    
+    
+Individual: Concept:SELECT_LAYER_BY_ATTRIBUTE_3
+
+    Facts:  
+     Concept:has_Final_Output  Concept:eliminate_polygon,
+     Concept:has_Input  Concept:reclass_polygon,
+     Concept:has_Output  Concept:updated_raster_to_feature_layer,
+     Concept:condition  "AREA"^^xsd:string,
+     Concept:part_area  "0.16KM*KM"^^xsd:string,
+     Concept:part_option  "CONTAINED_ONLY"^^xsd:string,
+     Concept:selection_type  "NEW_SELECTION"^^xsd:string,
+     Concept:where_clause  "\"parea\"<0.5"^^xsd:string
+    
+    
+Individual: Concept:SELECT_LAYER_BY_ATTRIBUTE_4
+
+    Facts:  
+     Concept:has_Final_Output  Concept:eliminate_iso,
+     Concept:has_Input  Concept:complete_mountain_plain,
+     Concept:has_Output  Concept:eliminate_ploy_layer,
+     Concept:has_Select_feature  Concept:domain_single,
+     Concept:has_Update_feature  Concept:mountain_selection,
+     Concept:invert_spatial_relationship  "INVERT"^^xsd:string,
+     Concept:overlap_type  "INTERSECT"^^xsd:string,
+     Concept:selection  "LENGTH"^^xsd:string,
+     Concept:selection_type  "NEW_SELECTION"^^xsd:string,
+     Concept:where_clause  "\"gridcode\"=1"^^xsd:string
+    
+    
+Individual: Concept:SELECT_LAYER_BY_LOCATION_1
+
+    Facts:  
+     Concept:has_Input  Concept:domain_single,
+     Concept:has_Output  Concept:mountain_selection,
+     Concept:has_Select_feature  Concept:eliminate_ploy_layer,
+     Concept:invert_spatial_relationship  "INVERT"^^xsd:string,
+     Concept:overlap_type  "INTERSECT"^^xsd:string,
+     Concept:selection_type  "NEW_SELECTION"^^xsd:string
+    
+    
+Individual: Concept:SLOPE_1
+
+    Facts:  
+     Concept:has_Input  Concept:noprj_dem,
+     Concept:has_Output  Concept:dem_slope_no_pro,
+     Concept:method  "PLANAR"^^xsd:string,
+     Concept:output_measurement  "DEGREE"^^xsd:string,
+     Concept:z_factor  "1.0"^^xsd:double
+    
+    
+Individual: Concept:SLOPE_2
+
+    Facts:  
+     Concept:has_Input  Concept:prj_dem,
+     Concept:has_Output  Concept:prj_dem_slope,
+     Concept:method  "PLANAR"^^xsd:string,
+     Concept:output_measurement  "DEGREE"^^xsd:string,
+     Concept:z_factor  "1.0"^^xsd:double
+    
+    
+Individual: Concept:STREAM_LINK_1
+
+    Facts:  
+     Concept:has_Input  Concept:raster_14000,
+     Concept:has_Input_flow_direction_raster  Concept:noprj_FanFlow,
+     Concept:has_Output  Concept:stream_link
+    
+    
+Individual: Concept:UPDATE_1
+
+    Facts:  
+     Concept:has_Input  Concept:mountain_unit,
+     Concept:has_Output  Concept:common_mountain,
+     Concept:has_Update_feature  Concept:rest_mountain,
+     Concept:keep_borders  "BORDERS"^^xsd:string
+    
+    
+Individual: Concept:UPDATE_2
+
+    Facts:  
+     Concept:has_Input  Concept:mountain_unit_shape,
+     Concept:has_Output  Concept:domain_update,
+     Concept:has_Update_feature  Concept:domain_erase,
+     Concept:keep_borders  "BORDERS"^^xsd:string
+    
+    
+Individual: Concept:WATERSHED_1
+
+    Facts:  
+     Concept:has_Input_flow_direction_raster  Concept:noprj_FanFlow,
+     Concept:has_Input_pour_point_data  Concept:stream_link,
+     Concept:has_Output  Concept:water_shed,
+     Concept:pour_point_field  "VALUE"^^xsd:string
+    
+    
+Individual: Concept:ZONAL_STATISTICS_1
+
+    Facts:  
+     Concept:has_Extent  Concept:projDEM,
+     Concept:has_Input  Concept:eliminate_polygon,
+     Concept:has_Input_value_raster  Concept:prj_dem,
+     Concept:has_Output  Concept:zonal,
+     Concept:ignore_nodata  "DATA"^^xsd:string,
+     Concept:statistics_type  "RANGE"^^xsd:string,
+     Concept:zone_field  "ID"^^xsd:string
+    
+    
+Individual: Concept:ZONAL_STATISTICS_2
+
+    Facts:  
+     Concept:has_Input  Concept:mountainMU,
+     Concept:has_Input_value_raster  Concept:prj_dem,
+     Concept:has_Output  Concept:mountainMini,
+     Concept:ignore_nodata  "DATA"^^xsd:string,
+     Concept:statistics_type  "MINIMUM"^^xsd:string,
+     Concept:zone_field  "VALUE"^^xsd:string
+    
+    
+Individual: Concept:band_1
+
+    
+Individual: Concept:cal_first_code
+
+    SameAs: 
+        Concept:cal_second_code
+    
+    
+Individual: Concept:cal_second_code
+
+    SameAs: 
+        Concept:cal_first_code,
+        Concept:prj_dem_muploy11
+    
+    
+Individual: Concept:class_withrest
+
+    
+Individual: Concept:comMuRaster
+
+    
+Individual: Concept:comb_1
+
+    
+Individual: Concept:comb_2
+
+    
+Individual: Concept:comb_out
+
+    
+Individual: Concept:common_mountain
+
+    
+Individual: Concept:complete_mountain_plain
+
+    
+Individual: Concept:dem_domain
+
+    
+Individual: Concept:dem_slope_no_pro
+
+    
+Individual: Concept:dem_slope_pro
+
+    
+Individual: Concept:demdomain
+
+    
+Individual: Concept:domain_clip
+
+    
+Individual: Concept:domain_erase
+
+    
+Individual: Concept:domain_raster
+
+    
+Individual: Concept:domain_single
+
+    
+Individual: Concept:domain_update
+
+    
+Individual: Concept:edit_mandpall
+
+    
+Individual: Concept:eliminate_iso
+
+    
+Individual: Concept:eliminate_ploy_layer
+
+    
+Individual: Concept:eliminate_polygon
+
+    
+Individual: Concept:globalfishnet_wgs84
+
+    
+Individual: Concept:m_qfd_ele_poly
+
+    
+Individual: Concept:majority__slope
+
+    
+Individual: Concept:merge
+
+    
+Individual: Concept:merge_filter_1
+
+    
+Individual: Concept:merge_filter_2
+
+    
+Individual: Concept:modified_mountain
+
+    
+Individual: Concept:mosaic_QFD_Ele
+
+    
+Individual: Concept:mosaic_QFD_Ele_poly
+
+    
+Individual: Concept:mountainMU
+
+    
+Individual: Concept:mountainMini
+
+    
+Individual: Concept:mountainQFD
+
+    
+Individual: Concept:mountain_raster
+
+    
+Individual: Concept:mountain_selection
+
+    
+Individual: Concept:mountain_sum_QFD_Ele
+
+    
+Individual: Concept:mountain_unit
+
+    
+Individual: Concept:mountain_unit_elimi
+
+    
+Individual: Concept:mountain_unit_shape
+
+    
+Individual: Concept:new_color
+
+    
+Individual: Concept:noprj_FanAcc
+
+    
+Individual: Concept:noprj_FanFlow
+
+    
+Individual: Concept:noprj_dem
+
+    
+Individual: Concept:p_area
+
+    
+Individual: Concept:pclass_ele
+
+    
+Individual: Concept:pclass_preEle
+
+    
+Individual: Concept:polygon_with_field
+
+    
+Individual: Concept:prj_ZhenAcc
+
+    
+Individual: Concept:prj_dem
+
+    
+Individual: Concept:prj_dem_muploy11
+
+    SameAs: 
+        Concept:cal_second_code
+    
+    
+Individual: Concept:prj_dem_slope
+
+    
+Individual: Concept:pro_dem_40000
+
+    
+Individual: Concept:pro_dem_40000_800
+
+    
+Individual: Concept:projDEM
+
+    
+Individual: Concept:projDEM_domain
+
+    
+Individual: Concept:raster_14000
+
+    
+Individual: Concept:raster_to_feature
+
+    
+Individual: Concept:raster_to_feature_layer
+
+    
+Individual: Concept:raster_to_watershed
+
+    Facts:  
+     Concept:has_Input  Concept:raster_to_watershed_layer,
+     Concept:selection  "LENGTH"^^xsd:string
+    
+    
+Individual: Concept:raster_to_watershed_layer
+
+    
+Individual: Concept:raster_to_watershed_layer_eliminate
+
+    
+Individual: Concept:reclass
+
+    
+Individual: Concept:reclassQFD
+
+    
+Individual: Concept:reclass_ele
+
+    
+Individual: Concept:reclass_polygon
+
+    
+Individual: Concept:rest_area
+
+    
+Individual: Concept:rest_area_with_step1result
+
+    
+Individual: Concept:rest_mountain
+
+    
+Individual: Concept:rest_step1_reclass
+
+    
+Individual: Concept:rough_PM_classification
+
+    
+Individual: Concept:select_grid
+
+    
+Individual: Concept:slope_threshold
+
+    
+Individual: Concept:step4_raster
+
+    
+Individual: Concept:stream_link
+
+    
+Individual: Concept:updated_raster_to_feature_layer
+
+    
+Individual: Concept:value
+
+    
+Individual: Concept:water_net
+
+    
+Individual: Concept:water_shed
+
+    
+Individual: Concept:water_shed_flow
+
+    
+Individual: Concept:zonal
+
+    
+Individual: DEM1
+
+    Types: 
+        DEM
+    
+    Facts:  
+     dem_name  "noprj_dem.tif"^^xsd:string,
+     format  "GTiff"^^xsd:string,
+     linear_unit  "1.0"^^xsd:string,
+     path  "H:/geomorphology/material_from_NNU/Model and Data/preData/noprj_dem.tif"^^xsd:string,
+     projected  "false"^^xsd:string,
+     spatial_resolution  "0.00027777777777777794"^^xsd:string,
+     spatial_value  "POLYGON((97.14791666666667 29.499861111111116,97.14791666666667 32.508750000000006,100.5001388888889 32.508750000000006,100.5001388888889 29.499861111111116,97.14791666666667 29.499861111111116))"^^xsd:string
+    
+    
+Individual: FABDEM_30
+
+    Types: 
+        DEM
+    
+    Facts:  
+     path  "H:/DEM/output_data/SRTM90_CLIP_1.tif"^^xsd:string
+    
+    
+Individual: GMTED_250
+
+    Types: 
+        DEM
+    
+    Facts:  
+     path  "H:/DEM/GMTED_250m/GMTED2010.tif"^^xsd:string
+    
+    
+Individual: SRTM_90
+
+    Types: 
+        DEM
+    
+    Facts:  
+     path  "H:/DEM/China_DEM/China_DEM/90m/china_dem90m.tif"^^xsd:string
+    
+    
+Individual: TanDEM_90
+
+    Types: 
+        DEM
+    
+    Facts:  
+     path  "H:/DEM/TanDEM_90m/china/china.tif"^^xsd:string
+    
+    
+Individual: output_1
+
+    Types: 
+        Dimension
+    
+    Facts:  
+     decidesBy  output_1,
+     linear_unit  "1"^^xsd:string
+    
+    
+DisjointProperties: 
+    doubleParameter,floatParameter,intParameter
+
+Rule: 
+    Raster_To_Polygon(?a4), Add_Field(?b4), Calculate_Field(?c4), Select_Layer_By_Attribute_Delete_Row_Eliminate(?d4) -> Vectorize_Merge_area_of_mountain_and_plain(?e4)
+
+Rule: 
+    Mosaic_To_New_Raster(?a13), Apply_Symbology_From_Layer(?c13), Raster_To_Polygon(?b13) -> Apply_Symbology(?d13)
+
+Rule: 
+    Calculate_Geometry_Attributes(?c6), Erase(?a6), Select_Layer_By_Attribute_Eliminate(?d6), Update(?b6) -> Division_of_mountain_unit(?e6)
+
+Rule: 
+    Clip_Raster(?c12), Raster_To_Polygon(?a12), Pairwise_Erase(?b12), Raster_Calculator(?d12) -> Classification_of_plain_based_on_altitude(?e12)
+
+Rule: 
+    Raster_Calculator(?c2), Raster_Calculator(?b2), Mosaic(?d2), Distance_Accumulation(?a2), Extract_By_Mask(?e2) -> Identify_plain_within_mountains(?f2)
+
+Rule: 
+    Erase(?c8), Pairwise_Clip(?b8), Multipart_To_Singlepart(?e8), Update(?d8), Select(?a8) -> Replenish_Mountain_Unit(?f8)
+
+Rule: 
+    Raster_Calculator(?a11), Raster_Calculator(?d11), Zonal_Statistics(?c11), Extract_By_Mask(?b11), Reclassify(?e11), Raster_Calculator(?f11) -> Mountain_classification_based_on_slope(?g11)
+
+Rule: 
+    Raster_Calculator(?c10), Raster_Calculator(?b10), Feature_to_Raster(?a10), Mosaic_To_New_Raster(?e10), Reclassify(?d10) -> Replenish_the_vacant_parts_of_the_island(?f10)
+
+Rule: 
+    Feature_to_Raster(?b9), Select_Layer_By_Attribute_Location_Eliminate(?a9) -> Eliminate_isolated_pieces(?c9)
+
+Rule: 
+    Raster_Calculator(?a1), Focal_Statistics(?b1) -> Rough_Classification_of_mountain_and_plain(?c1)
+
+Rule: 
+    Reclassify(?c3), Raster_Calculator(?a3), Majority_Filter(?b3) -> Merge_area_of_mountain_and_plain(?d3)
+
+Rule: 
+    Reclassify(?b5), Mosaic_To_New_Raster(?c5), Zonal_Statistics(?a5), Raster_To_Polygon(?d5) -> Vectorize_Complete_mountain_and_plain(?e5)
+
+Rule: 
+    Reclassify(?a7) -> General_Classification_Based_on_Altitude_Value(?b7)
+
+Rule: 
+    decidesBy(?y, ?x) -> Slope_Calculation_Method(?y)
+
+Rule: 
+    Concept:altitude(?mountain_A, ?b), Concept:topographic_relief(?mountain_A, ?a) -> Concept:Basic_Landform_Type(?mountain_A)
+
+Rule: 
+    Concept:topographic_relief(?mountain_B, ?v) -> Concept:Basic_Morphological_Features_of_Landform(?mountain_B)
+
