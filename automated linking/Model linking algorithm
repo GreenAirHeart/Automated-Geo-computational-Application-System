@@ -1,0 +1,70 @@
+import owlready2
+import re
+import pandas
+from owlready2 import *
+
+ontology="/geomorphological_classification knowledge graph.owl"
+
+
+
+a = get_ontology(ontology).load()
+on_class=a.classes()
+on_object_property=a.object_properties()
+on_data_property=a.data_properties()
+on_anxioms=a.general_axioms()
+on=a.variables()
+on_rule=a.rules()
+l_object_property=list(on_object_property)
+l_class=list(on_class)
+l_rules=list(on_rule)
+
+
+
+my_dict = {str(item).split('.')[1]: item for item in l_class}
+my_object_project = {str(item).split('.')[1]: item for item in l_object_property}
+model_list= [my_dict['PD'],my_dict['DB'],my_dict['VD'],my_dict['SV'],my_dict['MU'],my_dict['WN']]
+constant_list=[my_dict['Fishnet'],my_dict['Symbology_Layer'],my_dict['Projected_DEM'],my_dict['DEM_boundary'],my_dict['Valid_DEM'],my_dict['Slope_output'],my_dict['Mountain_unit'],my_dict['Water_net']]
+
+
+
+property_to_check=my_object_project['hasOutput']
+value_to_match=my_dict['Classification_Result']
+out=my_dict['C_r'].hasOutput
+method=list(my_dict['Method'].subclasses())
+
+def output_match(method,value_to_match):
+    for x in method:
+        if x.hasOutput == [value_to_match]:
+            return x
+
+def input_match(x):
+    input = x.hasInput
+    # print(input)
+    return input
+
+parameter_non_repeat=[]
+def model_match (value_to_match):
+    if value_to_match not in (constant_list):
+        if value_to_match not in (parameter_non_repeat):
+            m1=output_match(method,value_to_match)
+            print("m1:%s"%m1)
+            i1=input_match(m1)
+            print("i1:%s"%i1)
+            model_sequence=[]
+            for i in i1:
+               if output_match(method, i) is not None:
+                   model_sequence.append(output_match(method,i))
+            print("model_sequence:%s"%model_sequence)
+            line=str(model_sequence)+"->"+str(m1)
+            with open(filename, 'a') as file:
+                file.write(line + '\n')
+                file.close()
+                print("sequence of the models has been written into the file")
+            parameter_non_repeat.append(value_to_match)
+            print("parameter_non_repeat:%s"%parameter_non_repeat)
+            for i in i1:
+                print("each i for new model:%s"%i)
+                model_match(i)
+
+
+model_match(my_dict['Classification_Result'])
