@@ -146,10 +146,10 @@ def process_file(input_file, output_file,ontology_name):
     print(f"Re-sequenced lines saved to {output_file}")
 
 #set the output file of generating the model workflow using the knowledge graph
-filename="D:/arcpy_project/Scripts/output_test4.txt"
+filename="/output.txt"
 
 #remove the prefix in the above file and reorder the generated model workflow
-output_file ="D:/arcpy_project/Scripts/output_test3.txt"
+output_file ="/output_final.txt"
 
 ontology_name="Geo_computation"
 
