@@ -2,9 +2,12 @@ import owlready2
 import re
 import pandas
 from owlready2 import *
+import re
+from collections import defaultdict, deque
 
-ontology="/geomorphological_classification knowledge graph.owl"
 
+#set the ontology provided in the folder
+ontology="/Geo_computation.owl"
 
 
 a = get_ontology(ontology).load()
@@ -22,16 +25,16 @@ l_rules=list(on_rule)
 
 my_dict = {str(item).split('.')[1]: item for item in l_class}
 my_object_project = {str(item).split('.')[1]: item for item in l_object_property}
-model_list= [my_dict['PD'],my_dict['DB'],my_dict['VD'],my_dict['SV'],my_dict['MU'],my_dict['WN']]
-constant_list=[my_dict['Fishnet'],my_dict['Symbology_Layer'],my_dict['Projected_DEM'],my_dict['DEM_boundary'],my_dict['Valid_DEM'],my_dict['Slope_output'],my_dict['Mountain_unit'],my_dict['Water_net']]
+model_list= [my_dict['Project_DEM'],my_dict['Identify_DEM_boundary'],my_dict['Validate_DEM'],my_dict['Calculate_slope_value'],my_dict['Detect_mountain_unit'],my_dict['Identify_water_net']]
+constant_list=[my_dict['Fishnet'],my_dict['Symbology_Layer'],my_dict['Projected_DEM'],my_dict['DEM_boundary'],my_dict['Valid_DEM'],my_dict['Slope_value'],my_dict['Mountain_unit'],my_dict['Water_net']]
 
 
 
 property_to_check=my_object_project['hasOutput']
 value_to_match=my_dict['Classification_Result']
-out=my_dict['C_r'].hasOutput
-method=list(my_dict['Method'].subclasses())
-
+out=my_dict['Classification_Result'].hasOutput
+method=list(my_dict['MODEL'].subclasses())
+# print(method)
 def output_match(method,value_to_match):
     for x in method:
         if x.hasOutput == [value_to_match]:
@@ -43,6 +46,8 @@ def input_match(x):
     return input
 
 parameter_non_repeat=[]
+
+#do the match and generate the model workflow
 def model_match (value_to_match):
     if value_to_match not in (constant_list):
         if value_to_match not in (parameter_non_repeat):
@@ -66,5 +71,89 @@ def model_match (value_to_match):
                 print("each i for new model:%s"%i)
                 model_match(i)
 
+# Read the file generaed above
 
-model_match(my_dict['Classification_Result'])
+# Parse the lines, remove prefixes, and build the dependency graph
+def parse_file(file_path,ontology_name):
+    prefix = str(ontology_name)+"."
+    dependencies = defaultdict(list)  # To store dependencies
+    lines = []  # To preserve the original order
+
+    with open(file_path, "r") as file:
+        for line in file:
+            # Remove prefix and extract dependencies
+            clean_line = re.sub(fr"\b{re.escape(prefix)}", "", line.strip())
+            lines.append(clean_line)
+
+            if "->" in clean_line:
+                before, after = map(str.strip, clean_line.split("->"))
+                dependencies[after].extend(before.strip("[]").split(", "))
+
+    return dependencies, lines
+
+
+# Perform topological sorting
+def topological_sort(dependencies):
+    indegree = defaultdict(int)
+    graph = defaultdict(list)
+
+    # Build graph and compute in-degrees
+    for target, sources in dependencies.items():
+        for source in sources:
+            graph[source].append(target)
+            indegree[target] += 1
+            if source not in indegree:  # Ensure all nodes are in the indegree map
+                indegree[source] = 0
+
+    # Start with nodes having zero in-degree
+    zero_indegree = deque([node for node, degree in indegree.items() if degree == 0])
+    sorted_order = []
+
+    while zero_indegree:
+        current = zero_indegree.popleft()
+        sorted_order.append(current)
+        for neighbor in graph[current]:
+            indegree[neighbor] -= 1
+            if indegree[neighbor] == 0:
+                zero_indegree.append(neighbor)
+
+    if len(sorted_order) != len(indegree):
+        raise ValueError("Cycle detected in the dependency graph!")
+
+    return sorted_order
+
+
+# Generate the re-sequenced lines
+def generate_resequenced_lines(sorted_order, dependencies):
+    output_lines = []
+    for target in sorted_order:
+        if target in dependencies:
+            sources = ", ".join(dependencies[target])
+            output_lines.append(f"[{sources}]->{target}" if sources else target)
+    return output_lines
+
+
+# Main processing function
+def process_file(input_file, output_file,ontology_name):
+    dependencies, lines = parse_file(input_file,ontology_name)
+    sorted_order = topological_sort(dependencies)
+    resequenced_lines = generate_resequenced_lines(sorted_order, dependencies)
+
+    # Save the output
+    with open(output_file, "w") as file:
+        file.write("\n".join(resequenced_lines))
+
+    print(f"Re-sequenced lines saved to {output_file}")
+
+#set the output file of generating the model workflow using the knowledge graph
+filename="D:/arcpy_project/Scripts/output_test4.txt"
+
+#remove the prefix in the above file and reorder the generated model workflow
+output_file ="D:/arcpy_project/Scripts/output_test3.txt"
+
+ontology_name="Geo_computation"
+
+expected_result = my_dict['Classification_Result']
+
+model_match(expected_result)
+process_file(filename, output_file,ontology_name)
