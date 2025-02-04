@@ -1,0 +1,2346 @@
+@prefix : <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#> .
+@prefix p0: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix SWEET: <http://sweetontology.net/sweetAll> .
+@prefix OntoGeoCompu: <http://www.semanticweb.org/ontology/geocomputation.owl#> .
+@prefix OntoSoilPhysics: <http://imash.leeds.ac.uk/ontologies/atu/SoilPhysics.owl#> .
+@prefix OntoSoilEro_SoilProdu: <http://www.semanticweb.org/geocomputation_kg/soil_erosion-soil_productivity.owl#> .
+@base <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl> .
+
+<http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#hasInput
+:hasInput rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#hasOutput
+:hasOutput rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#hasResult
+:hasResult rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#isAchievedBy
+:isAchievedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#isCalculatedBy
+:isCalculatedBy rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#isRepresentedBy
+:isRepresentedBy rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content
+:data_content rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format
+:data_format rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_name
+:data_name rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_type
+:data_type rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit
+:data_unit rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#model_type
+:model_type rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#parameter_value
+:parameter_value rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected
+:projected rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_region
+:spatial_region rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution
+:spatial_resolution rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#store_path
+:store_path rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix
+:suffix rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#technique_invocation
+:technique_invocation rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#technique_type
+:technique_type rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_range
+:temporal_range rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_resolution
+:temporal_resolution rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#AirProperty
+:AirProperty rdf:type owl:Class ;
+             rdfs:subClassOf :Property .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#AirTemperature
+:AirTemperature rdf:type owl:Class ;
+                rdfs:subClassOf :AirProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#AnnualData
+:AnnualData rdf:type owl:Class ;
+            rdfs:subClassOf :SpecificFeatureData ,
+                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :data_format ;
+                                                     owl:hasValue "TIFF"
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :data_type ;
+                                                     owl:hasValue "Raster"
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :suffix ;
+                                                     owl:hasValue "tif"
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :temporal_resolution ;
+                                                     owl:hasValue "yearly"
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :data_name ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:string
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :projected ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:boolean
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#AnnualEvaporation
+:AnnualEvaporation rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Evaporation
+                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :data_format ;
+                                                                                       owl:hasValue "TIFF"
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :data_type ;
+                                                                                       owl:hasValue "Raster"
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :data_unit ;
+                                                                                       owl:hasValue "mm"
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :suffix ;
+                                                                                       owl:hasValue "tif"
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :temporal_resolution ;
+                                                                                       owl:hasValue "yearly"
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :data_name ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:string
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :projected ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:boolean
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :spatial_region ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:string
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :spatial_resolution ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:string
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :temporal_range ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:string
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#AnnualRainfall
+:AnnualRainfall rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Rainfall
+                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :data_format ;
+                                                                                    owl:hasValue "TIFF"
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :data_type ;
+                                                                                    owl:hasValue "Raster"
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :data_unit ;
+                                                                                    owl:hasValue "mm"
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :suffix ;
+                                                                                    owl:hasValue "tif"
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :temporal_resolution ;
+                                                                                    owl:hasValue "yearly"
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :data_name ;
+                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:string
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :projected ;
+                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:boolean
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :spatial_region ;
+                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:string
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :spatial_resolution ;
+                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:string
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :temporal_range ;
+                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:string
+                                                                                  ]
+                                                                                ) ;
+                                                             rdf:type owl:Class
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Application
+:Application rdf:type owl:Class ;
+             rdfs:subClassOf :Research .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Climate
+:Climate rdf:type owl:Class ;
+         rdfs:subClassOf :PlanetaryPhenomena .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#ClimatePotentialProductivity
+:ClimatePotentialProductivity rdf:type owl:Class ;
+                              rdfs:subClassOf :Productivity .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#ClimatePotentialProductivityModel
+:ClimatePotentialProductivityModel rdf:type owl:Class ;
+                                   rdfs:subClassOf :GeocomputationalModel ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasInput ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :LightTemperaturePotentialProductivity
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasInput ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :MoistureCorrectionCoefficient
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasOutput ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :ClimatePotentialProductivity
+                                                   ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Coefficient
+:Coefficient rdf:type owl:Class ;
+             rdfs:subClassOf :NumericalEntity .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Conservation
+:Conservation rdf:type owl:Class ;
+              rdfs:subClassOf :HumanActivity .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#ConservationPracticeModel
+:ConservationPracticeModel rdf:type owl:Class ;
+                           rdfs:subClassOf :GeocomputationalModel ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasInput ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :LandCoverData
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasInput ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :SlopeData
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasOutput ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :ConservationPracticesFactor
+                                           ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#ConservationPracticesFactor
+:ConservationPracticesFactor rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :Factor
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :isCalculatedBy ;
+                                                                          owl:someValuesFrom :ConservationPracticeModel
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#CropManagement
+:CropManagement rdf:type owl:Class ;
+                rdfs:subClassOf :HumanActivity .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#CropManagementModel
+:CropManagementModel rdf:type owl:Class ;
+                     rdfs:subClassOf :GeocomputationalModel ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasInput ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :NDVI_Data
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasOutput ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :CroppingManagementFactor
+                                     ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#CroppingManagementFactor
+:CroppingManagementFactor rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :Factor
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :isCalculatedBy ;
+                                                                       owl:someValuesFrom :CropManagementModel
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#DEM
+:DEM rdf:type owl:Class ;
+     rdfs:subClassOf :GeneralData ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :suffix ;
+                       owl:someValuesFrom xsd:string
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :data_format ;
+                       owl:hasValue "TIFF"
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :data_type ;
+                       owl:hasValue "Raster"
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :data_name ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onDataRange xsd:string
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :projected ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onDataRange xsd:boolean
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :spatial_region ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onDataRange xsd:string
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :spatial_resolution ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onDataRange xsd:string
+                     ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Data
+:Data rdf:type owl:Class ;
+      rdfs:subClassOf :Research .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Data_withUnit_kcal
+:Data_withUnit_kcal rdf:type owl:Class ;
+                    rdfs:subClassOf :SpecificFeatureData .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Data_withUnit_mm
+:Data_withUnit_mm rdf:type owl:Class ;
+                  rdfs:subClassOf :SpecificFeatureData .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Elevation
+:Elevation rdf:type owl:Class ;
+           rdfs:subClassOf :Measure .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Evaporation
+:Evaporation rdf:type owl:Class ;
+             rdfs:subClassOf :WaterInterchange .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Factor
+:Factor rdf:type owl:Class ;
+        rdfs:subClassOf :Research .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#FileFormatOperation
+:FileFormatOperation rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Operation
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :isAchievedBy ;
+                                                                  owl:someValuesFrom :FileFormatOperationModel
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#FileFormatOperationModel
+:FileFormatOperationModel rdf:type owl:Class ;
+                          rdfs:subClassOf :PreProcessingModel ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasInput ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :GeneralData
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasOutput ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :FormatSpecifiedData
+                                          ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#FormatSpecifiedData
+:FormatSpecifiedData rdf:type owl:Class ;
+                     rdfs:subClassOf :SpecificFeatureData .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Frost
+:Frost rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :WaterSubstance
+                                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :data_format ;
+                                                                           owl:hasValue "TIFF"
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :data_type ;
+                                                                           owl:hasValue "Raster"
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :data_unit ;
+                                                                           owl:hasValue "day"
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :suffix ;
+                                                                           owl:hasValue "tif"
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :temporal_resolution ;
+                                                                           owl:hasValue "yearly"
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :data_name ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :projected ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:boolean
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :spatial_region ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :spatial_resolution ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :temporal_range ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#GeneralData
+:GeneralData rdf:type owl:Class ;
+             rdfs:subClassOf :Data .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#GeneralProperty
+:GeneralProperty rdf:type owl:Class ;
+                 rdfs:subClassOf :Property .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#GeocomputationalModel
+:GeocomputationalModel rdf:type owl:Class ;
+                       rdfs:subClassOf :Model .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#HumanActivity
+:HumanActivity rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Index
+:Index rdf:type owl:Class ;
+       rdfs:subClassOf :Property .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#LandCover
+:LandCover rdf:type owl:Class ;
+           rdfs:subClassOf :MaterialThing .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#LandCoverData
+:LandCoverData rdf:type owl:Class ;
+               rdfs:subClassOf :GeneralData ,
+                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :data_format ;
+                                                        owl:hasValue "TIFF"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :data_type ;
+                                                        owl:hasValue "Raster"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :suffix ;
+                                                        owl:hasValue "tif"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :temporal_resolution ;
+                                                        owl:hasValue "yearly"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :data_name ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:string
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :projected ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :spatial_region ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:string
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :spatial_resolution ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:string
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :temporal_range ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:string
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Light-temperaturePotentialProductivityModel
+:Light-temperaturePotentialProductivityModel rdf:type owl:Class ;
+                                             rdfs:subClassOf :GeocomputationalModel ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasInput ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :PhotosyntheticPotentialProductivity
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasInput ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :TemperatureCorrectionCoefficient
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasOutput ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :LightTemperaturePotentialProductivity
+                                                             ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#LightTemperaturePotentialProductivity
+:LightTemperaturePotentialProductivity rdf:type owl:Class ;
+                                       rdfs:subClassOf :Productivity .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#MaterialThing
+:MaterialThing rdf:type owl:Class ;
+               rdfs:subClassOf :Substance .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#MathematicalProcess
+:MathematicalProcess rdf:type owl:Class ;
+                     rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Measure
+:Measure rdf:type owl:Class ;
+         rdfs:subClassOf :Property .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#MeteorologicalProperty
+:MeteorologicalProperty rdf:type owl:Class ;
+                        rdfs:subClassOf :Property .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Model
+:Model rdf:type owl:Class ;
+       rdfs:subClassOf :Representation .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#MoistureCorrectionCoefficient
+:MoistureCorrectionCoefficient rdf:type owl:Class ;
+                               rdfs:subClassOf :Coefficient ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :isCalculatedBy ;
+                                                 owl:someValuesFrom :MoistureCorrectionCoefficientModel
+                                               ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#MoistureCorrectionCoefficientModel
+:MoistureCorrectionCoefficientModel rdf:type owl:Class ;
+                                    rdfs:subClassOf :GeocomputationalModel ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasInput ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass :AnnualEvaporation
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasInput ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass :AnnualRainfall
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasOutput ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass :MoistureCorrectionCoefficient
+                                                    ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#MonthlyData
+:MonthlyData rdf:type owl:Class ;
+             rdfs:subClassOf :SpecificFeatureData ,
+                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :data_format ;
+                                                      owl:hasValue "TIFF"
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :data_type ;
+                                                      owl:hasValue "Raster"
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :suffix ;
+                                                      owl:hasValue "tif"
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :temporal_resolution ;
+                                                      owl:hasValue "monthly"
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :data_name ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:string
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :projected ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:boolean
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#MonthlyRainfall
+:MonthlyRainfall rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Rainfall
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :data_format ;
+                                                              owl:hasValue "TIFF"
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :data_type ;
+                                                              owl:hasValue "Raster"
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :data_unit ;
+                                                              owl:hasValue "mm"
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :suffix ;
+                                                              owl:hasValue "tif"
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :temporal_resolution ;
+                                                              owl:hasValue "monthly"
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :data_name ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onDataRange xsd:string
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :projected ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onDataRange xsd:boolean
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :spatial_region ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onDataRange xsd:string
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :spatial_resolution ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onDataRange xsd:string
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :temporal_range ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onDataRange xsd:string
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#NDVI
+:NDVI rdf:type owl:Class ;
+      rdfs:subClassOf :Index .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#NDVI_Data
+:NDVI_Data rdf:type owl:Class ;
+           rdfs:subClassOf :GeneralData ,
+                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :data_format ;
+                                                    owl:hasValue "TIFF"
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :data_type ;
+                                                    owl:hasValue "Raster"
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :suffix ;
+                                                    owl:hasValue "tif"
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :temporal_resolution ;
+                                                    owl:hasValue "yearly"
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :data_name ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onDataRange xsd:string
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :projected ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onDataRange xsd:boolean
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :spatial_region ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onDataRange xsd:string
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :spatial_resolution ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onDataRange xsd:string
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :temporal_range ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onDataRange xsd:string
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#NumericalEntity
+:NumericalEntity rdf:type owl:Class ;
+                 rdfs:subClassOf :Representation .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Operation
+:Operation rdf:type owl:Class ;
+           rdfs:subClassOf :MathematicalProcess .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#OrganicCarbonContent
+:OrganicCarbonContent rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :SoilContent
+                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :data_format ;
+                                                                                          owl:hasValue "TIFF"
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :data_type ;
+                                                                                          owl:hasValue "Raster"
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :suffix ;
+                                                                                          owl:hasValue "tif"
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :data_name ;
+                                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                          owl:onDataRange xsd:string
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :projected ;
+                                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                          owl:onDataRange xsd:boolean
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :spatial_region ;
+                                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                          owl:onDataRange xsd:string
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :spatial_resolution ;
+                                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                          owl:onDataRange xsd:string
+                                                                                        ]
+                                                                                      ) ;
+                                                                   rdf:type owl:Class
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Parameter
+:Parameter rdf:type owl:Class ;
+           rdfs:subClassOf :Representation .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Phenomena
+:Phenomena rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#PhotosyntheticPotentialProductivity
+:PhotosyntheticPotentialProductivity rdf:type owl:Class ;
+                                     rdfs:subClassOf :Productivity .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#PhotosyntheticPotentialProductivityModel
+:PhotosyntheticPotentialProductivityModel rdf:type owl:Class ;
+                                          rdfs:subClassOf :GeocomputationalModel ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasInput ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass :Radiation
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasOutput ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass :PhotosyntheticPotentialProductivity
+                                                          ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#PlanetaryPhenomena
+:PlanetaryPhenomena rdf:type owl:Class ;
+                    rdfs:subClassOf :Phenomena .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#PreProcessingModel
+:PreProcessingModel rdf:type owl:Class ;
+                    rdfs:subClassOf :Model .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Precipitation
+:Precipitation rdf:type owl:Class ;
+               rdfs:subClassOf :WaterInterchange .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Process
+:Process rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Productivity
+:Productivity rdf:type owl:Class ;
+              rdfs:subClassOf :ScientificQuantity .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#ProjectedData
+:ProjectedData rdf:type owl:Class ;
+               rdfs:subClassOf :SpecificFeatureData .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#ProjectionOperation
+:ProjectionOperation rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Operation
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :isAchievedBy ;
+                                                                  owl:someValuesFrom :ProjectionOperationModel
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#ProjectionOperationModel
+:ProjectionOperationModel rdf:type owl:Class ;
+                          rdfs:subClassOf :PreProcessingModel ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasInput ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :GeneralData
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasOutput ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :ProjectedData
+                                          ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Property
+:Property rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Radiation
+:Radiation rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :MeteorologicalProperty
+                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :data_format ;
+                                                                               owl:hasValue "TIFF"
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :data_type ;
+                                                                               owl:hasValue "Raster"
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :data_unit ;
+                                                                               owl:hasValue "kcal/cm^2"
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :suffix ;
+                                                                               owl:hasValue "tif"
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :temporal_resolution ;
+                                                                               owl:hasValue "yearly"
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :data_name ;
+                                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                               owl:onDataRange xsd:string
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :projected ;
+                                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                               owl:onDataRange xsd:boolean
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :spatial_region ;
+                                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                               owl:onDataRange xsd:string
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :spatial_resolution ;
+                                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                               owl:onDataRange xsd:string
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :temporal_range ;
+                                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                               owl:onDataRange xsd:string
+                                                                             ]
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Rainfall
+:Rainfall rdf:type owl:Class ;
+          rdfs:subClassOf :Precipitation .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#RainfallData
+:RainfallData rdf:type owl:Class ;
+              rdfs:subClassOf :GeneralData .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#RainfallErosivityFactor
+:RainfallErosivityFactor rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :Factor
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :isCalculatedBy ;
+                                                                      owl:someValuesFrom :RainfallErosivityModel
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#RainfallErosivityModel
+:RainfallErosivityModel rdf:type owl:Class ;
+                        rdfs:subClassOf :GeocomputationalModel ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasInput ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :AnnualRainfall
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasInput ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :MonthlyRainfall
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasOutput ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :RainfallErosivityFactor
+                                        ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#RegionClipModel
+:RegionClipModel rdf:type owl:Class ;
+                 rdfs:subClassOf :PreProcessingModel .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Representation
+:Representation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Research
+:Research rdf:type owl:Class ;
+          rdfs:subClassOf :HumanActivity .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#ScientificQuantity
+:ScientificQuantity rdf:type owl:Class ;
+                    rdfs:subClassOf :Property .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Slope
+:Slope rdf:type owl:Class ;
+       rdfs:subClassOf :Operation .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SlopeData
+:SlopeData rdf:type owl:Class ;
+           rdfs:subClassOf :GeneralData ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :data_format ;
+                             owl:hasValue "TIFF"
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :data_type ;
+                             owl:hasValue "Raster"
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :data_unit ;
+                             owl:hasValue "degree"
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :suffix ;
+                             owl:hasValue "tif"
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :data_name ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :projected ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:boolean
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :spatial_region ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :spatial_resolution ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SlopeGradient
+:SlopeGradient rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :Slope
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :isCalculatedBy ;
+                                                            owl:someValuesFrom :SlopeGradientModel
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SlopeGradientModel
+:SlopeGradientModel rdf:type owl:Class ;
+                    rdfs:subClassOf :GeocomputationalModel ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasInput ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :SlopeData
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasOutput ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :SlopeGradient
+                                    ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SlopeLength
+:SlopeLength rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :Slope
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :isCalculatedBy ;
+                                                          owl:someValuesFrom :SlopeLengthModel
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SlopeLengthModel
+:SlopeLengthModel rdf:type owl:Class ;
+                  rdfs:subClassOf :GeocomputationalModel ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasInput ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :SlopeData
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasOutput ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :SlopeLength
+                                  ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SlopeModel
+:SlopeModel rdf:type owl:Class ;
+            rdfs:subClassOf :GeocomputationalModel ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasInput ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :DEM
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasOutput ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :SlopeData
+                            ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilAgriculturalFunction
+:SoilAgriculturalFunction rdf:type owl:Class ;
+                          rdfs:subClassOf :SoilFunction .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilChemicalProperty
+:SoilChemicalProperty rdf:type owl:Class ;
+                      rdfs:subClassOf :SoilProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilClayContent
+:SoilClayContent rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :SoilContent
+                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :data_format ;
+                                                                                     owl:hasValue "TIFF"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :data_type ;
+                                                                                     owl:hasValue "Raster"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :suffix ;
+                                                                                     owl:hasValue "tif"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :data_name ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:string
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :projected ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:boolean
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :spatial_region ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:string
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :spatial_resolution ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:string
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilContent
+:SoilContent rdf:type owl:Class ;
+             rdfs:subClassOf :SoilPhysicalProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilCorrectionCoefficient
+:SoilCorrectionCoefficient rdf:type owl:Class ;
+                           rdfs:subClassOf :Coefficient ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :isCalculatedBy ;
+                                             owl:someValuesFrom :SoilCorrectionCoefficientModel
+                                           ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilCorrectionCoefficientModel
+:SoilCorrectionCoefficientModel rdf:type owl:Class ;
+                                rdfs:subClassOf :GeocomputationalModel ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasInput ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :DEM
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasInput ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :SlopeData
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasInput ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :SoilFertility
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasInput ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :SoilPH
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasInput ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :SoilTexture
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasOutput ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :SoilCorrectionCoefficient
+                                                ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilErodibility
+:SoilErodibility rdf:type owl:Class ;
+                 rdfs:subClassOf :SoilPhysicalProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilErodibilityFactor
+:SoilErodibilityFactor rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Factor
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :isCalculatedBy ;
+                                                                    owl:someValuesFrom :SoilErodibilityModel
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilErodibilityModel
+:SoilErodibilityModel rdf:type owl:Class ;
+                      rdfs:subClassOf :GeocomputationalModel ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasInput ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :OrganicCarbonContent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasInput ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :SoilClayContent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasInput ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :SoilSandContent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasInput ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :SoilSiltContent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasOutput ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :SoilErodibilityFactor
+                                      ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilErosion
+:SoilErosion rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :SoilPhysicalDegradativeProcess
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :isCalculatedBy ;
+                                                          owl:someValuesFrom :SoilErosionModel
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilErosionModel
+:SoilErosionModel rdf:type owl:Class ;
+                  rdfs:subClassOf :GeocomputationalModel ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasInput ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :ConservationPracticesFactor
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasInput ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :CroppingManagementFactor
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasInput ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :RainfallErosivityFactor
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasInput ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :SlopeGradient
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasInput ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :SlopeLength
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasInput ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :SoilErodibilityFactor
+                                  ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilFertility
+:SoilFertility rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :SoilProperty
+                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :data_format ;
+                                                                                   owl:hasValue "TIFF"
+                                                                                 ]
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :data_type ;
+                                                                                   owl:hasValue "Raster"
+                                                                                 ]
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :suffix ;
+                                                                                   owl:hasValue "tif"
+                                                                                 ]
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :data_name ;
+                                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onDataRange xsd:string
+                                                                                 ]
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :projected ;
+                                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onDataRange xsd:boolean
+                                                                                 ]
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :spatial_region ;
+                                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onDataRange xsd:string
+                                                                                 ]
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :spatial_resolution ;
+                                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onDataRange xsd:string
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilFertilityModel
+:SoilFertilityModel rdf:type owl:Class ;
+                    rdfs:subClassOf :GeocomputationalModel ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasInput ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :SoilKaliumContent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasInput ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :SoilNitrogenContent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasInput ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :SoilOrganicMatterContent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasInput ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :SoilPhosphorusContent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasOutput ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :SoilFertility
+                                    ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilFunction
+:SoilFunction rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilKaliumContent
+:SoilKaliumContent rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :SoilChemicalProperty
+                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :data_format ;
+                                                                                       owl:hasValue "TIFF"
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :data_type ;
+                                                                                       owl:hasValue "Raster"
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :suffix ;
+                                                                                       owl:hasValue "tif"
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :data_name ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:string
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :projected ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:boolean
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :spatial_region ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:string
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :spatial_resolution ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:string
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilMapData
+:SoilMapData rdf:type owl:Class ;
+             rdfs:subClassOf :GeneralData .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilNitrogenContent
+:SoilNitrogenContent rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :SoilChemicalProperty
+                                                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :data_format ;
+                                                                                         owl:hasValue "TIFF"
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :data_type ;
+                                                                                         owl:hasValue "Raster"
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :suffix ;
+                                                                                         owl:hasValue "tif"
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :data_name ;
+                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:string
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :projected ;
+                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:boolean
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :spatial_region ;
+                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:string
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :spatial_resolution ;
+                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:string
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilOrganicMatterContent
+:SoilOrganicMatterContent rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :SoilContent
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :data_format ;
+                                                                                              owl:hasValue "TIFF"
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :data_type ;
+                                                                                              owl:hasValue "Raster"
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :suffix ;
+                                                                                              owl:hasValue "tif"
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :data_name ;
+                                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                              owl:onDataRange xsd:string
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :projected ;
+                                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                              owl:onDataRange xsd:boolean
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :spatial_region ;
+                                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                              owl:onDataRange xsd:string
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :spatial_resolution ;
+                                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                              owl:onDataRange xsd:string
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPH
+:SoilPH rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :SoilChemicalProperty
+                                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :data_format ;
+                                                                            owl:hasValue "TIFF"
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :data_type ;
+                                                                            owl:hasValue "Raster"
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :suffix ;
+                                                                            owl:hasValue "tif"
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :data_name ;
+                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                            owl:onDataRange xsd:string
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :projected ;
+                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                            owl:onDataRange xsd:boolean
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :spatial_region ;
+                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                            owl:onDataRange xsd:string
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :spatial_resolution ;
+                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                            owl:onDataRange xsd:string
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPhosphorusContent
+:SoilPhosphorusContent rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :SoilChemicalProperty
+                                                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :data_format ;
+                                                                                           owl:hasValue "TIFF"
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :data_type ;
+                                                                                           owl:hasValue "Raster"
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :suffix ;
+                                                                                           owl:hasValue "tif"
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :data_name ;
+                                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:string
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :projected ;
+                                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:boolean
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :spatial_region ;
+                                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:string
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :spatial_resolution ;
+                                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:string
+                                                                                         ]
+                                                                                       ) ;
+                                                                    rdf:type owl:Class
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPhysicalDegradativeProcess
+:SoilPhysicalDegradativeProcess rdf:type owl:Class ;
+                                rdfs:subClassOf :SoilPhysicalProcess .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPhysicalProcess
+:SoilPhysicalProcess rdf:type owl:Class ;
+                     rdfs:subClassOf :SoilProcess .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPhysicalProperty
+:SoilPhysicalProperty rdf:type owl:Class ;
+                      rdfs:subClassOf :SoilProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPotentialProductivity
+:SoilPotentialProductivity rdf:type owl:Class ;
+                           rdfs:subClassOf :Productivity .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPotentialProductivityModel
+:SoilPotentialProductivityModel rdf:type owl:Class ;
+                                rdfs:subClassOf :GeocomputationalModel ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasInput ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :ClimatePotentialProductivity
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasInput ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :SoilCorrectionCoefficient
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasOutput ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :SoilProductivity
+                                                ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilProcess
+:SoilProcess rdf:type owl:Class ;
+             rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilProductivity
+:SoilProductivity rdf:type owl:Class ;
+                  rdfs:subClassOf :SoilAgriculturalFunction .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilProperty
+:SoilProperty rdf:type owl:Class ;
+              rdfs:subClassOf :Property .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPropertyModel
+:SoilPropertyModel rdf:type owl:Class ;
+                   rdfs:subClassOf :GeocomputationalModel ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasInput ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :DEM
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasOutput ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :SoilFertility
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasOutput ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :SoilPH
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasOutput ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :SoilTexture
+                                   ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilQualityIndexModel
+:SoilQualityIndexModel rdf:type owl:Class ;
+                       rdfs:subClassOf :GeocomputationalModel ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasInput ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :DEM
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasInput ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :SlopeData
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasInput ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :SoilFertility
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasInput ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :SoilPH
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasInput ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :SoilTexture
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasOutput ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :SoilCorrectionCoefficient
+                                       ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilSandContent
+:SoilSandContent rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :SoilContent
+                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :data_format ;
+                                                                                     owl:hasValue "TIFF"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :data_type ;
+                                                                                     owl:hasValue "Raster"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :suffix ;
+                                                                                     owl:hasValue "tif"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :data_name ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:string
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :projected ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:boolean
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :spatial_region ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:string
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :spatial_resolution ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:string
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilSiltContent
+:SoilSiltContent rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :SoilContent
+                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :data_format ;
+                                                                                     owl:hasValue "TIFF"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :data_type ;
+                                                                                     owl:hasValue "Raster"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :suffix ;
+                                                                                     owl:hasValue "tif"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :data_name ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:string
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :projected ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:boolean
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :spatial_region ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:string
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :spatial_resolution ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:string
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilTexture
+:SoilTexture rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :SoilPhysicalProperty
+                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :data_format ;
+                                                                                 owl:hasValue "TIFF"
+                                                                               ]
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :data_type ;
+                                                                                 owl:hasValue "Raster"
+                                                                               ]
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :suffix ;
+                                                                                 owl:hasValue "tif"
+                                                                               ]
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :data_name ;
+                                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                 owl:onDataRange xsd:string
+                                                                               ]
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :projected ;
+                                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                 owl:onDataRange xsd:boolean
+                                                                               ]
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :spatial_region ;
+                                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                 owl:onDataRange xsd:string
+                                                                               ]
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :spatial_resolution ;
+                                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                 owl:onDataRange xsd:string
+                                                                               ]
+                                                                             ) ;
+                                                          rdf:type owl:Class
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SpatialResolutionConversion
+:SpatialResolutionConversion rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :Operation
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :isAchievedBy ;
+                                                                          owl:someValuesFrom :SpatialResolutionConversionModel
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SpatialResolutionConversionModel
+:SpatialResolutionConversionModel rdf:type owl:Class ;
+                                  rdfs:subClassOf :PreProcessingModel ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasInput ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass :GeneralData
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasOutput ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass :SpatialResolutionSpecifiedData
+                                                  ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SpatialResolutionSpecifiedData
+:SpatialResolutionSpecifiedData rdf:type owl:Class ;
+                                rdfs:subClassOf :SpecificFeatureData .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SpecificFeatureData
+:SpecificFeatureData rdf:type owl:Class ;
+                     rdfs:subClassOf :Data .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Substance
+:Substance rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Temperature
+:Temperature rdf:type owl:Class ;
+             rdfs:subClassOf :GeneralProperty .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#TemperatureCorrectionCoefficient
+:TemperatureCorrectionCoefficient rdf:type owl:Class ;
+                                  rdfs:subClassOf :Coefficient ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :isCalculatedBy ;
+                                                    owl:someValuesFrom :TemperatureCorrectionCoefficientModel
+                                                  ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#TemperatureCorrectionCoefficientModel
+:TemperatureCorrectionCoefficientModel rdf:type owl:Class ;
+                                       rdfs:subClassOf :GeocomputationalModel ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasInput ;
+                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onClass :Frost
+                                                       ] ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasOutput ;
+                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onClass :TemperatureCorrectionCoefficient
+                                                       ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#TemporalResolutionConversion
+:TemporalResolutionConversion rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Operation
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :isAchievedBy ;
+                                                                           owl:someValuesFrom :TemporalResolutionConversionModel
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#TemporalResolutionConversionModel
+:TemporalResolutionConversionModel rdf:type owl:Class ;
+                                   rdfs:subClassOf :PreProcessingModel ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasInput ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :GeneralData
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasOutput ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :TemporalResolutionSpecifiedData
+                                                   ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#TemporalResolutionSpecifiedData
+:TemporalResolutionSpecifiedData rdf:type owl:Class ;
+                                 rdfs:subClassOf :SpecificFeatureData .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#UnitConversion_to__kcal_Model
+:UnitConversion_to__kcal_Model rdf:type owl:Class ;
+                               rdfs:subClassOf :PreProcessingModel ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasInput ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :GeneralData
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasOutput ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :Data_withUnit_kcal
+                                               ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#UnitConversion_to_kcal
+:UnitConversion_to_kcal rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( :Operation
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :isAchievedBy ;
+                                                                     owl:someValuesFrom :UnitConversion_to__kcal_Model
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#UnitConversion_to_mm
+:UnitConversion_to_mm rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :Operation
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :isAchievedBy ;
+                                                                   owl:someValuesFrom :UnitConversion_to_mm_Model
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#UnitConversion_to_mm_Model
+:UnitConversion_to_mm_Model rdf:type owl:Class ;
+                            rdfs:subClassOf :PreProcessingModel ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasInput ;
+                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass :GeneralData
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasOutput ;
+                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass :Data_withUnit_mm
+                                            ] .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#WaterInterchange
+:WaterInterchange rdf:type owl:Class ;
+                  rdfs:subClassOf :PlanetaryPhenomena .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#WaterSubstance
+:WaterSubstance rdf:type owl:Class ;
+                rdfs:subClassOf :Substance .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#NDVI1
+:NDVI1 rdf:type owl:NamedIndividual ,
+                :NDVI ;
+       :data_content "NDVI"^^xsd:string ;
+       :data_format "GTiff"^^xsd:string ;
+       :projected "true"^^xsd:boolean ;
+       :spatial_resolution 0.008333 ;
+       :suffix "tif"^^xsd:string ;
+       :temporal_resolution "yearly"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#annual_rainfall1
+:annual_rainfall1 rdf:type owl:NamedIndividual ,
+                           :Rainfall ;
+                  :data_content "rainfall"^^xsd:string ;
+                  :data_format "GTiff"^^xsd:string ;
+                  :data_unit "mm"^^xsd:string ;
+                  :projected "true"^^xsd:boolean ;
+                  :spatial_resolution 0.008333 ;
+                  :suffix "tif"^^xsd:string ;
+                  :temporal_resolution "yearly"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#clay_content1
+:clay_content1 rdf:type owl:NamedIndividual ,
+                        :SoilClayContent ;
+               :data_content "soil clay content"^^xsd:string ;
+               :data_format "GTiff"^^xsd:string ;
+               :data_unit "%" ;
+               :projected "true"^^xsd:boolean ;
+               :spatial_resolution 0.008333 ;
+               :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#dem1
+:dem1 rdf:type owl:NamedIndividual ,
+               :DEM ;
+      :data_content "DEM"^^xsd:string ;
+      :projected "true"^^xsd:boolean ;
+      :spatial_resolution 0.008333 ;
+      :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#evaporation_1
+:evaporation_1 rdf:type owl:NamedIndividual ,
+                        :Evaporation ;
+               :data_content "Evaporation"^^xsd:string ;
+               :data_format "GTiff"^^xsd:string ;
+               :data_unit "mm" ;
+               :projected "true"^^xsd:boolean ;
+               :spatial_resolution 0.008333 ;
+               :suffix "tif"^^xsd:string ;
+               :temporal_resolution "yearly" .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#frs1
+:frs1 rdf:type owl:NamedIndividual ,
+               :Frost ;
+      :data_content "ground frost frequency" ;
+      :data_format "GTiff"^^xsd:string ;
+      :data_unit "days" ;
+      :projected "true"^^xsd:boolean ;
+      :spatial_resolution 0.008333 ;
+      :suffix "tif"^^xsd:string ;
+      :temporal_resolution "yearly" .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#landcover1
+:landcover1 rdf:type owl:NamedIndividual ,
+                     :LandCover ;
+            :data_content "land cover"^^xsd:string ;
+            :data_format "GTiff"^^xsd:string ;
+            :projected "true"^^xsd:boolean ;
+            :spatial_resolution 0.008333 ;
+            :suffix "tif"^^xsd:string ;
+            :temporal_range "2001-2015"^^xsd:string ;
+            :temporal_resolution "yearly"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#monthly_rainfall1
+:monthly_rainfall1 rdf:type owl:NamedIndividual ,
+                            :Rainfall ;
+                   :data_content "rainfall"^^xsd:string ;
+                   :data_format "GTiff"^^xsd:string ;
+                   :data_unit "mm"^^xsd:string ;
+                   :projected "true"^^xsd:boolean ;
+                   :spatial_resolution 0.008333 ;
+                   :suffix "tif"^^xsd:string ;
+                   :temporal_resolution "monthly"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#organic_carbon_content1
+:organic_carbon_content1 rdf:type owl:NamedIndividual ,
+                                  :OrganicCarbonContent ;
+                         :data_content "soil organic carbon content"^^xsd:string ;
+                         :data_format "GTiff"^^xsd:string ;
+                         :data_unit "%" ;
+                         :projected "true"^^xsd:boolean ;
+                         :spatial_resolution 0.008333 ;
+                         :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#ph1
+:ph1 rdf:type owl:NamedIndividual ,
+              :SoilPH ;
+     :data_content "pH value"^^xsd:string ;
+     :data_format "GTiff"^^xsd:string ;
+     :projected "true"^^xsd:boolean ;
+     :spatial_resolution 0.008333 ;
+     :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#sand_content1
+:sand_content1 rdf:type owl:NamedIndividual ,
+                        :SoilSandContent ;
+               :data_content "soil sand content"^^xsd:string ;
+               :data_format "GTiff"^^xsd:string ;
+               :data_unit "%" ;
+               :projected "true"^^xsd:boolean ;
+               :spatial_resolution 0.008333 ;
+               :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#silt_content1
+:silt_content1 rdf:type owl:NamedIndividual ,
+                        :SoilSiltContent ;
+               :data_content "soil silt content"^^xsd:string ;
+               :data_format "GTiff"^^xsd:string ;
+               :data_unit "%" ;
+               :projected "true"^^xsd:boolean ;
+               :spatial_resolution 0.008333 ;
+               :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#solar1
+:solar1 rdf:type owl:NamedIndividual ,
+                 :Radiation ;
+        :data_content "Surface solar radiation downwards"^^xsd:string ;
+        :data_format "GTiff"^^xsd:string ;
+        :data_unit "kcal cm**-2"^^xsd:string ;
+        :projected "true"^^xsd:boolean ;
+        :spatial_resolution 0.008333 ;
+        :suffix "tif"^^xsd:string ;
+        :temporal_range "2001-2010"^^xsd:string ;
+        :temporal_resolution "yearly"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#som1
+:som1 rdf:type owl:NamedIndividual ,
+               :SoilOrganicMatterContent ;
+      :data_content "soil organic matter"^^xsd:string ;
+      :data_format "GTiff"^^xsd:string ;
+      :data_unit "% of weight"^^xsd:string ;
+      :projected "true"^^xsd:boolean ;
+      :spatial_resolution 0.008333 ;
+      :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#test1
+:test1 rdf:type owl:NamedIndividual ,
+                :GeneralData ;
+       :store_path "kgljsdgkjdsd" .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#test_model1
+:test_model1 rdf:type owl:NamedIndividual ,
+                      :FileFormatOperationModel ;
+             :hasInput :test1 .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#texture1
+:texture1 rdf:type owl:NamedIndividual ,
+                   :SoilTexture ;
+          :data_content "soil texture"^^xsd:string ;
+          :data_format "GTiff"^^xsd:string ;
+          :projected "true"^^xsd:boolean ;
+          :spatial_resolution 0.008333 ;
+          :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#tk1
+:tk1 rdf:type owl:NamedIndividual ,
+              :SoilKaliumContent ;
+     :data_content "total K"^^xsd:string ;
+     :data_format "GTiff"^^xsd:string ;
+     :data_unit "% of weight"^^xsd:string ;
+     :projected "true"^^xsd:boolean ;
+     :spatial_resolution 0.008333 ;
+     :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#tn1
+:tn1 rdf:type owl:NamedIndividual ,
+              :SoilNitrogenContent ;
+     :data_content "total N"^^xsd:string ;
+     :data_format "GTiff"^^xsd:string ;
+     :data_unit "% of weight"^^xsd:string ;
+     :projected "true"^^xsd:boolean ;
+     :spatial_resolution 0.008333 ;
+     :suffix "tif"^^xsd:string .
+
+
+###  http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#tp1
+:tp1 rdf:type owl:NamedIndividual ,
+              :SoilPhosphorusContent ;
+     :data_content "total P"^^xsd:string ;
+     :data_format "GTiff"^^xsd:string ;
+     :data_unit "% of weight"^^xsd:string ;
+     :projected "true"^^xsd:boolean ;
+     :spatial_resolution 0.008333 ;
+     :suffix "tif"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
