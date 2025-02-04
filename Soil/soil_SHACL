@@ -1,0 +1,1037 @@
+@prefix dash:   <http://datashapes.org/dash#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix shapes: <https://shacl-play.sparna.fr/shapes/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+shapes:LandCover_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:NDVI  rdf:type   sh:NodeShape ;
+        rdfs:label      "NDVI"@en ;
+        sh:property     shapes:NDVI_data_content , shapes:NDVI_data_format , shapes:NDVI_projected , shapes:NDVI_spatial_resolution , shapes:NDVI_suffix , shapes:NDVI_temporal_resolution ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#NDVI> .
+
+shapes:OrganicCarbonContent_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:Rainfall_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilClayContent_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:SoilClayContent_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:Radiation_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:Radiation_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:SoilKaliumContent_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:Radiation_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:OrganicCarbonContent_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "soil organic carbon content" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:Evaporation_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:Radiation_temporal_range
+        sh:datatype  xsd:string ;
+        sh:hasValue  "2001-2010" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "temporal_range"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_range> .
+
+shapes:OrganicCarbonContent_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilKaliumContent_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "% of weight" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:Radiation_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "kcal cm**-2" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:SoilSandContent_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "soil sand content" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:Radiation_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "Surface solar radiation downwards" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:Evaporation_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "mm" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:OrganicCarbonContent_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "%" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:SoilSiltContent_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:OrganicCarbonContent
+        rdf:type        sh:NodeShape ;
+        rdfs:label      "OrganicCarbonContent"@en ;
+        sh:property     shapes:OrganicCarbonContent_data_content , shapes:OrganicCarbonContent_data_format , shapes:OrganicCarbonContent_data_unit , shapes:OrganicCarbonContent_projected , shapes:OrganicCarbonContent_spatial_resolution , shapes:OrganicCarbonContent_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#OrganicCarbonContent> .
+
+shapes:Frost_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:SoilSiltContent_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilKaliumContent_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:NDVI_temporal_resolution
+        sh:datatype  xsd:string ;
+        sh:hasValue  "yearly" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "temporal_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_resolution> .
+
+shapes:NDVI_suffix  sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:Radiation_temporal_resolution
+        sh:datatype  xsd:string ;
+        sh:hasValue  "yearly" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "temporal_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_resolution> .
+
+shapes:Radiation  rdf:type  sh:NodeShape ;
+        rdfs:label      "Radiation"@en ;
+        sh:property     shapes:Radiation_data_unit , shapes:Radiation_data_content , shapes:Radiation_temporal_range , shapes:Radiation_suffix , shapes:Radiation_temporal_resolution , shapes:Radiation_data_format , shapes:Radiation_projected , shapes:Radiation_spatial_resolution ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Radiation> .
+
+shapes:SoilPH_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:SoilSiltContent_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "%" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:Evaporation_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:DEM_suffix  sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:SoilTexture_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:Frost_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:Frost_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:Frost_temporal_resolution
+        sh:datatype  xsd:string ;
+        sh:hasValue  "yearly" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "temporal_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_resolution> .
+
+shapes:SoilSiltContent_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "soil silt content" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilPhosphorusContent
+        rdf:type        sh:NodeShape ;
+        rdfs:label      "SoilPhosphorusContent"@en ;
+        sh:property     shapes:SoilPhosphorusContent_data_content , shapes:SoilPhosphorusContent_data_format , shapes:SoilPhosphorusContent_data_unit , shapes:SoilPhosphorusContent_projected , shapes:SoilPhosphorusContent_spatial_resolution , shapes:SoilPhosphorusContent_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPhosphorusContent> .
+
+shapes:SoilTexture_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "soil texture" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:Radiation_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:SoilNitrogenContent_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:SoilPH_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:SoilPhosphorusContent_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:Rainfall_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "mm" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:SoilPH_suffix  sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:SoilKaliumContent_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:OrganicCarbonContent_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:LandCover_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:Frost_suffix  sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:SoilPhosphorusContent_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "total P" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilOrganicMatterContent
+        rdf:type        sh:NodeShape ;
+        rdfs:label      "SoilOrganicMatterContent"@en ;
+        sh:property     shapes:SoilOrganicMatterContent_data_content , shapes:SoilOrganicMatterContent_data_format , shapes:SoilOrganicMatterContent_data_unit , shapes:SoilOrganicMatterContent_projected , shapes:SoilOrganicMatterContent_spatial_resolution , shapes:SoilOrganicMatterContent_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilOrganicMatterContent> .
+
+shapes:SoilPH_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilOrganicMatterContent_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:SoilSandContent_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:SoilSandContent
+        rdf:type        sh:NodeShape ;
+        rdfs:label      "SoilSandContent"@en ;
+        sh:property     shapes:SoilSandContent_data_content , shapes:SoilSandContent_data_format , shapes:SoilSandContent_data_unit , shapes:SoilSandContent_projected , shapes:SoilSandContent_spatial_resolution , shapes:SoilSandContent_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilSandContent> .
+
+shapes:SoilTexture_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:Evaporation  rdf:type  sh:NodeShape ;
+        rdfs:label      "Evaporation"@en ;
+        sh:property     shapes:Evaporation_spatial_resolution , shapes:Evaporation_data_unit , shapes:Evaporation_data_content , shapes:Evaporation_suffix , shapes:Evaporation_temporal_resolution , shapes:Evaporation_data_format , shapes:Evaporation_projected ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Evaporation> .
+
+shapes:LandCover  rdf:type  sh:NodeShape ;
+        rdfs:label      "LandCover"@en ;
+        sh:property     shapes:LandCover_temporal_resolution , shapes:LandCover_suffix , shapes:LandCover_projected , shapes:LandCover_temporal_range , shapes:LandCover_data_content , shapes:LandCover_data_format , shapes:LandCover_spatial_resolution ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#LandCover> .
+
+shapes:Evaporation_temporal_resolution
+        sh:datatype  xsd:string ;
+        sh:hasValue  "yearly" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "temporal_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_resolution> .
+
+shapes:SoilNitrogenContent_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:Evaporation_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "Evaporation" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilPH  rdf:type  sh:NodeShape ;
+        rdfs:label      "SoilPH"@en ;
+        sh:property     shapes:SoilPH_data_content , shapes:SoilPH_data_format , shapes:SoilPH_projected , shapes:SoilPH_spatial_resolution , shapes:SoilPH_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilPH> .
+
+shapes:SoilNitrogenContent_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "% of weight" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:SoilOrganicMatterContent_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:Frost_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "ground frost frequency" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilClayContent_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:Rainfall_temporal_resolution
+        sh:datatype  xsd:string ;
+        sh:in        ( "monthly" "yearly" ) ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "temporal_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_resolution> .
+
+shapes:SoilSandContent_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:SoilNitrogenContent_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "total N" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilNitrogenContent_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:SoilPhosphorusContent_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:Frost_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "days" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:Evaporation_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:LandCover_temporal_range
+        sh:datatype  xsd:string ;
+        sh:hasValue  "2001-2015" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "temporal_range"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_range> .
+
+shapes:SoilKaliumContent
+        rdf:type        sh:NodeShape ;
+        rdfs:label      "SoilKaliumContent"@en ;
+        sh:property     shapes:SoilKaliumContent_data_content , shapes:SoilKaliumContent_data_format , shapes:SoilKaliumContent_data_unit , shapes:SoilKaliumContent_projected , shapes:SoilKaliumContent_spatial_resolution , shapes:SoilKaliumContent_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilKaliumContent> .
+
+shapes:LandCover_temporal_resolution
+        sh:datatype  xsd:string ;
+        sh:hasValue  "yearly" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "temporal_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#temporal_resolution> .
+
+shapes:DEM_projected  sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilSiltContent
+        rdf:type        sh:NodeShape ;
+        rdfs:label      "SoilSiltContent"@en ;
+        sh:property     shapes:SoilSiltContent_data_content , shapes:SoilSiltContent_data_format , shapes:SoilSiltContent_data_unit , shapes:SoilSiltContent_projected , shapes:SoilSiltContent_spatial_resolution , shapes:SoilSiltContent_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilSiltContent> .
+
+shapes:SoilClayContent_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:SoilClayContent
+        rdf:type        sh:NodeShape ;
+        rdfs:label      "SoilClayContent"@en ;
+        sh:property     shapes:SoilClayContent_data_content , shapes:SoilClayContent_data_format , shapes:SoilClayContent_data_unit , shapes:SoilClayContent_projected , shapes:SoilClayContent_spatial_resolution , shapes:SoilClayContent_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilClayContent> .
+
+shapes:SoilSandContent_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:NDVI_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilClayContent_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "soil clay content" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:NDVI_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:OrganicCarbonContent_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:LandCover_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:SoilOrganicMatterContent_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilSandContent_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "%" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:DEM_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "DEM" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilNitrogenContent
+        rdf:type        sh:NodeShape ;
+        rdfs:label      "SoilNitrogenContent"@en ;
+        sh:property     shapes:SoilNitrogenContent_data_content , shapes:SoilNitrogenContent_data_format , shapes:SoilNitrogenContent_data_unit , shapes:SoilNitrogenContent_projected , shapes:SoilNitrogenContent_spatial_resolution , shapes:SoilNitrogenContent_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilNitrogenContent> .
+
+shapes:Rainfall_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:SoilTexture_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:Rainfall_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "rainfall" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilOrganicMatterContent_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "% of weight" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:SoilSiltContent_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+<https://shacl-play.sparna.fr/shapes>
+        rdf:type  <http://www.w3.org/2002/07/owl#Ontology> ;
+        <http://purl.org/dc/terms/abstract>
+                "Generated by SHACL Play!"@en ;
+        <http://purl.org/dc/terms/created>
+                "2024-09-03T18:34:27.706Z"^^xsd:dateTime .
+
+shapes:Evaporation_data_format
+        sh:datatype  xsd:string ;
+        sh:hasValue  "GTiff" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_format"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_format> .
+
+shapes:Frost  rdf:type  sh:NodeShape ;
+        rdfs:label      "Frost"@en ;
+        sh:property     shapes:Frost_suffix , shapes:Frost_projected , shapes:Frost_data_format , shapes:Frost_data_unit , shapes:Frost_temporal_resolution , shapes:Frost_data_content , shapes:Frost_spatial_resolution ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Frost> .
+
+shapes:SoilSiltContent_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:SoilOrganicMatterContent_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "soil organic matter" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:Rainfall_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:DEM  rdf:type    sh:NodeShape ;
+        rdfs:label      "DEM"@en ;
+        sh:property     shapes:DEM_data_content , shapes:DEM_projected , shapes:DEM_spatial_resolution , shapes:DEM_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#DEM> .
+
+shapes:SoilTexture  rdf:type  sh:NodeShape ;
+        rdfs:label      "SoilTexture"@en ;
+        sh:property     shapes:SoilTexture_data_content , shapes:SoilTexture_data_format , shapes:SoilTexture_projected , shapes:SoilTexture_spatial_resolution , shapes:SoilTexture_suffix ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#SoilTexture> .
+
+shapes:SoilSandContent_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:SoilClayContent_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "%" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:NDVI_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:NDVI_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "NDVI" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilTexture_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilKaliumContent_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:LandCover_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilPhosphorusContent_projected
+        sh:datatype  xsd:boolean ;
+        sh:hasValue  true ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "projected"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#projected> .
+
+shapes:SoilKaliumContent_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "total K" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilOrganicMatterContent_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:DEM_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
+
+shapes:Rainfall  rdf:type  sh:NodeShape ;
+        rdfs:label      "Rainfall"@en ;
+        sh:property     shapes:Rainfall_suffix , shapes:Rainfall_projected , shapes:Rainfall_data_content , shapes:Rainfall_temporal_resolution , shapes:Rainfall_data_unit , shapes:Rainfall_spatial_resolution , shapes:Rainfall_data_format ;
+        sh:targetClass  <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#Rainfall> .
+
+shapes:SoilPH_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "pH value" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:SoilPhosphorusContent_data_unit
+        sh:datatype  xsd:string ;
+        sh:hasValue  "% of weight" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_unit"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_unit> .
+
+shapes:SoilNitrogenContent_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:SoilPhosphorusContent_suffix
+        sh:datatype  xsd:string ;
+        sh:hasValue  "tif" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "suffix"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#suffix> .
+
+shapes:LandCover_data_content
+        sh:datatype  xsd:string ;
+        sh:hasValue  "land cover" ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "data_content"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#data_content> .
+
+shapes:Rainfall_spatial_resolution
+        sh:datatype  xsd:decimal ;
+        sh:hasValue  0.008333 ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:name      "spatial_resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.semanticweb.org/geocomputation/soil_erosion-soil_productivity.owl#spatial_resolution> .
